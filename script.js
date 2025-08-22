@@ -2,6 +2,16 @@ document.addEventListener('DOMContentLoaded', () => {
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
   }
+
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', e => {
+      const honey = form.querySelector('input[name="_honey"]').value;
+      if (honey) {
+        e.preventDefault();
+      }
+    });
+  }
 });
 
 function toggleTheme() {
@@ -12,6 +22,15 @@ function toggleTheme() {
 
 function toggleMenu() {
   document.querySelector('.navbar').classList.toggle('open');
+}
+
+function revealEmail() {
+  const email = document.getElementById('email');
+  const btn = document.getElementById('reveal-email');
+  if (email && btn) {
+    email.style.display = 'block';
+    btn.style.display = 'none';
+  }
 }
 
 // highlight navigation based on scroll position

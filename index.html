@@ -7,6 +7,22 @@
       name="description"
       content="PMP-certified project manager and full-stack developer portfolio of Yalın Yorulmaz."
     />
+    <link rel="canonical" href="https://ylnyorulmaz.github.io/" />
+    <meta property="og:title" content="Yalın Yorulmaz | PMP & Full Stack Developer" />
+    <meta
+      property="og:description"
+      content="PMP-certified project manager and full-stack developer bridging product and security."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ylnyorulmaz.github.io/" />
+    <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Yalın Yorulmaz | PMP & Full Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="PMP-certified project manager and full-stack developer bridging product and security."
+    />
+    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.png" />
     <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,14 +36,30 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yalın Yorulmaz",
+        "jobTitle": "PMP-certified Project Manager and Full Stack Developer",
+        "url": "https://ylnyorulmaz.github.io",
+        "sameAs": [
+          "https://www.linkedin.com/in/yalin-yorulmaz",
+          "https://github.com/ylnyorulmaz"
+        ]
+      }
+    </script>
   </head>
   <body>
     <header class="hero">
       <div class="container">
         <h1>Yalın Yorulmaz</h1>
-        <p>
+        <p class="roles">
           PMP® Certified &nbsp;|&nbsp; Full Stack Developer &nbsp;|&nbsp;
           Product Owner
+        </p>
+        <p class="tagline">
+          Bridging product, security and engineering for global teams.
         </p>
         <a href="Yalin_Yorulmaz_CV.pdf" class="btn" download
           ><i class="fas fa-file-arrow-down"></i>Download CV</a
@@ -107,14 +139,49 @@
       </div>
     </section>
 
+    <section class="projects" id="projects">
+      <div class="container">
+        <h2><i class="fas fa-diagram-project"></i>Selected Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/300x180?text=SatrancOnline"
+              alt="Screenshot of SatrancOnline chess AI"
+              loading="lazy"
+            />
+            <h3>SatrancOnline</h3>
+            <p>Founder &amp; Developer – Vue.js, Node.js</p>
+            <p>Launched a chess-playing AI with growing user base.</p>
+            <a href="https://satranc.online" target="_blank">Live site</a>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/300x180?text=Invicti"
+              alt="Invicti Security integration screenshot"
+              loading="lazy"
+            />
+            <h3>Invicti Security Integrations</h3>
+            <p>Technical Product Owner – REST APIs</p>
+            <p>Shipped integrations for Netsparker &amp; Acunetix 360.</p>
+          </div>
+          <div class="project-card">
+            <img
+              src="https://via.placeholder.com/300x180?text=SONY"
+              alt="SONY Electronics security dashboard"
+              loading="lazy"
+            />
+            <h3>SONY Electronics</h3>
+            <p>Security Coordinator – Global reach</p>
+            <p>Improved app-sec triage time across regions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="skills" id="skills">
       <div class="container">
         <h2><i class="fas fa-code"></i>Skills</h2>
         <ul class="skills-list">
-          <li>
-            <i class="fas fa-code"></i>C#, .NET, NodeJS, VueJS, HTML5/CSS3
-          </li>
-          <li><i class="fas fa-database"></i>SQL, MySQL, PL/SQL, Oracle</li>
           <li>
             <i class="fas fa-project-diagram"></i>Agile, Scrum, Waterfall, PMP
           </li>
@@ -123,13 +190,61 @@
             (Basic), Chinese (Basic)
           </li>
         </ul>
+        <div class="tech-badges">
+          <span class="badge">C#</span>
+          <span class="badge">.NET</span>
+          <span class="badge">Node.js</span>
+          <span class="badge">Vue.js</span>
+          <span class="badge">SQL</span>
+          <span class="badge">Oracle</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <h2><i class="fas fa-handshake"></i>Services</h2>
+        <ul class="services-list">
+          <li>Product Ownership</li>
+          <li>Full-stack Development</li>
+          <li>Security Project Management</li>
+        </ul>
+        <a
+          href="https://calendly.com/yalin-yorulmaz/intro-call"
+          target="_blank"
+          class="btn"
+          >Book a Call</a
+        >
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="container">
         <h2><i class="fas fa-envelope"></i>Contact</h2>
-        <p>
+        <form
+          id="contact-form"
+          action="https://formspree.io/f/mayvdayy"
+          method="POST"
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            name="_replyto"
+            placeholder="Your Email"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <input type="text" name="_honey" style="display: none" />
+          <button type="submit" class="btn">Send</button>
+        </form>
+        <button id="reveal-email" class="btn" onclick="revealEmail()">
+          Show Email
+        </button>
+        <p id="email" style="display: none">
           <i class="fas fa-envelope"></i
           ><a href="mailto:yorulmaz@sabanciuniv.edu"
             >yorulmaz@sabanciuniv.edu</a
@@ -139,6 +254,12 @@
           <i class="fab fa-linkedin"></i
           ><a href="https://www.linkedin.com/in/yalin-yorulmaz" target="_blank"
             >LinkedIn Profile</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-github"></i
+          ><a href="https://github.com/ylnyorulmaz" target="_blank"
+            >GitHub</a
           >
         </p>
       </div>
