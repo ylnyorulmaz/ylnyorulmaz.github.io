@@ -1,5 +1,13 @@
+document.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+});
+
 function toggleTheme() {
   document.body.classList.toggle('dark-mode');
+  const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+  localStorage.setItem('theme', mode);
 }
 
 function toggleMenu() {
@@ -28,7 +36,9 @@ const observer = new IntersectionObserver(
 
 sections.forEach(section => observer.observe(section));
 
-// change navbar style on scroll
+const backToTopBtn = document.querySelector('.back-to-top');
+
+// change navbar style on scroll and toggle back-to-top visibility
 window.addEventListener('scroll', () => {
   const navbar = document.querySelector('.navbar');
   if (window.scrollY > 10) {
@@ -36,4 +46,14 @@ window.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('scrolled');
   }
+
+  if (window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
 });
+
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
