@@ -35,7 +35,7 @@ function revealEmail() {
 
 // highlight navigation based on scroll position
 const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('.navbar ul li a');
+const navLinks = document.querySelectorAll('.navbar ul li a[href^="#"]');
 
 const observer = new IntersectionObserver(
   entries => {
