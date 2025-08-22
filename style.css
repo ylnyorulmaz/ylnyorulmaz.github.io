@@ -1,19 +1,20 @@
 /* Base Variables */
 :root {
-  --color-bg: #0d1b2a;
-  --color-text: #e0e1dd;
-  --color-primary: #1b9aaa;
-  --color-accent: #778da9;
-  --navbar-bg: rgba(13, 27, 42, 0.6);
-  --card-bg: rgba(27, 38, 59, 0.8);
+  --color-bg: #0a192f;
+  --color-text: #e6f1ff;
+  --color-primary: #1e3a8a;
+  --color-accent: #3b82f6;
+  --navbar-bg: rgba(10, 25, 47, 0.6);
+  --card-bg: rgba(30, 58, 138, 0.8);
 }
 
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   background-color: var(--color-bg);
-  background-image: url("https://www.toptal.com/designers/subtlepatterns/uploads/dot-grid.png");
-  background-repeat: repeat;
+  background-image: url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
   color: var(--color-text);
   transition:
@@ -48,12 +49,12 @@ a:hover {
   background-image:
     linear-gradient(
       -45deg,
-      rgba(27, 38, 59, 0.8),
-      rgba(65, 90, 119, 0.8),
-      rgba(27, 154, 170, 0.8),
-      rgba(119, 141, 169, 0.8)
+      rgba(30, 58, 138, 0.8),
+      rgba(37, 99, 235, 0.8),
+      rgba(59, 130, 246, 0.8),
+      rgba(29, 78, 216, 0.8)
     ),
-    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1350&q=80");
+    url("https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1350&q=80");
   background-size:
     400% 400%,
     cover;
