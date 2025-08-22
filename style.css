@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0D1B2A;
+  color: #E0E1DD;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: #1B9AAA;
+}
+
+.hero {
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #1B263B, #415A77);
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #778DA9;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #1B9AAA;
+}
+
+.btn.coffee {
+  background: #FFDD00;
+  color: #333;
+  font-weight: bold;
+}
+
+.navbar {
+  background-color: #1B263B;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #E0E1DD;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+section h2 {
+  font-size: 32px;
+  border-bottom: 2px solid #E0E1DD;
+  margin-bottom: 20px;
+}
+
+.skills-list {
+  list-style: square inside;
+}
+
+footer {
+  background: #1B263B;
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.dark-mode {
+  background-color: #F5F5F5;
+  color: #1B263B;
+}
+
+.dark-mode .hero, .dark-mode .navbar, .dark-mode footer {
+  background-color: #E0E1DD;
+  color: #0D1B2A;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
+  .navbar ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
