@@ -47,6 +47,7 @@ const observer = new IntersectionObserver(
         if (activeLink) {
           activeLink.classList.add('active');
         }
+        entry.target.classList.add('visible');
       }
     });
   },
