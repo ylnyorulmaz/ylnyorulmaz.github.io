@@ -399,6 +399,10 @@ body.dark-mode {
 
 /* Responsive */
 @media (max-width: 768px) {
+  body,
+  .hero {
+    background-attachment: scroll;
+  }
   .hero h1 {
     font-size: 36px;
   }
@@ -417,6 +421,11 @@ body.dark-mode {
   }
   .navbar ul li {
     margin: 10px 0;
+    width: 100%;
+  }
+  .navbar ul li a {
+    width: 100%;
+    justify-content: center;
   }
   .navbar.open ul {
     display: flex;
