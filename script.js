@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const setThemeMeta = mode => {
+    if (themeMeta) {
+      themeMeta.setAttribute('content', mode === 'dark' ? '#0a192f' : '#f5f5f5');
+    }
+  };
+
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark-mode');
+    setThemeMeta('dark');
+  } else {
+    setThemeMeta('light');
   }
 
   const form = document.getElementById('contact-form');
@@ -18,10 +28,22 @@ function toggleTheme() {
   document.body.classList.toggle('dark-mode');
   const mode = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
   localStorage.setItem('theme', mode);
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  if (themeMeta) {
+    themeMeta.setAttribute('content', mode === 'dark' ? '#0a192f' : '#f5f5f5');
+  }
 }
 
 function toggleMenu() {
-  document.querySelector('.navbar').classList.toggle('open');
+  const navbar = document.querySelector('.navbar');
+  const toggleBtn = document.querySelector('.menu-toggle');
+  if (navbar) {
+    navbar.classList.toggle('open');
+  }
+  if (toggleBtn) {
+    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+    toggleBtn.setAttribute('aria-expanded', String(!expanded));
+  }
 }
 
 function revealEmail() {
