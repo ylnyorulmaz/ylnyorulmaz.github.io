@@ -61,6 +61,10 @@
             padding: 0 20px;
         }
 
+        section {
+            scroll-margin-top: 80px;
+        }
+
         /* Header */
         header {
             position: fixed;
@@ -484,7 +488,8 @@
             nav { position: relative; }
             .nav-links {
                 position: absolute;
-                top: 60px;
+                top: 100%;
+                left: 0;
                 right: 0;
                 background: rgba(10, 10, 10, 0.95);
                 flex-direction: column;
@@ -494,6 +499,7 @@
                 overflow: hidden;
                 padding: 0 0 1rem 0;
                 transition: max-height 0.3s ease;
+                z-index: 1000;
             }
             .nav-links.open { max-height: 300px; }
             .nav-links li { text-align: center; }
