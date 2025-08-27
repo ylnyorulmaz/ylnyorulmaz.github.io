@@ -8,15 +8,23 @@
     <meta name="author" content="Yalın Yorulmaz">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ylnyorulmaz.github.io/slick_personal_website2.html">
+    <link rel="icon" type="image/jpeg" href="yalinyorulmaz.jpeg">
     <meta property="og:title" content="Yalın Yorulmaz | PMP & Full Stack Developer">
     <meta property="og:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ylnyorulmaz.github.io/slick_personal_website2.html">
     <meta property="og:image" content="https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg">
+    <meta property="og:image:alt" content="Portrait of Yalın Yorulmaz">
+    <meta property="og:site_name" content="Yalın Yorulmaz Portfolio">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Yalın Yorulmaz | PMP & Full Stack Developer">
     <meta name="twitter:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
     <meta name="twitter:image" content="https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg">
+    <meta name="twitter:image:alt" content="Portrait of Yalın Yorulmaz">
+    <meta name="twitter:site" content="@ylnyorulmaz">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
     <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,6 +38,7 @@
         "jobTitle": "PMP-certified Project Manager and Full Stack Developer",
         "url": "https://ylnyorulmaz.github.io/slick_personal_website2.html",
         "image": "https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg",
+        "email": "mailto:yorulmazyln@gmail.com",
         "sameAs": [
             "https://linkedin.com/in/ylnyorulmaz",
             "https://github.com/ylnyorulmaz",
@@ -44,6 +53,11 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         body {
@@ -534,8 +548,8 @@
     <header>
         <nav aria-label="Main Navigation">
             <div class="logo">Yalın Yorulmaz</div>
-            <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-            <ul class="nav-links">
+            <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+            <ul id="primary-navigation" class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -683,9 +697,9 @@
             <p class="fade-in" style="color: #a0a0a0; font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Ready to collaborate on your next project or discuss opportunities? I'd love to hear from you.</p>
             
             <div class="contact-links fade-in">
-                <a href="mailto:yalin@example.com" class="contact-link">
+                <a href="mailto:yorulmazyln@gmail.com" class="contact-link">
                     <span>📧</span>
-                    Email Me
+                    yorulmazyln@gmail.com
                 </a>
                 <a href="https://linkedin.com/in/ylnyorulmaz" class="contact-link" target="_blank" rel="noopener noreferrer">
                     <span>💼</span>
@@ -740,10 +754,14 @@
         const navLinks = document.querySelector('.nav-links');
         if (menuToggle && navLinks) {
             menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('open');
+                const isOpen = navLinks.classList.toggle('open');
+                menuToggle.setAttribute('aria-expanded', isOpen);
             });
             navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => navLinks.classList.remove('open'));
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                    menuToggle.setAttribute('aria-expanded', 'false');
+                });
             });
         }
 
