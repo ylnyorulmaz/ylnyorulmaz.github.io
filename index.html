@@ -23,6 +23,7 @@
       content="PMP-certified project manager and full-stack developer bridging product and security."
     />
     <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.png" />
+    <meta name="theme-color" content="#0a192f" />
     <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,12 +46,15 @@
         "url": "https://ylnyorulmaz.github.io",
         "sameAs": [
           "https://www.linkedin.com/in/yalin-yorulmaz",
-          "https://github.com/ylnyorulmaz"
+          "https://github.com/ylnyorulmaz",
+          "https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share",
+          "https://ylnyorulmaz.etsy.com"
         ]
       }
     </script>
   </head>
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <header class="hero">
       <div class="container">
         <img
@@ -74,6 +78,7 @@
         <a
           href="https://buymeacoffee.com/ylnyorulmaz"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn coffee"
           ><i class="fas fa-mug-hot"></i>Buy Me a Coffee</a
         >
@@ -84,10 +89,10 @@
     </header>
 
     <nav class="navbar">
-      <button class="menu-toggle" onclick="toggleMenu()">
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu()">
         <i class="fas fa-bars"></i>
       </button>
-      <ul>
+      <ul id="nav-menu">
         <li>
           <a href="#about"><i class="fas fa-user"></i>About</a>
         </li>
@@ -115,15 +120,36 @@
           <a
             href="https://www.linkedin.com/in/yalin-yorulmaz"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             class="icon"
             aria-label="LinkedIn"
             ><i class="fab fa-linkedin"></i></a
           >
         </li>
+        <li>
+          <a
+            href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon"
+            aria-label="Upwork"
+            ><i class="fab fa-upwork"></i></a
+          >
+        </li>
+        <li>
+          <a
+            href="https://ylnyorulmaz.etsy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="icon"
+            aria-label="Etsy"
+            ><i class="fab fa-etsy"></i></a
+          >
+        </li>
       </ul>
     </nav>
 
+    <main id="main-content">
     <section class="about" id="about">
       <div class="container">
         <h2><i class="fas fa-user-circle"></i>About Me</h2>
@@ -144,7 +170,12 @@
             <p>
               Developed a chess-playing AI and built its brand, powering 5K+
               online games.
-              <a href="https://satranc.online" target="_blank">Visit site</a>
+              <a
+                href="https://satranc.online"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Visit site</a
+              >
             </p>
           </div>
           <div class="job">
@@ -184,7 +215,12 @@
             <h3>SatrancOnline</h3>
             <p>Founder &amp; Developer – Vue.js, Node.js</p>
             <p>Launched a chess-playing AI with growing user base.</p>
-            <a href="https://satranc.online" target="_blank">Live site</a>
+            <a
+              href="https://satranc.online"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Live site</a
+            >
           </div>
           <div class="project-card">
             <img
@@ -249,6 +285,7 @@
         <a
           href="https://calendly.com/yalin-yorulmaz/intro-call"
           target="_blank"
+          rel="noopener noreferrer"
           class="btn"
           >Book a Call</a
         >
@@ -289,18 +326,44 @@
         </p>
         <p>
           <i class="fab fa-linkedin"></i
-          ><a href="https://www.linkedin.com/in/yalin-yorulmaz" target="_blank"
+          ><a
+            href="https://www.linkedin.com/in/yalin-yorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
             >LinkedIn Profile</a
           >
         </p>
         <p>
           <i class="fab fa-github"></i
-          ><a href="https://github.com/ylnyorulmaz" target="_blank"
+          ><a
+            href="https://github.com/ylnyorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
             >GitHub</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-upwork"></i
+          ><a
+            href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Upwork</a
+          >
+        </p>
+        <p>
+          <i class="fab fa-etsy"></i
+          ><a
+            href="https://ylnyorulmaz.etsy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Etsy Shop</a
           >
         </p>
       </div>
     </section>
+
+    </main>
 
     <footer>
       <p>© 2025 Yalın Yorulmaz | Made with ❤️ in Istanbul</p>
