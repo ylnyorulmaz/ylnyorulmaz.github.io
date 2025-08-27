@@ -3,7 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yalín Yorulmaz | PMP & Full Stack Developer</title>
+    <meta name="description" content="PMP-certified project manager and full-stack developer portfolio of Yalın Yorulmaz.">
+    <link rel="canonical" href="https://ylnyorulmaz.github.io/slick_personal_website2.html">
+    <meta property="og:title" content="Yalın Yorulmaz | PMP & Full Stack Developer">
+    <meta property="og:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ylnyorulmaz.github.io/slick_personal_website2.html">
+    <meta property="og:image" content="https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yalın Yorulmaz | PMP & Full Stack Developer">
+    <meta name="twitter:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
+    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg">
+    <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -106,6 +120,7 @@
             bottom: 0;
             background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="500" cy="500" r="500" gradientUnits="userSpaceOnUse"><stop stop-color="%23ff6b6b" stop-opacity="0.1"/><stop offset="1" stop-color="%23ff6b6b" stop-opacity="0"/></radialGradient></defs><circle cx="500" cy="500" r="500" fill="url(%23a)"/></svg>') center/cover;
             animation: pulse 4s ease-in-out infinite alternate;
+            transform: translateY(var(--bg-offset, 0));
         }
 
         @keyframes pulse {
@@ -513,7 +528,7 @@
                 <div class="project-card">
                     <h3>Satranç.online - Chess AI Platform</h3>
                     <p>Developed a comprehensive chess-playing AI platform with a growing user base. Built the entire brand from concept to execution, featuring intelligent gameplay and user engagement systems.</p>
-                    <a href="https://satranc.online" class="project-link" target="_blank">Visit Site →</a>
+                    <a href="https://satranc.online" class="project-link" target="_blank" rel="noopener noreferrer">Visit Site →</a>
                     <div class="project-tags">
                         <span class="tag">Vue.js</span>
                         <span class="tag">Node.js</span>
@@ -591,15 +606,23 @@
                     <span>📧</span>
                     Email Me
                 </a>
-                <a href="https://linkedin.com/in/ylnyorulmaz" class="contact-link" target="_blank">
+                <a href="https://linkedin.com/in/ylnyorulmaz" class="contact-link" target="_blank" rel="noopener noreferrer">
                     <span>💼</span>
                     LinkedIn
                 </a>
-                <a href="https://github.com/ylnyorulmaz" class="contact-link" target="_blank">
+                <a href="https://github.com/ylnyorulmaz" class="contact-link" target="_blank" rel="noopener noreferrer">
                     <span>💻</span>
                     GitHub
                 </a>
-                <a href="https://buymeacoffee.com/ylnyorulmaz" class="contact-link" target="_blank">
+                <a href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>🧑‍💻</span>
+                    Upwork
+                </a>
+                <a href="https://ylnyorulmaz.etsy.com" class="contact-link" target="_blank" rel="noopener noreferrer">
+                    <span>🛍️</span>
+                    Etsy Shop
+                </a>
+                <a href="https://buymeacoffee.com/ylnyorulmaz" class="contact-link" target="_blank" rel="noopener noreferrer">
                     <span>☕</span>
                     Buy Me a Coffee
                 </a>
@@ -659,9 +682,9 @@
         // Parallax effect for hero background
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero::before');
+            const hero = document.querySelector('.hero');
             if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                hero.style.setProperty('--bg-offset', `${scrolled * 0.5}px`);
             }
         });
     </script>
