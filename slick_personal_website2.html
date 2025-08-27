@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PMP-certified project manager and full-stack developer portfolio of Yalın Yorulmaz.">
+    <meta name="keywords" content="Yalın Yorulmaz, PMP, Project Manager, Full Stack Developer, Product Owner, Portfolio">
+    <meta name="author" content="Yalın Yorulmaz">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://ylnyorulmaz.github.io/slick_personal_website2.html">
     <meta property="og:title" content="Yalın Yorulmaz | PMP & Full Stack Developer">
     <meta property="og:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
@@ -15,9 +18,27 @@
     <meta name="twitter:description" content="PMP-certified project manager and full-stack developer bridging product and security.">
     <meta name="twitter:image" content="https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg">
     <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
+    <meta name="theme-color" content="#0a0a0a">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Yalın Yorulmaz",
+        "jobTitle": "PMP-certified Project Manager and Full Stack Developer",
+        "url": "https://ylnyorulmaz.github.io/slick_personal_website2.html",
+        "image": "https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg",
+        "sameAs": [
+            "https://linkedin.com/in/ylnyorulmaz",
+            "https://github.com/ylnyorulmaz",
+            "https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share",
+            "https://ylnyorulmaz.etsy.com",
+            "https://buymeacoffee.com/ylnyorulmaz"
+        ]
+    }
+    </script>
     <style>
         * {
             margin: 0;
@@ -432,6 +453,28 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: linear-gradient(135deg, #ff6b6b, #ffa726);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            display: flex;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
@@ -479,7 +522,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav aria-label="Main Navigation">
             <div class="logo">Yalın Yorulmaz</div>
             <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
             <ul class="nav-links">
@@ -491,6 +534,7 @@
         </nav>
     </header>
 
+    <main>
     <section class="hero">
         <div class="hero-content">
             <h1>Yalın Yorulmaz</h1>
@@ -656,12 +700,15 @@
             </div>
         </div>
     </section>
+    </main>
 
     <footer>
         <div class="container">
             <p>&copy; 2025 Yalın Yorulmaz. Crafted with passion and precision.</p>
         </div>
     </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
     <script>
         // Smooth scrolling for navigation links
@@ -726,6 +773,21 @@
                 hero.style.setProperty('--bg-offset', `${scrolled * 0.5}px`);
             }
         });
+
+        // Back to top button
+        const backToTop = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
     </script>
 </body>
 </html>
