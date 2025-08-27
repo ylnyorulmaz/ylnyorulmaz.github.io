@@ -22,6 +22,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  const mobileNavLinks = document.querySelectorAll('.navbar a');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      const navbar = document.querySelector('.navbar');
+      const toggleBtn = document.querySelector('.menu-toggle');
+      if (navbar && navbar.classList.contains('open')) {
+        navbar.classList.remove('open');
+        if (toggleBtn) {
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      }
+    });
+  });
 });
 
 function toggleTheme() {
