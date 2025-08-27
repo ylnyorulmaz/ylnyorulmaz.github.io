@@ -36,6 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  document.addEventListener('click', e => {
+    const navbar = document.querySelector('.navbar');
+    const toggleBtn = document.querySelector('.menu-toggle');
+    if (
+      navbar &&
+      toggleBtn &&
+      navbar.classList.contains('open') &&
+      !navbar.contains(e.target)
+    ) {
+      navbar.classList.remove('open');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+    }
+  });
 });
 
 function toggleTheme() {
