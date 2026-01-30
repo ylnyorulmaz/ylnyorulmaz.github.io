@@ -2,56 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="PMP-certified project manager and full-stack developer portfolio of Yalın Yorulmaz."
+      content="Yalın Yorulmaz portfolio hub for early-stage products, calm technical writing, and quietly shipped experiments."
     />
     <link rel="canonical" href="https://ylnyorulmaz.github.io/" />
-    <meta property="og:title" content="Yalın Yorulmaz | PMP & Full Stack Developer" />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <meta property="og:title" content="Yalın Yorulmaz | Portfolio Hub" />
     <meta
       property="og:description"
-      content="PMP-certified project manager and full-stack developer bridging product and security."
+      content="Minimal portfolio hub featuring early-stage projects, calm technical notes, and a tasteful support option."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://ylnyorulmaz.github.io/" />
     <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Yalın Yorulmaz - PMP & Full Stack Developer" />
+    <meta property="og:image:alt" content="Yalın Yorulmaz Portfolio Hub preview" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Yalın Yorulmaz | PMP & Full Stack Developer" />
+    <meta name="twitter:title" content="Yalın Yorulmaz | Portfolio Hub" />
     <meta
       name="twitter:description"
-      content="PMP-certified project manager and full-stack developer bridging product and security."
+      content="Minimal portfolio hub featuring early-stage projects, calm technical notes, and a tasteful support option."
     />
     <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
-    <meta name="twitter:image:alt" content="Yalın Yorulmaz - PMP & Full Stack Developer" />
-    <meta name="theme-color" content="#0a192f" />
-    <title>Yalın Yorulmaz | PMP & Full Stack Developer</title>
+    <meta name="twitter:image:alt" content="Yalın Yorulmaz Portfolio Hub preview" />
 
-    <!-- Favicons -->
+    <title>Yalın Yorulmaz | Portfolio Hub</title>
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
     <link rel="apple-touch-icon" href="favicon.svg" />
 
-    <!-- Resource hints for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
-    <link rel="dns-prefetch" href="https://formspree.io" />
-    <link rel="dns-prefetch" href="https://images.unsplash.com" />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <script type="application/ld+json">
@@ -59,335 +43,206 @@
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Yalın Yorulmaz",
-        "jobTitle": "PMP-certified Project Manager and Full Stack Developer",
-        "url": "https://ylnyorulmaz.github.io",
-        "sameAs": [
-          "https://www.linkedin.com/in/yalin-yorulmaz",
-          "https://github.com/ylnyorulmaz",
-          "https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share",
-          "https://ylnyorulmaz.etsy.com"
-        ]
+        "jobTitle": "Product Builder & Full Stack Developer",
+        "url": "https://ylnyorulmaz.github.io"
       }
     </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    <header class="hero">
-      <div class="container">
-        <img
-          src="yalinyorulmaz.jpeg"
-          alt="Portrait of Yalın Yorulmaz"
-          class="profile-photo"
-          width="150"
-          height="150"
-        />
-        <h1>Yalın Yorulmaz</h1>
-        <p class="roles">
-          PMP® Certified &nbsp;|&nbsp; Full Stack Developer &nbsp;|&nbsp;
-          Product Owner
-        </p>
-        <p class="tagline">
-          Bridging product, security and engineering for global teams.
-        </p>
-        <a href="Yalin_Yorulmaz_CV.pdf" class="btn" download
-          ><i class="fas fa-file-arrow-down"></i>Download CV</a
+
+    <header class="site-header" role="banner">
+      <div class="container nav-bar">
+        <a href="/" class="logo">Yalın Yorulmaz</a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
         >
-        <a
-          href="https://buymeacoffee.com/ylnyorulmaz"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn coffee"
-          ><i class="fas fa-mug-hot"></i>Buy Me a Coffee</a
-        >
-        <a href="#contact" class="btn"
-          ><i class="fas fa-paper-plane"></i>Contact Me</a
-        >
+          Menu
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <ul id="primary-navigation" class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#now">Now</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a
+                class="btn btn-secondary"
+                href="https://buymeacoffee.com/ylnyorulmaz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Buy me a coffee
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="container hero">
+        <div class="hero-content">
+          <p class="eyebrow">Portfolio Hub</p>
+          <h1>Quietly shipping tools that feel obvious.</h1>
+          <p class="lead">
+            I design and build small, useful products with a calm, technical tone.
+            Everything here is early, by design—fast, focused, and ready to learn.
+          </p>
+          <p class="disclaimer">Early, by design. Quality over noise.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">Explore projects</a>
+            <a
+              class="btn btn-tertiary"
+              href="https://buymeacoffee.com/ylnyorulmaz"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Buy me a coffee
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
-    <nav class="navbar">
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
-      <ul id="nav-menu">
-        <li>
-          <a href="#about"><i class="fas fa-user"></i>About</a>
-        </li>
-        <li>
-          <a href="#experience"><i class="fas fa-briefcase"></i>Experience</a>
-        </li>
-        <li>
-          <a href="#projects"><i class="fas fa-diagram-project"></i>Projects</a>
-        </li>
-        <li>
-          <a href="#skills"><i class="fas fa-code"></i>Skills</a>
-        </li>
-        <li>
-          <a href="#contact"><i class="fas fa-envelope"></i>Contact</a>
-        </li>
-        <li>
-          <a
-            href="mailto:yorulmaz@sabanciuniv.edu"
-            class="icon"
-            aria-label="Email"
-            ><i class="fas fa-envelope"></i></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/yalin-yorulmaz"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="icon"
-            aria-label="LinkedIn"
-            ><i class="fab fa-linkedin"></i></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="icon"
-            aria-label="Upwork"
-            ><i class="fab fa-upwork"></i></a
-          >
-        </li>
-        <li>
-          <a
-            href="https://ylnyorulmaz.etsy.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="icon"
-            aria-label="Etsy"
-            ><i class="fab fa-etsy"></i></a
-          >
-        </li>
-      </ul>
-    </nav>
-
     <main id="main-content">
-    <section class="about" id="about">
-      <div class="container">
-        <h2><i class="fas fa-user-circle"></i>About Me</h2>
-        <p>
-          PMP® certified Project Manager and Full Stack Developer with 8+ years
-          of experience. I build scalable digital experiences and lead
-          cross-functional teams of 15+ to success.
-        </p>
-      </div>
-    </section>
-
-    <section class="experience" id="experience">
-      <div class="container">
-        <h2><i class="fas fa-briefcase"></i>Work Experience</h2>
-        <div class="experience-grid">
-          <div class="job">
-            <h3><i class="fas fa-chess-knight"></i>Founder at SatrancOnline</h3>
+      <section id="about" class="section">
+        <div class="container split">
+          <div>
+            <h2>About / Why</h2>
             <p>
-              Developed a chess-playing AI and built its brand, powering 5K+
-              online games.
+              I build calm, technical experiences for people who like clarity over hype.
+              My work blends product thinking with engineering pragmatism—fast prototypes,
+              stable foundations, and a bias toward real feedback.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>What you can expect</h3>
+            <ul>
+              <li>Simple interfaces, measurable outcomes.</li>
+              <li>Early access releases that mature in public.</li>
+              <li>Documentation and decisions shared plainly.</li>
+            </ul>
+            <div class="cta-inline">
+              <p>Enjoy the work? Support it quietly.</p>
               <a
-                href="https://satranc.online"
+                class="btn btn-secondary"
+                href="https://buymeacoffee.com/ylnyorulmaz"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Visit site</a
               >
-            </p>
-          </div>
-          <div class="job">
-            <h3>
-              <i class="fas fa-user-tie"></i>Technical Product Owner - Invicti
-              Security
-            </h3>
-            <p>
-              Led 10+ integrations with 3rd-party platforms for Netsparker and
-              Acunetix 360 using agile methodologies.
-            </p>
-          </div>
-          <div class="job">
-            <h3>
-              <i class="fas fa-shield-alt"></i>Security Coordinator - SONY
-              Electronics
-            </h3>
-            <p>
-              Coordinated application security projects globally, cutting
-              triage time by 40% using agile principles.
-            </p>
+                Buy me a coffee
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="projects" id="projects">
-      <div class="container">
-        <h2><i class="fas fa-diagram-project"></i>Selected Projects</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <img
-              src="https://via.placeholder.com/300x180?text=SatrancOnline"
-              alt="Screenshot of SatrancOnline chess AI"
-              loading="lazy"
-            />
-            <h3>SatrancOnline</h3>
-            <p>Founder &amp; Developer – Vue.js, Node.js</p>
-            <p>Launched a chess-playing AI with growing user base.</p>
+      <section id="projects" class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Projects</h2>
+            <p class="muted">
+              A few live experiments, quietly maintained. Replace the links below with
+              your live URLs when ready.
+            </p>
+          </div>
+          <div class="project-grid">
+            <article class="project-card">
+              <div>
+                <p class="pill">Early Access</p>
+                <h3>CodeSight</h3>
+                <p>Learn to think like a senior engineer.</p>
+              </div>
+              <a class="btn btn-small" href="/codesight">View CodeSight</a>
+            </article>
+            <article class="project-card">
+              <div>
+                <p class="pill">Play</p>
+                <h3>Football IQ Quiz</h3>
+                <p>How good is your football knowledge, really?</p>
+              </div>
+              <a class="btn btn-small" href="/football-iq">Play the quiz</a>
+            </article>
+            <article class="project-card">
+              <div>
+                <p class="pill">Try</p>
+                <h3>Calm Down Button</h3>
+                <p>A button. A breath. A moment of calm.</p>
+              </div>
+              <a class="btn btn-small" href="/calm-down">Try it</a>
+            </article>
+          </div>
+          <div class="support-card">
+            <p>
+              If any of these help you slow down and ship better, a first coffee is a
+              meaningful nudge.
+            </p>
             <a
-              href="https://satranc.online"
+              class="btn btn-secondary"
+              href="https://buymeacoffee.com/ylnyorulmaz"
               target="_blank"
               rel="noopener noreferrer"
-              >Live site</a
             >
-          </div>
-          <div class="project-card">
-            <img
-              src="https://via.placeholder.com/300x180?text=Invicti"
-              alt="Invicti Security integration screenshot"
-              loading="lazy"
-            />
-            <h3>Invicti Security Integrations</h3>
-            <p>Technical Product Owner – REST APIs</p>
-            <p>Shipped integrations for Netsparker &amp; Acunetix 360.</p>
-          </div>
-          <div class="project-card">
-            <img
-              src="https://via.placeholder.com/300x180?text=SONY"
-              alt="SONY Electronics security dashboard"
-              loading="lazy"
-            />
-            <h3>SONY Electronics</h3>
-            <p>Security Coordinator – Global reach</p>
-            <p>Improved app-sec triage time across regions.</p>
+              Buy me a coffee
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="skills" id="skills">
-      <div class="container">
-        <h2><i class="fas fa-code"></i>Skills</h2>
-        <ul class="skills-list">
-          <li>
-            <i class="fas fa-project-diagram"></i>Agile, Scrum, Waterfall, PMP
-          </li>
-          <li>
-            <i class="fas fa-language"></i>Languages: English (TOEFL 95), German
-            (Basic), Chinese (Basic)
-          </li>
-        </ul>
-        <div class="tech-badges">
-          <span class="badge">C#</span>
-          <span class="badge">.NET</span>
-          <span class="badge">Node.js</span>
-          <span class="badge">Vue.js</span>
-          <span class="badge">SQL</span>
-          <span class="badge">Oracle</span>
-          <span class="badge">JavaScript</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">Docker</span>
-          <span class="badge">AWS</span>
-          <span class="badge">Git</span>
+      <section id="now" class="section">
+        <div class="container now">
+          <h2>Now / Currently building</h2>
+          <p>
+            Refining CodeSight onboarding and writing small, practical notes on
+            engineering judgment.
+          </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="services" id="services">
-      <div class="container">
-        <h2><i class="fas fa-handshake"></i>Services</h2>
-        <ul class="services-list">
-          <li>Product Ownership</li>
-          <li>Full-stack Development</li>
-          <li>Security Project Management</li>
-        </ul>
-        <a
-          href="https://calendly.com/yalin-yorulmaz/intro-call"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn"
-          >Book a Call</a
-        >
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2><i class="fas fa-envelope"></i>Contact</h2>
-        <form
-          id="contact-form"
-          action="https://formspree.io/f/mayvdayy"
-          method="POST"
-        >
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input
-            type="email"
-            name="_replyto"
-            placeholder="Your Email"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            required
-          ></textarea>
-          <input type="text" name="_honey" style="display: none" />
-          <button type="submit" class="btn">Send</button>
-        </form>
-        <button id="reveal-email" class="btn" onclick="revealEmail()">
-          Show Email
-        </button>
-        <p id="email" style="display: none">
-          <i class="fas fa-envelope"></i
-          ><a href="mailto:yorulmaz@sabanciuniv.edu"
-            >yorulmaz@sabanciuniv.edu</a
-          >
-        </p>
-        <p>
-          <i class="fab fa-linkedin"></i
-          ><a
-            href="https://www.linkedin.com/in/yalin-yorulmaz"
-            target="_blank"
-            rel="noopener noreferrer"
-            >LinkedIn Profile</a
-          >
-        </p>
-        <p>
-          <i class="fab fa-github"></i
-          ><a
-            href="https://github.com/ylnyorulmaz"
-            target="_blank"
-            rel="noopener noreferrer"
-            >GitHub</a
-          >
-        </p>
-        <p>
-          <i class="fab fa-upwork"></i
-          ><a
-            href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&mp_source=share"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Upwork</a
-          >
-        </p>
-        <p>
-          <i class="fab fa-etsy"></i
-          ><a
-            href="https://ylnyorulmaz.etsy.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Etsy Shop</a
-          >
-        </p>
-      </div>
-    </section>
-
+      <section id="contact" class="section">
+        <div class="container contact">
+          <div>
+            <h2>Contact</h2>
+            <p class="muted">Short, clear messages work best.</p>
+            <p>
+              Email:
+              <a href="mailto:hello@example.com">hello@example.com</a>
+            </p>
+          </div>
+          <div>
+            <h3>Social</h3>
+            <ul class="link-list">
+              <li><a href="https://github.com/your-handle">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/your-handle">LinkedIn</a></li>
+              <li><a href="https://x.com/your-handle">X / Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <p>© 2025 Yalın Yorulmaz | Made with ❤️ in Istanbul</p>
-      <button onclick="toggleTheme()">🌓 Toggle Theme</button>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">Early, by design.</p>
+          <p class="muted">
+            Calm, technical products with a long-term mindset.
+          </p>
+        </div>
+        <div class="footer-cta">
+          <a
+            class="btn btn-secondary"
+            href="https://buymeacoffee.com/ylnyorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy me a coffee
+          </a>
+          <p class="muted">© <span id="year">2025</span> Yalın Yorulmaz</p>
+        </div>
+      </div>
     </footer>
-    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top" tabindex="0">
-      <i class="fas fa-arrow-up"></i>
-    </button>
   </body>
 </html>
