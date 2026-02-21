@@ -28,8 +28,11 @@
     />
     <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="stylesheet" href="/style.css" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,102 +48,210 @@
     </script>
   </head>
   <body>
-    <main id="main-content" class="section erly-page">
-      <div class="container erly-shell">
-        <section class="erly-hero" aria-labelledby="erly-title">
-          <p class="eyebrow">...erly</p>
-          <h1 id="erly-title">Daily sports trivia puzzles.</h1>
-          <p class="lead">These are a growing collection of daily sports challenges.</p>
-          <div class="erly-kicker">Built for fans who pay attention.</div>
-        </section>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-hidden="true"></div>
 
-        <section class="erly-panel" aria-labelledby="format-title">
-          <h2 id="format-title">The format</h2>
-          <p>Each game focuses on a different sport. Each challenge follows the same simple format:</p>
-          <ul class="erly-checklist">
-            <li>One athlete</li>
-            <li>Six progressive hints</li>
-            <li>Four matches per day</li>
-            <li>No spoilers</li>
-            <li>No ads</li>
-            <li>No accounts required</li>
+    <header class="site-header" role="banner">
+      <div class="container nav-bar">
+        <a href="/" class="logo" aria-label="Yalın Yorulmaz — Home">
+          <span class="logo-text">YY</span>
+          <span>Yalın Yorulmaz</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <ul id="primary-navigation" class="nav-links">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#now">Now</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li>
+              <a
+                class="btn btn-secondary btn-small"
+                href="https://buymeacoffee.com/ylnyorulmaz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >☕ Coffee</a>
+            </li>
           </ul>
-        </section>
+        </nav>
+      </div>
+    </header>
 
-        <section class="erly-panel" aria-labelledby="philosophy-title">
-          <h2 id="philosophy-title">The philosophy</h2>
-          <p>We believe sports are more interesting when you remember the details.</p>
-          <p class="muted">The transfers. The rivalries. The forgotten finals. The tactical eras.</p>
-          <p>
-            ...erly is not about trivia speed. It&rsquo;s about recognition. A small daily ritual for
-            serious fans.
-          </p>
-        </section>
+    <main id="main-content">
 
-        <section class="erly-panel" aria-labelledby="games-title">
-          <h2 id="games-title">Current games</h2>
-          <div class="erly-games-grid">
-            <article class="erly-game-card">
+      <!-- Hero -->
+      <section class="proj-hero" aria-labelledby="proj-title">
+        <div class="container">
+          <a class="proj-back" href="/#projects">← All projects</a>
+          <p class="eyebrow">Project</p>
+          <h1 id="proj-title">...erly</h1>
+          <p class="lead">Daily sports trivia puzzles for fans who pay attention.</p>
+          <div class="proj-badges">
+            <span class="badge badge-live">Live</span>
+            <span class="badge">Sports</span>
+            <span class="badge">Trivia</span>
+            <span class="badge">Daily</span>
+          </div>
+          <div class="proj-actions">
+            <a class="btn" href="https://footballerly.com" target="_blank" rel="noopener noreferrer">Play now ↗</a>
+            <a class="btn btn-ghost" href="/#projects">← Back to portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Format + Philosophy -->
+      <section class="section" aria-labelledby="format-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="format-title">The format</h2>
+              <p>Each game focuses on a different sport. Every challenge follows the same simple structure:</p>
+              <ul class="proj-checklist">
+                <li>One athlete</li>
+                <li>Six progressive hints</li>
+                <li>Four matches per day</li>
+                <li>No spoilers</li>
+                <li>No ads</li>
+                <li>No accounts required</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>The philosophy</h3>
+              <p>Sports are more interesting when you remember the details.</p>
+              <p class="muted">The transfers. The rivalries. The forgotten finals. The tactical eras.</p>
+              <p class="muted">
+                ...erly is not about trivia speed. It&rsquo;s about recognition &mdash; a small
+                daily ritual for serious fans.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Games -->
+      <section class="section" aria-labelledby="games-title">
+        <div class="container">
+          <h2 id="games-title" data-reveal>Current games</h2>
+          <p class="muted" data-reveal>Four sports. One format. New puzzles every day.</p>
+          <div class="proj-grid" style="margin-top: 1.75rem;">
+            <article class="proj-game-card" data-reveal>
               <h3>⚽ Footballerly</h3>
               <p>Guess the footballer from six clues.</p>
-              <a href="https://footballerly.com" rel="noopener noreferrer" target="_blank"
-                >footballerly.com</a
-              >
+              <a href="https://footballerly.com" rel="noopener noreferrer" target="_blank">footballerly.com ↗</a>
             </article>
-            <article class="erly-game-card">
+            <article class="proj-game-card" data-reveal>
               <h3>🏀 Basketballerly</h3>
               <p>NBA legends and current stars. Six hints. No mercy.</p>
-              <a href="https://basketballerly.com" rel="noopener noreferrer" target="_blank"
-                >basketballerly.com</a
-              >
+              <a href="https://basketballerly.com" rel="noopener noreferrer" target="_blank">basketballerly.com ↗</a>
             </article>
-            <article class="erly-game-card">
+            <article class="proj-game-card" data-reveal>
               <h3>🚴 Cyclerly</h3>
               <p>From the peloton to the podium.</p>
-              <a href="https://cyclerly.com" rel="noopener noreferrer" target="_blank">cyclerly.com</a>
+              <a href="https://cyclerly.com" rel="noopener noreferrer" target="_blank">cyclerly.com ↗</a>
             </article>
-            <article class="erly-game-card">
+            <article class="proj-game-card" data-reveal>
               <h3>🏁 Formulaonerly</h3>
               <p>One driver. Six clues. Race weekend ritual.</p>
-              <a href="https://formulaonerly.com" rel="noopener noreferrer" target="_blank"
-                >formulaonerly.com</a
-              >
+              <a href="https://formulaonerly.com" rel="noopener noreferrer" target="_blank">formulaonerly.com ↗</a>
             </article>
           </div>
-          <p class="muted erly-more">More coming soon.</p>
-        </section>
+          <p class="muted" style="margin-top: 1rem;" data-reveal>More sports coming soon.</p>
+        </div>
+      </section>
 
-        <section class="erly-panel" aria-labelledby="why-daily-title">
-          <h2 id="why-daily-title">Why daily?</h2>
-          <p>
-            Because anticipation matters. One puzzle resets every 24 hours. You can&rsquo;t binge it.
-            You can&rsquo;t grind it. Come back tomorrow.
+      <!-- Why daily + Built for fans -->
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="why-title">Why daily?</h2>
+              <p>
+                Because anticipation matters. One puzzle resets every 24 hours.
+                You can&rsquo;t binge it. You can&rsquo;t grind it. Come back tomorrow.
+              </p>
+            </div>
+            <div>
+              <h2>Built different</h2>
+              <p>No login walls. No pop-ups. No dopamine traps. Just you and the clues.</p>
+              <p class="muted">
+                If you watch full races, remember the assists, or know who finished second in 2012
+                &mdash; you&rsquo;ll enjoy this.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="proj-cta section" aria-labelledby="cta-title">
+        <div class="container">
+          <h2 id="cta-title">Start today</h2>
+          <p class="muted">
+            Pick your sport. Guess the name. Come back tomorrow.
           </p>
-        </section>
-
-        <section class="erly-panel erly-split" aria-label="Built for fans">
-          <div>
-            <h2>Built different</h2>
-            <p>No login walls. No pop-ups. No dopamine traps. Just you and the clues.</p>
-          </div>
-          <div>
-            <h2>For fans</h2>
-            <p>
-              If you watch full races. If you remember the assists. If you know who finished second
-              in 2012. You&rsquo;ll enjoy this.
-            </p>
-          </div>
-        </section>
-
-        <section class="erly-panel erly-cta" aria-labelledby="start-title">
-          <h2 id="start-title">Start today</h2>
-          <p>Pick your sport. Guess the name. Come back tomorrow.</p>
           <p class="muted">
             ...erly started as a small experiment &mdash; a way to make daily sports knowledge more
-            fun. It grew into something more. Thanks for playing.
+            fun. It grew into something more.
           </p>
-        </section>
-      </div>
+          <div class="proj-actions">
+            <a class="btn" href="https://footballerly.com" target="_blank" rel="noopener noreferrer">⚽ Play Footballerly ↗</a>
+            <a class="btn btn-secondary" href="https://basketballerly.com" target="_blank" rel="noopener noreferrer">🏀 Play Basketballerly ↗</a>
+          </div>
+        </div>
+      </section>
+
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">Early, by design.</p>
+          <p class="muted">Calm, technical products with a long-term mindset.</p>
+        </div>
+        <form class="email-signup" action="#" method="post">
+          <label for="email-input" class="footer-title">A quiet email, occasionally.</label>
+          <p class="muted">
+            For people who care about thoughtful software. 1&ndash;2 emails every few weeks.
+          </p>
+          <div class="email-signup-controls">
+            <input
+              id="email-input"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@domain.com"
+              required
+            />
+            <button class="btn btn-small" type="submit">Subscribe</button>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        </form>
+        <div class="footer-cta">
+          <a
+            class="btn btn-secondary"
+            href="https://buymeacoffee.com/ylnyorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >☕ Buy me a coffee</a>
+          <p class="muted">© <span id="year">2025</span> Yalın Yorulmaz</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <polyline points="4,10 8,5 12,10" />
+      </svg>
+    </button>
+
+    <script src="/script.js"></script>
   </body>
 </html>
