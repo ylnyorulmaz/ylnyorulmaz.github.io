@@ -439,3 +439,101 @@ h3 {
     transition: none !important;
   }
 }
+
+/* ...erly page */
+.erly-page {
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.1), transparent 55%);
+}
+
+.erly-shell {
+  max-width: 860px;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.erly-hero,
+.erly-panel {
+  background: rgba(18, 24, 36, 0.88);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1.2rem, 2.4vw, 2rem);
+}
+
+.erly-hero {
+  padding-top: clamp(1.6rem, 3vw, 2.5rem);
+}
+
+.erly-kicker {
+  margin-top: 1rem;
+  display: inline-flex;
+  border: 1px solid rgba(125, 211, 252, 0.35);
+  background: rgba(125, 211, 252, 0.12);
+  border-radius: 999px;
+  padding: 0.35rem 0.8rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.erly-checklist {
+  margin-top: 1rem;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.erly-checklist li {
+  padding: 0.6rem 0.85rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+}
+
+.erly-games-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.erly-game-card {
+  background: rgba(24, 32, 45, 0.8);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.erly-game-card h3 {
+  margin: 0;
+}
+
+.erly-game-card p {
+  color: var(--muted);
+}
+
+.erly-game-card a {
+  color: var(--accent);
+}
+
+.erly-more {
+  margin-top: 0.9rem;
+}
+
+.erly-split {
+  display: grid;
+  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.erly-cta {
+  text-align: center;
+}
+
+.erly-panel h2 {
+  margin-bottom: 0.5rem;
+}
+
+.erly-panel p + p {
+  margin-top: 0.6rem;
+}
