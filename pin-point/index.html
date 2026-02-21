@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PinPoint | Privacy-First Map App for Saving Personal Places</title>
+    <meta
+      name="description"
+      content="PinPoint is a privacy-first, local-first map app that helps you save meaningful locations without accounts, cloud tracking, or ads."
+    />
+    <link rel="canonical" href="https://ylnyorulmaz.github.io/pin-point/" />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <meta
+      property="og:title"
+      content="PinPoint | Privacy-First Map App for Saving Personal Places"
+    />
+    <meta
+      property="og:description"
+      content="A local-first Progressive Web App for storing personal pins privately on your device. No login, no cloud sync, no ads."
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://ylnyorulmaz.github.io/pin-point/" />
+    <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="PinPoint | Privacy-First Map App for Saving Personal Places"
+    />
+    <meta
+      name="twitter:description"
+      content="Save places that matter with a local-first map tool designed for privacy, speed, and simplicity."
+    />
+    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+
+    <link rel="stylesheet" href="/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PinPoint",
+        "applicationCategory": "TravelApplication",
+        "operatingSystem": "Web",
+        "description": "A privacy-first, local-first map app for saving meaningful places without cloud tracking.",
+        "url": "https://pin-point.online",
+        "creator": {
+          "@type": "Person",
+          "name": "Yalın Yorulmaz"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main id="main-content">
+      <section class="section">
+        <div class="container now">
+          <p class="eyebrow">Project Detail</p>
+          <h1>📍 PinPoint</h1>
+          <p class="lead">A privacy-first map tool for saving places that matter.</p>
+          <p>
+            PinPoint is a local-first Progressive Web App built for people who want to save
+            meaningful coordinates without giving location history to cloud platforms.
+          </p>
+          <p>
+            It strips map usage down to the essentials: drop a pin, label it, find it again —
+            privately.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Overview</h2>
+            <p>
+              PinPoint was designed as a focused alternative to feature-heavy mapping ecosystems.
+              No accounts, no recommendations, no ads, and no behavioral profiling.
+            </p>
+            <p>
+              The core idea is intentionally narrow: let users mark personal places and come back
+              to them quickly.
+            </p>
+          </div>
+          <div class="panel">
+            <h3>The use case</h3>
+            <ul>
+              <li>Where did I park?</li>
+              <li>What was that quiet fishing spot?</li>
+              <li>Where exactly did we take that photo?</li>
+              <li>Where did I propose?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>The Problem</h2>
+            <p>Modern map apps are powerful, but many are optimized for engagement rather than ownership.</p>
+            <ul>
+              <li>They require accounts.</li>
+              <li>They store location history in the cloud.</li>
+              <li>They blend personal memories with commercial recommendations.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>Core Principles</h2>
+            <ol>
+              <li><strong>Local-first:</strong> Pins are stored in local storage on-device.</li>
+              <li><strong>Minimal surface area:</strong> No ratings, reviews, ads, or recommendation loops.</li>
+              <li><strong>Utility over complexity:</strong> Precision placement and fast retrieval first.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Feature Highlights</h2>
+            <ul>
+              <li><strong>Precision pin dropping:</strong> Tap to draft, drag to fine-tune coordinates.</li>
+              <li><strong>Category system:</strong> 10 visual categories with custom icons and colors.</li>
+              <li><strong>Map layers:</strong> Standard, dark mode, and satellite options.</li>
+              <li><strong>Smart directions:</strong> One-tap handoff to Google Maps navigation.</li>
+              <li><strong>List tools:</strong> Live search, filters, and mobile-friendly swipe-to-delete.</li>
+              <li><strong>PWA support:</strong> Home-screen install and fullscreen app-like usage.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>Technical Architecture</h2>
+            <ul>
+              <li><strong>Frontend:</strong> React 19, Vite, TypeScript, Tailwind CSS.</li>
+              <li><strong>Maps:</strong> Leaflet with OSM, Carto, and Esri raster tiles.</li>
+              <li><strong>State:</strong> LocalStorage with JSON serialization and safe parsing.</li>
+              <li><strong>UX:</strong> Mobile-first layouts, safe-area handling, and custom transitions.</li>
+              <li><strong>Delivery:</strong> No backend and no service worker (intentional early-stage tradeoff).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Tradeoffs &amp; Constraints</h2>
+            <p>
+              PinPoint intentionally avoids accounts, sync, and server infrastructure. The product
+              remains private and simple, but it also means:
+            </p>
+            <ul>
+              <li>Clearing browser data deletes saved pins.</li>
+              <li>There is no automatic backup yet.</li>
+              <li>It is not built for collaborative map editing.</li>
+            </ul>
+          </div>
+          <div>
+            <h2>What I Learned</h2>
+            <ul>
+              <li>Local-first architecture removes ops overhead but raises UX responsibility around data safety.</li>
+              <li>Mobile map UX depends heavily on spacing, safe areas, and gesture expectations.</li>
+              <li>Service workers are powerful but should be introduced only with strict cache discipline.</li>
+              <li>The smallest feature sets are often the hardest to refine.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split">
+          <div>
+            <h2>Future Directions</h2>
+            <ul>
+              <li>Optional encrypted cloud backup.</li>
+              <li>Shareable view-only maps.</li>
+              <li>Folder-based pin collections.</li>
+              <li>A lightweight opt-in sync mode.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h2>Live Project</h2>
+            <p>
+              <a href="https://pin-point.online" target="_blank" rel="noopener noreferrer"
+                >https://pin-point.online</a
+              >
+            </p>
+            <p>
+              PinPoint is independently built and maintained. If it helps you, consider supporting
+              its development.
+            </p>
+            <p>
+              <a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener noreferrer"
+                >buymeacoffee.com/ylnyorulmaz</a
+              >
+            </p>
+            <p><a class="btn" href="/">Back to portfolio</a></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
