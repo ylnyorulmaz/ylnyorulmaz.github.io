@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Satranç | AI-Powered Browser Chess with Multi-Engine Analysis</title>
+    <meta
+      name="description"
+      content="Satranç is a browser-based chess platform with Stockfish & LCZero multi-engine analysis, OpenAI game commentary, Chess960, and real-time evaluation — no install required."
+    />
+    <link rel="canonical" href="https://ylnyorulmaz.github.io/satranc/" />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Satranç | AI-Powered Browser Chess with Multi-Engine Analysis"
+    />
+    <meta
+      property="og:description"
+      content="Play and analyze chess in the browser with Stockfish, LCZero, and OpenAI-powered commentary. No install, no account required."
+    />
+    <meta property="og:url" content="https://ylnyorulmaz.github.io/satranc/" />
+    <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Satranç | AI-Powered Browser Chess with Multi-Engine Analysis"
+    />
+    <meta
+      name="twitter:description"
+      content="Chess in the browser — with Stockfish, LCZero, and OpenAI commentary. Multi-engine analysis, Chess960, and real-time evaluation."
+    />
+    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Satranç",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web",
+        "description": "A browser-based chess platform with multi-engine analysis, Chess960 support, and OpenAI-powered game commentary.",
+        "url": "https://satranc.online",
+        "creator": {
+          "@type": "Person",
+          "name": "Yalın Yorulmaz"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-hidden="true"></div>
+
+    <header class="site-header" role="banner">
+      <div class="container nav-bar">
+        <a href="/" class="logo" aria-label="Yalın Yorulmaz — Home">
+          <span class="logo-text">YY</span>
+          <span>Yalın Yorulmaz</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <ul id="primary-navigation" class="nav-links">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#now">Now</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li>
+              <a
+                class="btn btn-secondary btn-small"
+                href="https://buymeacoffee.com/ylnyorulmaz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >☕ Coffee</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="proj-hero" aria-labelledby="proj-title">
+        <div class="container">
+          <a class="proj-back" href="/#projects">← All projects</a>
+          <p class="eyebrow">Project</p>
+          <h1 id="proj-title">♟ Satranç</h1>
+          <p class="lead">AI-powered chess in the browser — analyze with engines, understand with AI.</p>
+          <div class="proj-badges">
+            <span class="badge badge-live">Live</span>
+            <span class="badge">Chess</span>
+            <span class="badge">Stockfish</span>
+            <span class="badge">OpenAI</span>
+            <span class="badge">Chess960</span>
+          </div>
+          <div class="proj-actions">
+            <a class="btn" href="https://satranc.online" target="_blank" rel="noopener noreferrer">Play Satranç ↗</a>
+            <a class="btn btn-ghost" href="/#projects">← Back to portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="section" aria-labelledby="overview-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="overview-title">The problem</h2>
+              <p>
+                Most chess platforms are built around matchmaking and rating ladders. But real improvement
+                comes from understanding <em>why</em> a move was good or bad — not just that it was.
+                Analysis tools exist, but they are often buried, technical, and intimidating.
+              </p>
+              <p class="muted">
+                Satranç puts deep engine analysis and plain-language AI commentary side by side,
+                right in the browser, with no install and no account gate.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Built for</h3>
+              <ul>
+                <li>Players who want to improve, not just play</li>
+                <li>Post-game review without leaving the browser</li>
+                <li>Exploring Chess960 and freestyle variants</li>
+                <li>Anyone curious what the engines actually think</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core principles -->
+      <section class="section" aria-labelledby="principles-title">
+        <div class="container" data-reveal>
+          <h2 id="principles-title">Core principles</h2>
+          <p class="muted">Three ideas that shape every product decision.</p>
+          <ol class="proj-principles" style="margin-top: 1.5rem; max-width: 680px;">
+            <li>
+              <div>
+                <strong>Engines plus language.</strong>
+                <span class="muted"> Raw centipawn numbers alone don't teach. Pairing Stockfish and LCZero evaluations with OpenAI commentary turns data into understanding.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Zero friction entry.</strong>
+                <span class="muted"> No download, no registration. Open a browser and play — or paste a PGN and analyze immediately.</span>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Variant support without compromise.</strong>
+                <span class="muted"> Chess960 and Total Random modes are first-class citizens, not afterthoughts.</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Features -->
+      <section class="section" aria-labelledby="features-title">
+        <div class="container">
+          <h2 id="features-title" data-reveal>Features &amp; capabilities</h2>
+          <div class="proj-grid" style="margin-top: 1.5rem;">
+            <div class="proj-card" data-reveal>
+              <h3>🤖 Multi-engine analysis</h3>
+              <p>Stockfish and LCZero run in tandem, giving both classical and neural-network evaluations for every position.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>💬 OpenAI commentary</h3>
+              <p>Request plain-language explanations of key moments. The AI narrates what the engines found, in terms a human can act on.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>📊 Real-time evaluation bar</h3>
+              <p>A live score in pawn units shows who is winning at every move. 0.0 is equal; +1.0 means roughly one pawn advantage for White.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>♟ Chess960 &amp; variants</h3>
+              <p>Freestyle Chess (Chess960) with a Total Random mode — every starting position is valid, forcing creative thinking from move one.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>📋 Full game reports</h3>
+              <p>After a game completes, generate a full report: blunders, missed opportunities, and the critical turning points.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🌐 Browser-native</h3>
+              <p>Everything runs in the browser. No app to install, no native dependencies, no account wall between you and the board.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech stack -->
+      <section class="section" aria-labelledby="tech-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="tech-title">Technical stack</h2>
+              <ul class="proj-checklist">
+                <li><strong>Engines:</strong> Stockfish (WASM) and LCZero for multi-engine position evaluation</li>
+                <li><strong>AI:</strong> OpenAI API for natural-language move commentary and game reports</li>
+                <li><strong>Frontend:</strong> Browser-native, no install required</li>
+                <li><strong>Variants:</strong> Chess960 with randomised starting positions including Total Random mode</li>
+                <li><strong>Delivery:</strong> Fully client-side evaluation; commentary calls OpenAI API</li>
+              </ul>
+            </div>
+            <div>
+              <h2>Design tradeoffs</h2>
+              <p class="muted">
+                Running two engines in the browser is computationally heavy. Satranç
+                balances analysis depth with performance through careful threading and
+                time controls.
+              </p>
+              <ul class="proj-checklist" style="margin-top: 0.75rem;">
+                <li>Analysis depth is throttled to keep the UI responsive</li>
+                <li>OpenAI commentary is on-demand, not automatic, to control cost</li>
+                <li>No server-side game storage — sessions are ephemeral by default</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lessons + Future -->
+      <section class="section" aria-labelledby="lessons-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="lessons-title">What I learned</h2>
+              <ul class="proj-checklist">
+                <li>WASM chess engines in the browser are viable — but threading discipline matters</li>
+                <li>AI commentary is most useful when scoped to specific positions, not whole games</li>
+                <li>Chess960 requires rethinking castling logic from scratch</li>
+                <li>Evaluation bar UX dramatically changes how players read a position</li>
+              </ul>
+            </div>
+            <div>
+              <h2>Future directions</h2>
+              <ul class="proj-checklist">
+                <li>Persistent game history with local storage</li>
+                <li>Opening explorer with engine evaluation</li>
+                <li>Puzzle mode generated from real game positions</li>
+                <li>Multiplayer with voice chat support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="proj-cta section" aria-labelledby="cta-title">
+        <div class="container">
+          <h2 id="cta-title">Play Satranç</h2>
+          <p class="muted">
+            Open the board, make your moves, and let the engines show you what you missed &mdash;
+            no account needed.
+          </p>
+          <p class="muted">
+            Satranç is independently built and maintained. If it helps your game, consider supporting its development.
+          </p>
+          <div class="proj-actions">
+            <a class="btn" href="https://satranc.online" target="_blank" rel="noopener noreferrer">Play Satranç ↗</a>
+            <a class="btn btn-ghost" href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener noreferrer">☕ Support the project</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">Early, by design.</p>
+          <p class="muted">Calm, technical products with a long-term mindset.</p>
+        </div>
+        <form class="email-signup" action="#" method="post">
+          <label for="email-input" class="footer-title">A quiet email, occasionally.</label>
+          <p class="muted">
+            For people who care about thoughtful software. 1&ndash;2 emails every few weeks.
+          </p>
+          <div class="email-signup-controls">
+            <input
+              id="email-input"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@domain.com"
+              required
+            />
+            <button class="btn btn-small" type="submit">Subscribe</button>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        </form>
+        <div class="footer-cta">
+          <a
+            class="btn btn-secondary"
+            href="https://buymeacoffee.com/ylnyorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >☕ Buy me a coffee</a>
+          <p class="muted">© <span id="year">2025</span> Yalın Yorulmaz</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <polyline points="4,10 8,5 12,10" />
+      </svg>
+    </button>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
