@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IntuitFlip | A Subconscious Decision-Making Ritual</title>
+    <meta
+      name="description"
+      content="IntuitFlip is a minimalist coin-flip app that reveals what you already want. Enter two options, flip a coin, and notice your gut reaction — the real answer surfaces before the coin lands."
+    />
+    <link rel="canonical" href="https://ylnyorulmaz.github.io/intuitflip/" />
+    <meta name="theme-color" content="#0b0f14" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="IntuitFlip | A Subconscious Decision-Making Ritual" />
+    <meta
+      property="og:description"
+      content="A minimalist PWA that uses a coin flip to surface what you already want — before the coin lands."
+    />
+    <meta property="og:url" content="https://ylnyorulmaz.github.io/intuitflip/" />
+    <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="IntuitFlip — Subconscious Decision-Making Ritual" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Yalın Yorulmaz" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="IntuitFlip | A Subconscious Decision-Making Ritual" />
+    <meta
+      name="twitter:description"
+      content="A minimalist PWA that uses a coin flip to surface what you already want — before the coin lands."
+    />
+    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
+    <meta name="twitter:image:alt" content="IntuitFlip — Subconscious Decision-Making Ritual" />
+
+    <!-- Structured data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "IntuitFlip",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Web",
+        "description": "A minimalist decision ritual that uses a coin flip to reveal the outcome you were secretly hoping for, helping you cut through decision fatigue.",
+        "url": "https://intuitflip.com",
+        "creator": {
+          "@type": "Person",
+          "name": "Yalın Yorulmaz",
+          "url": "https://ylnyorulmaz.github.io"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div id="scroll-progress" role="progressbar" aria-label="Page scroll progress" aria-hidden="true"></div>
+
+    <header class="site-header" role="banner">
+      <div class="container nav-bar">
+        <a href="/" class="logo" aria-label="Yalın Yorulmaz — Home">
+          <span class="logo-text">YY</span>
+          <span>Yalın Yorulmaz</span>
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Toggle menu"
+        >
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <ul id="primary-navigation" class="nav-links">
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#projects">Projects</a></li>
+            <li><a href="/#now">Now</a></li>
+            <li><a href="/#contact">Contact</a></li>
+            <li>
+              <a
+                class="btn btn-secondary btn-small"
+                href="https://buymeacoffee.com/ylnyorulmaz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >☕ Coffee</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+
+      <!-- Hero -->
+      <section class="proj-hero" aria-labelledby="proj-title">
+        <div class="container">
+          <a class="proj-back" href="/#projects">← All projects</a>
+          <p class="eyebrow">Project</p>
+          <h1 id="proj-title">🪙 IntuitFlip</h1>
+          <p class="lead">A subconscious decision-making ritual.</p>
+          <div class="proj-badges">
+            <span class="badge badge-live">Live</span>
+            <span class="badge">React</span>
+            <span class="badge">Tailwind</span>
+            <span class="badge">Framer Motion</span>
+            <span class="badge">PWA</span>
+            <span class="badge">Local-first</span>
+          </div>
+          <div class="proj-actions">
+            <a class="btn" href="https://intuitflip.com" target="_blank" rel="noopener noreferrer">Open IntuitFlip ↗</a>
+            <a class="btn btn-ghost" href="/#projects">← Back to portfolio</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="section" aria-labelledby="overview-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="overview-title">Overview</h2>
+              <p>
+                IntuitFlip is a minimalist decision ritual disguised as a coin flip.
+                At first glance, it looks simple: you enter two options, flip a coin, and receive a result.
+              </p>
+              <p class="muted">
+                But the result is not the point.
+              </p>
+              <p>
+                The real signal happens in the split second before the coin lands — when you realize
+                which outcome you&rsquo;re secretly hoping for.
+                IntuitFlip captures that moment. It doesn&rsquo;t tell you what to do. It reveals what you already wanted.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>At a glance</h3>
+              <ul>
+                <li><strong>Type:</strong> Progressive Web App (PWA)</li>
+                <li><strong>Live at:</strong> <a href="https://intuitflip.com" target="_blank" rel="noopener noreferrer">intuitflip.com</a></li>
+                <li><strong>Stack:</strong> React · Tailwind · Framer Motion</li>
+                <li><strong>Data:</strong> Local-first, no accounts</li>
+                <li><strong>Status:</strong> Live, evolving</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Problem -->
+      <section class="section" aria-labelledby="problem-title">
+        <div class="container" data-reveal>
+          <h2 id="problem-title">The problem</h2>
+          <p class="muted">Modern decision fatigue doesn&rsquo;t come from lack of information. It comes from overthinking.</p>
+          <p style="max-width: 680px;">
+            We compare endlessly. We simulate outcomes. We research. We delay.
+            But often, emotionally, we already know.
+            The coin flip is a psychological probe — it temporarily removes control, and that&rsquo;s when clarity leaks out.
+          </p>
+          <blockquote class="panel" style="max-width: 680px; margin-top: 1.5rem;">
+            <p>If the coin lands on &ldquo;Pizza&rdquo; and you feel disappointed, the answer was never Pizza.</p>
+          </blockquote>
+        </div>
+      </section>
+
+      <!-- The Mechanism -->
+      <section class="section" aria-labelledby="mechanism-title">
+        <div class="container">
+          <h2 id="mechanism-title" data-reveal>The mechanism</h2>
+          <p class="muted" data-reveal>The flow is intentionally ritualistic.</p>
+          <ol class="proj-principles" style="margin-top: 1.5rem; max-width: 680px;">
+            <li data-reveal>
+              <div>
+                <strong>Enter two options.</strong>
+                <span class="muted"> Name the decision without overthinking the labels.</span>
+              </div>
+            </li>
+            <li data-reveal>
+              <div>
+                <strong>Flip the coin.</strong>
+                <span class="muted"> A tactile animation with physical weight and presence.</span>
+              </div>
+            </li>
+            <li data-reveal>
+              <div>
+                <strong>Notice your first emotion.</strong>
+                <span class="muted"> Before logic kicks in, observe the gut reaction.</span>
+              </div>
+            </li>
+            <li data-reveal>
+              <div>
+                <strong>Select: relieved or disappointed.</strong>
+                <span class="muted"> A single honest signal.</span>
+              </div>
+            </li>
+            <li data-reveal>
+              <div>
+                <strong>Receive a short, reflective insight.</strong>
+                <span class="muted"> Generated locally — to translate emotion into language, not to advise.</span>
+              </div>
+            </li>
+          </ol>
+          <p style="max-width: 680px; margin-top: 1.5rem;" data-reveal>
+            The coin is random. Your reaction is not.
+          </p>
+        </div>
+      </section>
+
+      <!-- Psychology -->
+      <section class="section" aria-labelledby="psychology-title">
+        <div class="container">
+          <h2 id="psychology-title" data-reveal>Psychology behind it</h2>
+          <p class="muted" data-reveal>IntuitFlip is built around three simple ideas.</p>
+          <div class="proj-grid" style="margin-top: 1.5rem;">
+            <div class="proj-card" data-reveal>
+              <h3>⚡ Anticipatory emotion</h3>
+              <p>We feel outcomes before we rationalize them. The body responds to imagined futures in real time.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🔀 Cognitive dissonance</h3>
+              <p>When the result conflicts with our desire, discomfort appears instantly — before any deliberate thought.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🫀 Somatic signals</h3>
+              <p>The body often reacts faster than logic. Instead of suppressing that reaction, IntuitFlip isolates it.</p>
+            </div>
+          </div>
+          <p style="max-width: 680px; margin-top: 2rem;" data-reveal>
+            It creates a pause long enough to observe the signal that was always there.
+          </p>
+        </div>
+      </section>
+
+      <!-- Philosophy -->
+      <section class="section" aria-labelledby="philosophy-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="philosophy-title">Philosophy behind it</h2>
+              <p>IntuitFlip borrows quietly from ideas that predate the digital age:</p>
+              <ul class="proj-checklist">
+                <li>Stoic acceptance of uncertainty</li>
+                <li>Existential responsibility — you choose, not fate</li>
+                <li>The idea that randomness reveals preference, it doesn&rsquo;t dictate action</li>
+              </ul>
+            </div>
+            <div class="panel">
+              <h3>The core truth</h3>
+              <p>The coin does not decide.</p>
+              <p class="muted">
+                You do. The coin only removes the illusion of neutrality — the belief that more analysis will eventually produce the right answer.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Design approach -->
+      <section class="section" aria-labelledby="design-title">
+        <div class="container" data-reveal>
+          <h2 id="design-title">Design approach</h2>
+          <p class="muted">The goal was to design something that feels closer to a desk object than a startup tool.</p>
+          <div class="proj-grid" style="margin-top: 1.5rem;">
+            <div class="proj-card" data-reveal>
+              <h3>🌑 Dark, minimal UI</h3>
+              <p>Every element earns its place. Nothing decorative unless it adds meaning.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🪟 Subtle glassmorphism</h3>
+              <p>Depth without noise — translucent surfaces that recede rather than compete.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🪙 Tactile coin animation</h3>
+              <p>Framer Motion physics give the coin physical weight. The flip feels earned.</p>
+            </div>
+            <div class="proj-card" data-reveal>
+              <h3>🚫 No clutter</h3>
+              <p>No gamification. No notifications. No streaks. No social loops. Just the ritual.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why I built it -->
+      <section class="section" aria-labelledby="why-title">
+        <div class="container">
+          <div class="split" data-reveal>
+            <div>
+              <h2 id="why-title">Why I built it</h2>
+              <p>
+                I&rsquo;ve built many tools that optimize productivity, automate tasks, or gamify systems.
+                This one does the opposite.
+              </p>
+              <p>
+                It slows you down.
+              </p>
+              <p class="muted">
+                I wanted to explore whether technology could create clarity instead of more noise.
+                IntuitFlip is small on purpose — it doesn&rsquo;t try to be a life system.
+                It creates a moment.
+              </p>
+            </div>
+            <div class="panel">
+              <h3>Technical stack</h3>
+              <ul class="proj-checklist">
+                <li><strong>Frontend:</strong> React, Tailwind CSS</li>
+                <li><strong>Animation:</strong> Framer Motion</li>
+                <li><strong>Data:</strong> Local-first, no backend</li>
+                <li><strong>Delivery:</strong> PWA — installable, offline-capable</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future direction -->
+      <section class="section" aria-labelledby="future-title">
+        <div class="container" data-reveal>
+          <h2 id="future-title">Future direction</h2>
+          <p class="muted">Growth matters less than integrity here.</p>
+          <ul class="proj-checklist" style="margin-top: 1rem; max-width: 640px;">
+            <li>Expand the ritual coin collection</li>
+            <li>Introduce limited-edition digital and physical coins</li>
+            <li>Subtle pattern analysis — without surveillance</li>
+            <li>Maintain minimalism as a hard constraint, not a guideline</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="proj-cta section" aria-labelledby="cta-title">
+        <div class="container">
+          <h2 id="cta-title">Try IntuitFlip</h2>
+          <p class="muted">
+            Sometimes clarity is not a matter of logic. It&rsquo;s a matter of noticing.
+          </p>
+          <p class="muted">
+            IntuitFlip simply gives that moment room to appear.
+          </p>
+          <div class="proj-actions">
+            <a class="btn" href="https://intuitflip.com" target="_blank" rel="noopener noreferrer">Open IntuitFlip ↗</a>
+            <a class="btn btn-ghost" href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener noreferrer">☕ Support the project</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <p class="footer-title">Early, by design.</p>
+          <p class="muted">Calm, technical products with a long-term mindset.</p>
+        </div>
+        <form class="email-signup" action="#" method="post">
+          <label for="email-input" class="footer-title">A quiet email, occasionally.</label>
+          <p class="muted">
+            For people who care about thoughtful software. 1&ndash;2 emails every few weeks.
+          </p>
+          <div class="email-signup-controls">
+            <input
+              id="email-input"
+              name="email"
+              type="email"
+              autocomplete="email"
+              placeholder="you@domain.com"
+              required
+            />
+            <button class="btn btn-small" type="submit">Subscribe</button>
+          </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        </form>
+        <div class="footer-cta">
+          <a
+            class="btn btn-secondary"
+            href="https://buymeacoffee.com/ylnyorulmaz"
+            target="_blank"
+            rel="noopener noreferrer"
+          >☕ Buy me a coffee</a>
+          <p class="muted">© <span id="year">2025</span> Yalın Yorulmaz</p>
+        </div>
+      </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <polyline points="4,10 8,5 12,10" />
+      </svg>
+    </button>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
