@@ -1,412 +1,129 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Yalın Yorulmaz — Product Builder & Full Stack Developer. Shipping calm, useful tools: PinPoint, CodeSight, Lumina Tarot, and daily sports trivia puzzles."
-    />
-    <meta name="author" content="Yalın Yorulmaz" />
-    <link rel="canonical" href="https://ylnyorulmaz.github.io/" />
-    <meta name="theme-color" content="#0b0f14" />
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="Yalın Yorulmaz | Product Builder & Full Stack Developer" />
-    <meta
-      property="og:description"
-      content="Shipping calm, useful tools. PinPoint, CodeSight, Lumina Tarot, and daily sports trivia — built with care."
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://ylnyorulmaz.github.io/" />
-    <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Yalın Yorulmaz — Product Builder & Full Stack Developer" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:site_name" content="Yalın Yorulmaz" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Yalın Yorulmaz | Product Builder & Full Stack Developer" />
-    <meta
-      name="twitter:description"
-      content="Shipping calm, useful tools. PinPoint, CodeSight, Lumina Tarot, and daily sports trivia — built with care."
-    />
-    <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg" />
-    <meta name="twitter:image:alt" content="Yalın Yorulmaz — Product Builder & Full Stack Developer" />
-
-    <title>Yalın Yorulmaz | Product Builder & Full Stack Developer</title>
-
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="apple-touch-icon" href="favicon.svg" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
-
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Yalın Yorulmaz",
-        "jobTitle": "Product Builder & Full Stack Developer",
-        "url": "https://ylnyorulmaz.github.io",
-        "image": "https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg",
-        "sameAs": [
-          "https://ylnyorulmaz.itch.io",
-          "https://www.upwork.com/freelancers/~01489bcf3e7d90570b"
-        ],
-        "knowsAbout": [
-          "Product Development",
-          "Full Stack Development",
-          "UX Design",
-          "JavaScript",
-          "TypeScript",
-          "React"
-        ]
-      }
-    </script>
-  </head>
-  <body>
-    <!-- Scroll progress indicator -->
-    <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
-
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Sticky navigation -->
-    <header class="site-header" role="banner">
-      <div class="container nav-bar">
-        <a href="/" class="logo" aria-label="Yalın Yorulmaz — Home">
-          <span class="logo-text">YY</span>
-          <span>Yalın Yorulmaz</span>
-        </a>
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="primary-navigation"
-          aria-label="Toggle menu"
-        >
-          <span class="hamburger" aria-hidden="true"></span>
-        </button>
-        <nav class="nav" aria-label="Primary">
-          <ul id="primary-navigation" class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#now">Now</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-              <a
-                class="btn btn-secondary btn-small"
-                href="https://buymeacoffee.com/ylnyorulmaz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >☕ Coffee</a>
-            </li>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yalın Yorulmaz is a PMP-certified product and project manager who builds and ships useful software, games, and AI-assisted tools.">
+  <meta name="author" content="Yalın Yorulmaz">
+  <link rel="canonical" href="https://ylnyorulmaz.github.io/">
+  <meta name="theme-color" content="#090d13">
+  <meta property="og:title" content="Yalın Yorulmaz — Product builder">
+  <meta property="og:description" content="Product leadership with the technical range to build and ship. Explore selected tools, games, and experiments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ylnyorulmaz.github.io/">
+  <meta property="og:image" content="https://ylnyorulmaz.github.io/images/preview.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Yalın Yorulmaz — Product builder">
+  <meta name="twitter:description" content="Product leadership with the technical range to build and ship.">
+  <meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/preview.svg">
+  <title>Yalın Yorulmaz — Product Builder & Technical PM</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Yalın Yorulmaz","jobTitle":"Product Builder and Technical Project Manager","url":"https://ylnyorulmaz.github.io/","image":"https://ylnyorulmaz.github.io/yalinyorulmaz.jpeg","sameAs":["https://github.com/ylnyorulmaz","https://www.linkedin.com/in/yalin-yorulmaz","https://ylnyorulmaz.itch.io","https://www.upwork.com/freelancers/~01489bcf3e7d90570b"],"knowsAbout":["Product Management","Project Management","Full Stack Development","Application Security","Artificial Intelligence"]}</script>
+</head>
+<body>
+  <div id="scroll-progress" class="scroll-progress" aria-hidden="true"></div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header class="site-header">
+    <div class="container nav-bar">
+      <a href="/" class="logo" aria-label="Yalın Yorulmaz — Home"><span class="logo-text">YY</span><span>Yalın Yorulmaz</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu"><span class="hamburger" aria-hidden="true"></span></button>
+      <nav class="nav" aria-label="Primary">
+        <ul id="primary-navigation" class="nav-links">
+          <li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li>
+          <li><a class="btn btn-secondary btn-small" href="Yalin_Yorulmaz_CV.pdf">Résumé</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section class="hero-section" aria-label="Introduction">
+      <div class="hero-orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div></div>
+      <div class="container hero">
+        <div class="hero-content">
+          <p class="eyebrow">Product builder · Technical PM</p>
+          <h1>I turn messy ideas into <span class="gradient-text">products people can use.</span></h1>
+          <p class="lead hero-lead">PMP-certified product and project manager with 10+ years across software, application security, and AI—plus the technical range to prototype and ship my own products.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#work">See selected work</a>
+            <a class="btn btn-ghost" href="mailto:yorulmaz@sabanciuniv.edu">Get in touch</a>
+          </div>
+          <ul class="proof-strip" aria-label="Professional highlights">
+            <li><strong>10+ years</strong><span>shipping software</span></li>
+            <li><strong>PMP®</strong><span>certified</span></li>
+            <li><strong>Product + code</strong><span>one operator</span></li>
           </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main id="main-content">
-      <!-- Hero -->
-      <section class="hero-section" aria-label="Introduction">
-        <div class="hero-orbs" aria-hidden="true">
-          <div class="orb orb-1"></div>
-          <div class="orb orb-2"></div>
-          <div class="orb orb-3"></div>
         </div>
-        <div class="container hero">
-          <div class="hero-content">
-            <p class="eyebrow">Portfolio Hub</p>
-            <h1>
-              Quietly shipping<br />
-              <span class="gradient-text">tools that feel obvious.</span>
-            </h1>
-            <p class="lead">
-              Hi, I'm Yalin. I build tools, games, and creative platforms that inspire, assist and empower people.
-            </p>
-            <p class="disclaimer">Early, by design. Quality over noise.</p>
-            <p class="lead">
-              I am the PMP Certified Technical Project Manager | Product Manager with Full Stack Developer capabilities and a versatile and tireless worker, ambitious learner.
-            </p>
-            <p>
-              PMP&reg;-certified Product &amp; Project Manager with 10+ years of experience delivering impactful software, security, and AI-driven products and solutions. Core Strengths: &bull; Agile &amp; Scrum leadership — Managed cross-functional teams delivering secure, scalable platforms. &bull; Product lifecycle management — From ideation to launch, with robust backlog prioritization. &bull; Technical fluency — Bridged the gap between business and engineering using my full-stack development background (Node.js, .NET, Web Apps). Achievements: &bull; Led product roadmap and execution at Invicti Security, incorporating integrations with Netsparker/Acunetix resulting in improved user adoption. &bull; Coordinated global security projects for Sony Electronics, ensuring efficient Agile delivery. &bull; Delivered digital platforms for Hilton, Migros, and Istanbul Municipality, enhancing user workflows and security.
-            </p>
-            <p>
-              I studied Computer Science and Engineering at Sabanci University and earned my Master's degree from Istanbul Bilgi University in Marketing Communications. I also hold a degree in Management from the Distance Education Faculty of Anadolu University.
-            </p>
-            <div class="hero-actions">
-              <a class="btn" href="#projects">Explore projects</a>
-              <a
-                class="btn btn-ghost"
-                href="https://buymeacoffee.com/ylnyorulmaz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >☕ Buy me a coffee</a>
-            </div>
-          </div>
-          <div class="hero-portrait">
-            <img
-              src="yalinyorulmaz.jpeg"
-              alt="Yalın Yorulmaz"
-              width="260"
-              height="260"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-        </div>
-      </section>
-
-      <!-- About -->
-      <section id="about" class="section" data-reveal>
-        <div class="container split">
-          <div>
-            <h2>About / Why</h2>
-            <p>
-              I build calm, technical experiences for people who like clarity over hype.
-              My work blends product thinking with engineering pragmatism—fast prototypes,
-              stable foundations, and a bias toward real feedback.
-            </p>
-          </div>
-          <div class="panel">
-            <h3>What you can expect</h3>
-            <ul>
-              <li>Simple interfaces, measurable outcomes.</li>
-              <li>Early access releases that mature in public.</li>
-              <li>Documentation and decisions shared plainly.</li>
-            </ul>
-            <div class="cta-inline">
-              <p>Enjoy the work? Support it quietly.</p>
-              <a
-                class="btn btn-secondary"
-                href="https://buymeacoffee.com/ylnyorulmaz"
-                target="_blank"
-                rel="noopener noreferrer"
-              >☕ Buy me a coffee</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="section">
-        <div class="container">
-          <div class="section-head" data-reveal>
-            <h2>Projects</h2>
-            <p class="muted">A few live experiments, quietly maintained.</p>
-          </div>
-          <div class="project-grid">
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">📍</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>PinPoint</h3>
-                <p>A privacy-first map tool for saving places that matter.</p>
-                <p class="card-stack">React · TypeScript · Leaflet</p>
-              </div>
-              <a class="btn btn-small" href="/pin-point">View details</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">🧠</span>
-                  <p class="pill" data-status="early">Early Access</p>
-                </div>
-                <h3>CodeSight</h3>
-                <p>Learn to think like a senior engineer.</p>
-                <p class="card-stack">Full Stack · AI</p>
-              </div>
-              <a class="btn btn-small" href="/codesight">View CodeSight</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">⚽</span>
-                  <p class="pill" data-status="play">Play</p>
-                </div>
-                <h3>Daily Sports Trivia</h3>
-                <p>A growing collection of daily sports challenges.</p>
-                <p class="card-stack">Football · Basketball · F1 · Cycling</p>
-              </div>
-              <a class="btn btn-small" href="/football-iq">Explore the puzzles</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">🔮</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>Lumina Tarot</h3>
-                <p>Minimalist AI tarot for reflection, not fortune-telling.</p>
-                <p class="card-stack">AI · Mindfulness</p>
-              </div>
-              <a class="btn btn-small" href="/lumina-tarot">View details</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">♟</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>Satranç</h3>
-                <p>AI-powered browser chess with multi-engine analysis and plain-language commentary.</p>
-                <p class="card-stack">Stockfish · LCZero · OpenAI · Chess960</p>
-              </div>
-              <a class="btn btn-small" href="/satranc">View details</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">🪙</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>IntuitFlip</h3>
-                <p>A subconscious decision-making ritual — the coin reveals what you already wanted.</p>
-                <p class="card-stack">React · Tailwind · Framer Motion · PWA</p>
-              </div>
-              <a class="btn btn-small" href="/intuitflip">View details</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">🫁</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>Calm Down Button</h3>
-                <p>One button. Instant breathing guidance and calm — for when you need it most.</p>
-                <p class="card-stack">Vanilla JS · CSS Animations · PWA</p>
-              </div>
-              <a class="btn btn-small" href="/calm-down-button">View details</a>
-            </article>
-            <article class="project-card" data-reveal>
-              <div>
-                <div class="card-header">
-                  <span class="card-icon" aria-hidden="true">💢</span>
-                  <p class="pill" data-status="live">Live</p>
-                </div>
-                <h3>Fuck This Shit Button</h3>
-                <p>When calm breathing won't cut it — one button for instant, judgment-free stress release.</p>
-                <p class="card-stack">Vanilla JS · CSS Animations</p>
-              </div>
-              <a class="btn btn-small" href="/fuck-this-shit-button">View details</a>
-            </article>
-          </div>
-          <div class="support-card" data-reveal>
-            <p>
-              If any of these help you slow down and ship better, a first coffee is a
-              meaningful nudge.
-            </p>
-            <a
-              class="btn btn-secondary"
-              href="https://buymeacoffee.com/ylnyorulmaz"
-              target="_blank"
-              rel="noopener noreferrer"
-            >☕ Buy me a coffee</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Now -->
-      <section id="now" class="section" data-reveal>
-        <div class="container">
-          <div class="now">
-            <div class="now-dot" aria-hidden="true"></div>
-            <div>
-              <h2>Now / Currently building</h2>
-              <p>
-                Refining CodeSight onboarding and writing small, practical notes on
-                engineering judgment.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section id="contact" class="section" data-reveal>
-        <div class="container contact">
-          <div>
-            <h2>Contact</h2>
-            <p class="muted">Short, clear messages work best.</p>
-            <p>
-              Email:
-              <a href="mailto:hello@example.com">hello@example.com</a>
-            </p>
-          </div>
-          <div>
-            <h3>Social</h3>
-            <ul class="link-list">
-              <li><a href="https://github.com/your-handle" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="https://x.com/your-handle" target="_blank" rel="noopener noreferrer">X / Twitter</a></li>
-              <li>
-                <a
-                  href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b?companyReference=1929830998248497786&amp;mp_source=share"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Upwork</a>
-              </li>
-              <li>
-                <a href="https://ylnyorulmaz.itch.io" target="_blank" rel="noopener noreferrer">Itch.io</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div>
-          <p class="footer-title">Early, by design.</p>
-          <p class="muted">Calm, technical products with a long-term mindset.</p>
-        </div>
-        <form class="email-signup" action="#" method="post">
-          <label for="email-input" class="footer-title">A quiet email, occasionally.</label>
-          <p class="muted">
-            For people who care about thoughtful software. 1–2 emails every few weeks.
-          </p>
-          <div class="email-signup-controls">
-            <input
-              id="email-input"
-              name="email"
-              type="email"
-              autocomplete="email"
-              placeholder="you@domain.com"
-              required
-            />
-            <button class="btn btn-small" type="submit">Subscribe</button>
-          </div>
-        </form>
-        <div class="footer-cta">
-          <a
-            class="btn btn-secondary"
-            href="https://buymeacoffee.com/ylnyorulmaz"
-            target="_blank"
-            rel="noopener noreferrer"
-          >☕ Buy me a coffee</a>
-          <p class="muted">© <span id="year">2025</span> Yalın Yorulmaz</p>
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait"><img src="yalinyorulmaz.jpeg" alt="Yalın Yorulmaz" width="260" height="260" decoding="async"></div>
+          <p class="portrait-note"><span></span>Building from Antalya, Türkiye</p>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <!-- Back to top -->
-    <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-        <polyline points="4,10 8,5 12,10" />
-      </svg>
-    </button>
-  </body>
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-head" data-reveal><p class="eyebrow">Selected work</p><h2>Built, shipped, and in the wild.</h2><p class="muted">A focused selection from a larger collection of products and experiments.</p></div>
+        <div class="featured-grid">
+          <article class="project-card featured-card" data-reveal>
+            <div><div class="card-header"><span class="project-index">01</span><p class="pill" data-status="early">Early access</p></div><h3>CodeSight</h3><p class="project-pitch">An interactive learning environment for developing senior-level engineering judgment—not just generating more code.</p><p class="card-stack">AI · Developer education · Full stack</p></div>
+            <a class="text-link" href="/codesight">Explore CodeSight <span>↗</span></a>
+          </article>
+          <article class="project-card featured-card" data-reveal>
+            <div><div class="card-header"><span class="project-index">02</span><p class="pill" data-status="play">Playable</p></div><h3>Daily Sports Trivia</h3><p class="project-pitch">A family of fast daily guessing games for football, basketball, Formula 1, and cycling fans.</p><p class="card-stack">PWA · Game design · Daily content</p></div>
+            <a class="text-link" href="/football-iq">Play the puzzles <span>↗</span></a>
+          </article>
+          <article class="project-card featured-card" data-reveal>
+            <div><div class="card-header"><span class="project-index">03</span><p class="pill" data-status="live">Live</p></div><h3>IntuitFlip</h3><p class="project-pitch">A decision ritual that uses your reaction to a coin flip to reveal what you already wanted.</p><p class="card-stack">React · Framer Motion · PWA</p></div>
+            <a class="text-link" href="/intuitflip">Explore IntuitFlip <span>↗</span></a>
+          </article>
+          <article class="project-card featured-card" data-reveal>
+            <div><div class="card-header"><span class="project-index">04</span><p class="pill" data-status="live">Live</p></div><h3>Satranç</h3><p class="project-pitch">Browser chess with multi-engine analysis and plain-language AI commentary.</p><p class="card-stack">Stockfish · LCZero · OpenAI · Chess960</p></div>
+            <a class="text-link" href="/satranc">Explore Satranç <span>↗</span></a>
+          </article>
+        </div>
+        <details class="more-work" data-reveal>
+          <summary>More shipped experiments <span>+</span></summary>
+          <div class="compact-grid">
+            <a href="/pin-point"><strong>PinPoint</strong><span>Privacy-first saved places</span></a>
+            <a href="/lumina-tarot"><strong>Lumina Tarot</strong><span>Reflective AI tarot</span></a>
+            <a href="/calm-down-button"><strong>Calm Down Button</strong><span>One-button breathing guide</span></a>
+            <a href="/fuck-this-shit-button"><strong>Fuck This Shit Button</strong><span>Judgment-free stress release</span></a>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section" data-reveal>
+      <div class="container about-grid">
+        <div><p class="eyebrow">About</p><h2>Strategy when needed.<br>Execution by default.</h2></div>
+        <div class="about-copy">
+          <p>I work at the intersection of product, delivery, and engineering. I have led cross-functional work for security and software products, coordinated global projects, and built independent products from blank page to live release.</p>
+          <p>My background includes Computer Science and Engineering at Sabancı University, a master's in Marketing Communications from Istanbul Bilgi University, and product work involving Invicti Security, Sony Electronics, Hilton, Migros, and Istanbul Municipality.</p>
+          <div class="capabilities">
+            <span>Product strategy</span><span>Agile delivery</span><span>Rapid prototyping</span><span>Application security</span><span>Full-stack development</span><span>AI products</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section" data-reveal>
+      <div class="container contact-card">
+        <div><p class="eyebrow">Contact</p><h2>Have a product problem worth solving?</h2><p class="muted">For product work, technical project leadership, or a focused collaboration.</p></div>
+        <div class="contact-actions">
+          <a class="btn" href="mailto:yorulmaz@sabanciuniv.edu">Email me</a>
+          <a class="text-link" href="https://www.linkedin.com/in/yalin-yorulmaz" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+          <a class="text-link" href="https://github.com/ylnyorulmaz" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          <a class="text-link" href="https://www.upwork.com/freelancers/~01489bcf3e7d90570b" target="_blank" rel="noopener noreferrer">Upwork ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="container footer-simple"><p>© <span id="year">2026</span> Yalın Yorulmaz</p><p class="muted">Product leadership with builder hands.</p><a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener noreferrer">Buy me a coffee ↗</a></div></footer>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+</body>
 </html>
