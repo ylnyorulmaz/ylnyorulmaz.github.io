@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SDLC in the AI Era: Rebuilding the Lifecycle Around Agents</title>
+<meta name="description" content="When agents make implementation nearly free, the software development lifecycle becomes a loop, governance gets executed instead of convened, and the oldest engineering ideas gain the most leverage.">
+<meta name="author" content="Yalın Yorulmaz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="AI-native SDLC, software development lifecycle, AI agents, agentic engineering, DORA 2025, METR study, software architecture, engineering governance">
+<link rel="canonical" href="https://ylnyorulmaz.github.io/articles/sdlc-in-the-ai-era/">
+<meta name="theme-color" content="#f4f3ef">
+<meta property="og:site_name" content="Yalın Yorulmaz">
+<meta property="og:title" content="SDLC in the AI Era: Rebuilding the Lifecycle Around Agents">
+<meta property="og:description" content="The bottleneck moved from writing code to judgment. How the software lifecycle is being rebuilt around agents — and why the oldest ideas in software engineering matter most.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ylnyorulmaz.github.io/articles/sdlc-in-the-ai-era/">
+<meta property="og:image" content="https://ylnyorulmaz.github.io/images/article-sdlc-ai-era.svg">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-09">
+<meta property="article:author" content="https://ylnyorulmaz.github.io/about.html">
+<meta property="article:section" content="Software engineering">
+<meta property="article:tag" content="AI-native SDLC"><meta property="article:tag" content="Agentic engineering"><meta property="article:tag" content="Software architecture">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SDLC in the AI Era: Rebuilding the Lifecycle Around Agents">
+<meta name="twitter:description" content="AI is an amplifier. The organizations that invest in what it amplifies — architecture, feedback loops, disciplined review and judgment — will win.">
+<meta name="twitter:image" content="https://ylnyorulmaz.github.io/images/article-sdlc-ai-era.svg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/articles.css">
+<script defer src="/script.js"></script><script defer src="/articles.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"SDLC in the AI Era","alternativeHeadline":"How the software development lifecycle is being rebuilt around agents","description":"When agents make implementation nearly free, the constraint shifts to planning, review, deployment and the decision to build at all. A synthesis of Anthropic's AI-native SDLC playbook, Uber's managed software factory, the METR trial and the 2025 DORA report.","inLanguage":"en","datePublished":"2026-09-09","dateModified":"2026-09-09","wordCount":2900,"articleSection":"Software engineering","keywords":["AI-native SDLC","agentic engineering","software architecture","developer productivity","engineering governance"],"image":"https://ylnyorulmaz.github.io/images/article-sdlc-ai-era.svg","author":{"@type":"Person","name":"Yalın Yorulmaz","url":"https://ylnyorulmaz.github.io/about.html"},"publisher":{"@type":"Person","name":"Yalın Yorulmaz","url":"https://ylnyorulmaz.github.io/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ylnyorulmaz.github.io/articles/sdlc-in-the-ai-era/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ylnyorulmaz.github.io/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://ylnyorulmaz.github.io/articles/"},{"@type":"ListItem","position":3,"name":"SDLC in the AI Era","item":"https://ylnyorulmaz.github.io/articles/sdlc-in-the-ai-era/"}]}</script>
+</head><body class="article-page"><a class="skip-link" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="wordmark" href="/">YALIN YORULMAZ</a><button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu"><span class="hamburger"></span></button><nav><ul id="primary-navigation" class="nav-links"><li><a href="/#work">Work</a></li><li><a href="/articles/" aria-current="page">Articles</a></li><li><a href="/about.html">About</a></li><li><a href="/#contact">Contact</a></li><li><a class="resume-link" href="/Yalin_Yorulmaz_CV.pdf">Résumé ↗</a></li></ul></nav></div></header>
+
+<main id="main">
+<article>
+<div class="article-hero"><div class="wrap">
+<p class="kicker"><a href="/articles/">ARTICLES</a> / SOFTWARE ENGINEERING</p>
+<h1>SDLC in the AI Era</h1>
+<p class="article-deck">How the software development lifecycle is being rebuilt around agents — and why the oldest ideas in software engineering turn out to be the ones that matter most.</p>
+<div class="article-meta"><span class="by">By Yalın Yorulmaz</span><span><time datetime="2026-09-09">9 September 2026</time></span><span>13 min read</span><span>Essay</span></div>
+</div></div>
+
+<div class="wrap article-layout">
+<aside class="article-rail">
+  <section id="listen" class="listen" hidden aria-label="Listen to this article">
+    <h2>Listen to this article</h2>
+    <div class="listen-controls">
+      <button type="button" id="listen-play" class="primary">▶ Listen</button>
+      <button type="button" id="listen-stop" disabled>■ Stop</button>
+    </div>
+    <label class="listen-rate" for="listen-rate">Speed
+      <select id="listen-rate"><option value="0.8">0.8×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option></select>
+    </label>
+    <div class="listen-progress" role="progressbar" aria-label="Reading progress"><span id="listen-bar"></span></div>
+    <p class="listen-status" id="listen-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <nav class="article-toc" aria-label="Sections of this article">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#takeaways">Key takeaways</a></li>
+      <li><a href="#bottleneck">1 / The bottleneck that moved</a></li>
+      <li><a href="#loop">2 / From the line to the loop</a></li>
+      <li><a href="#platform">3 / The platform underneath</a></li>
+      <li><a href="#counterrevolution">4 / Code is not cheap</a></li>
+      <li><a href="#synthesis">5 / One transformation, three altitudes</a></li>
+      <li><a href="#becomes">6 / What the SDLC becomes</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<div class="article-body" id="article-body">
+
+<section id="takeaways" class="takeaways" aria-labelledby="takeaways-heading">
+<h2 id="takeaways-heading">The key takeaways</h2>
+<ul>
+<li><strong>The bottleneck moved.</strong> Writing code was the slowest, costliest step for fifty years, and the entire SDLC existed to aim that scarce act correctly. When agents make implementation nearly free, the constraint shifts to planning, review, deployment and — ultimately — deciding whether to build something at all.</li>
+<li><strong>Both the optimists and the skeptics are right.</strong> Uber doubled output; METR measured experienced developers going 19% slower. These aren’t contradictory findings about the model — they’re measurements of different systems. DORA’s “amplifier” framing reconciles them: AI magnifies existing strengths and weaknesses.</li>
+<li><strong>The SDLC becomes a loop, not a line.</strong> Six stages bound together by committed artifacts (<code>intent.md</code> → <code>spec.md</code> → <code>plan.md</code> → diff → review → incident), with agents embedded at every stage and humans positioned above it — instigating, directing, governing.</li>
+<li><strong>Governance gets executed, not convened.</strong> Policy applied as skills while code is written, enforced as hooks while agents act, and evidenced as an artifact chain that doubles as the audit trail. The review board becomes a hook; the change ticket becomes an artifact.</li>
+<li><strong>Bad code is now the most expensive it has ever been.</strong> AI performs dramatically better in a clean codebase than a tangled one, and entropy compounds at agent speed — so “ignore the code and let it manage itself” is just vibe coding by another name.</li>
+<li><strong>The oldest ideas have the highest leverage.</strong> Brooks on conceptual integrity, Evans on ubiquitous language, Ousterhout on deep modules, Beck on daily design investment — principles written for humans coordinating with humans turn out to be the operating manual for humans coordinating with agents.</li>
+</ul>
+</section>
+
+<p class="oneline"><b>The one-line version:</b> AI is an amplifier; the organizations that invest in what it amplifies — architecture, feedback loops, disciplined review and judgment — will win, and the rest will discover that entropy has been automated too.</p>
+
+<h2 id="bottleneck">1. The bottleneck that moved</h2>
+<p class="lede">For half a century, the software development lifecycle was organized around a single economic fact: writing code was the slowest, most expensive thing a technology organization did.</p>
+<p>Everything else — the PRDs, the estimation rituals, the review boards, the staged sign-offs — existed to make sure that the scarce, costly act of implementation was aimed at the right target. As Anthropic’s <em>AI-Native SDLC Playbook</em> puts it, the traditional SDLC “was designed to maximize efficiency in an era where the most time-consuming and expensive stage was writing and implementing code, which is no longer the case.”<a class="cite" href="#ref-1">[1]</a></p>
+<p>That era is over. When an agent can produce a working diff in minutes, the build phase collapses from weeks to hours, and the entire process architecture built around it becomes a friction machine. The playbook identifies three consequences: the bottleneck shifts left and right of build (to planning, review and deployment, which still run at human speed); the controls stop matching reality (line-by-line human review cannot keep pace with agent-generated diffs); and governance costs rise, because exceptions still route through committees that meet weekly.<a class="cite" href="#ref-1">[1]</a></p>
+<p>This is not a theoretical projection. On stage at a 2026 conference, Uber’s engineering leadership reported that more than 70% of their pull requests are now authored by local or cloud agents, that lines of code per engineer doubled year-over-year, and that over 250 automated migrations had touched 9 million lines of code — across an organization of a few thousand engineers at twelve global sites.<a class="cite" href="#ref-2">[2]</a> Whatever one thinks of lines-of-code as a metric, the directional claim is hard to dismiss: the constraint on software output is no longer typing.</p>
+<p>And yet the honest empirical picture is more complicated, and it is worth holding both truths at once. In mid-2025, METR ran a randomized controlled trial with experienced open-source developers working on mature repositories and found that AI tools made them <em>19% slower</em> — even though the developers themselves believed they had been sped up by 20%.<a class="cite" href="#ref-3">[3]</a> Google’s DORA program, surveying nearly 5,000 professionals for its 2025 <em>State of AI-assisted Software Development</em> report, reached a conclusion that reconciles the contradiction: AI is “an amplifier, magnifying an organization’s existing strengths and weaknesses.”<a class="cite" href="#ref-4">[4]</a> High-performing organizations accelerate; dysfunctional ones ship chaos faster. Uber’s numbers and METR’s numbers are both real — they are measurements of different socio-technical systems. The difference is not the model. It is the lifecycle wrapped around the model.</p>
+<p>That difference is what this essay is about.</p>
+
+<h2 id="loop">2. From the line to the loop</h2>
+<p>The classical SDLC is a line: plan, design, build, test, deploy, maintain, with documents and tickets ferrying work between stages and ownership changing hands at each boundary. The AI-native SDLC, as Anthropic frames it, is a loop — the same six stages, but wired together by committed artifacts rather than meetings, with agents embedded at every point and humans positioned <em>above</em> the loop: instigating, directing, governing.<a class="cite" href="#ref-1">[1]</a></p>
+<p>The mechanism is deceptively simple: <strong>every stage ends by committing an artifact that the next stage begins by reading.</strong> An idea becomes an <code>intent.md</code>, written in the originator’s own words during a brainstorm with an agent. An accepted intent triggers a design pass that produces <code>spec.md</code>, with brand, security and compliance policies applied <em>while the spec is written</em> — encoded as reusable skills — rather than discovered in a review weeks later. An approved spec triggers plan mode, producing <code>plan.md</code>, which an engineer interrogates before any code exists. The diff and its tests follow, then layered agentic review, then deployment behind hooks that act as approval gates. And in the final stage, the loop closes: a deterministic monitor detects a control-band breach in production, invokes an agent with no human in the invocation path, and the agent’s diagnosis is written back into the pipeline as a new <code>intent.md</code>.<a class="cite" href="#ref-1">[1]</a></p>
+<p>Two design decisions in this architecture deserve emphasis, because they separate serious practice from theater.</p>
+<p>The first is to <strong>keep detection deterministic and judgment agentic</strong>. The monitoring that decides <em>whether</em> to invoke an agent is a versioned, unit-tested script using statistical bands — no model involved. The agent is only summoned once a band is breached, and response tiers define what it may do: at one sigma, log; at two, diagnose read-only; at three, act — but only by opening a pull request into the review gate or triggering a pre-approved runbook.<a class="cite" href="#ref-1">[1]</a> Autonomy is rationed by evidence, not granted by enthusiasm.</p>
+<p>The second is the <strong>artifact chain as audit trail</strong>. The sequence of <code>intent.md</code> → <code>spec.md</code> → <code>plan.md</code> → diff → review findings → incident record is simultaneously the working memory of the agents and the compliance record for auditors: who asked for what, what the agent produced, who approved it.<a class="cite" href="#ref-1">[1]</a> In the traditional SDLC, accountability and speed traded off against each other. In the artifact-chained loop, the same mechanism delivers both — which is precisely what regulated enterprises need before they can let agents touch production.</p>
+
+<h2 id="platform">3. The platform underneath: lessons from Uber’s software factory</h2>
+<p>If Anthropic’s playbook is the process view, Uber’s talk is the infrastructure view of the same transformation — and the convergence between the two independent accounts is striking. Uber describes six building blocks, each of which answers a question the AI-native SDLC raises but does not itself solve:<a class="cite" href="#ref-2">[2]</a></p>
+<ul>
+<li><strong>A model gateway</strong> so that every request — from any harness, to any frontier or open-source model — passes through one endpoint with PII redaction, safety guardrails under a strict latency budget, and per-user, per-team, per-project attribution. Over 800 internal projects route through it, handling more than 100 million model requests a day. Governance that cannot see the traffic cannot govern the traffic.</li>
+<li><strong>An MCP gateway</strong> that projects thousands of internal APIs and SaaS tools into agent-callable tools behind one entry point, with aggressive token optimization (a single discover-and-invoke “Omni MCP,” CLI projection, and a code-mode skill) that cut fleet-wide token consumption by more than 40%.</li>
+<li><strong>Agentified environments</strong>: pre-provisioned, pre-indexed cloud dev pods that let an agent start real work in seconds, and a “mega devpod” spanning all repositories — because agents, unlike specialized engineers, routinely work across repo boundaries.</li>
+<li><strong>A managed skills marketplace</strong> with lint checks, automated review and feedback loops: 2,500 skills, over 20,000 executions a day. Institutional knowledge becomes versioned, quality-gated and centrally improvable — the exact role Anthropic assigns to skills as “advisory controls.”<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-2">[2]</a></li>
+<li><strong>A context graph</strong>: 150 node and edge types, 40 million entries, connecting services, owners, dependencies, design docs, Jira tickets and incidents — so agents stop burning tokens and latency rediscovering basic organizational context scattered across twenty or thirty systems.</li>
+<li><strong>A single assistant surface</strong> (Uber’s “Cortana”) through which every employee, engineer or not, reaches all of the above from Slack, CLI or web.</li>
+</ul>
+<p>On top of these blocks, Uber’s end-to-end demo walks a feature — a World Cup stadium pickup flow — from a Slack brainstorm through business research, PRD, Figma variants, autonomous implementation by its cloud coding agent, simulator-based visual validation against the design mocks, self-healing CI, and a split code review (a fast model in the inner loop, a reasoning model in the outer loop), with a table of every automated check attached to the PR so the human reviewer inherits confidence rather than having to manufacture it.<a class="cite" href="#ref-2">[2]</a></p>
+<p>Notice what this stack is really doing: it is moving the <em>control objectives</em> of the old SDLC — accountability, review, policy enforcement, auditability — out of meetings and into middleware. The review board becomes a hook. The architecture guideline becomes a skill. The change ticket becomes a committed artifact. The on-call runbook becomes a pre-approved agent route. Uber’s closing slide named the new bottlenecks explicitly: CI capacity, experiment throughput and decision-making — “not <em>can</em> we build it, but <em>should</em> we build it.”<a class="cite" href="#ref-2">[2]</a> When implementation is nearly free, judgment becomes the scarce resource. The whole platform exists to concentrate human attention on exactly that.</p>
+
+<h2 id="counterrevolution">4. The counterrevolution: code is not cheap</h2>
+<p>Against this optimism runs a necessary corrective, delivered in the second talk — a practitioner’s argument that begins with a confession. The speaker tried the “specs-to-code” workflow: write a specification, generate the code, and when something is wrong, fix the spec and regenerate — never reading the code. Each regeneration produced worse code than the last. “The idea that we can just ignore the code and let it manage itself,” he concluded, “is just vibe coding by another name.”<a class="cite" href="#ref-5">[5]</a></p>
+<p>The reference is to Andrej Karpathy’s February 2025 coinage — “fully give in to the vibes… forget that the code even exists” — a practice Karpathy himself framed as suitable for throwaway projects.<a class="cite" href="#ref-6">[6]</a> (It is telling that by early 2026 Karpathy was publicly declaring vibe coding passé in favor of “agentic engineering”: orchestrating agents, yes, but “without any compromise on the quality of the software.”)<a class="cite" href="#ref-7">[7]</a> The talk’s thesis inverts the movement’s founding assumption. If “code is cheap” were true, ignoring it would be rational. But code is not cheap: <strong>bad code is the most expensive it has ever been</strong>, because AI performs dramatically better in a good codebase than in a tangled one. Entropy — the Pragmatic Programmers’ old warning that systems decay whenever change is made without regard for the design of the whole — now compounds at agent speed.<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-8">[8]</a></p>
+<p>From that thesis come practical disciplines, each one an old software fundamental rediscovered as an AI technique:</p>
+<ul>
+<li><strong>Shared understanding before artifacts.</strong> The failure mode “the AI didn’t do what I wanted” is a requirements problem, not a model problem — Brooks’s “design concept” never formed between human and machine. The fix is adversarial elicitation: a skill that instructs the agent to interview the human relentlessly — forty, sixty, a hundred questions — until a shared understanding exists, and only then to write the PRD.<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-9">[9]</a></li>
+<li><strong>A ubiquitous language.</strong> Domain-driven design’s shared vocabulary, compiled into a markdown glossary that both human and agent think with, measurably reduces verbose misalignment in planning and implementation.<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-10">[10]</a></li>
+<li><strong>Feedback loops and small steps.</strong> “The rate of feedback is your speed limit.” Tests, types and browser access exist so the agent can verify its own work; test-driven development forces the small, deliberate steps that agents — left to themselves — are bad at taking.<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-8">[8]</a></li>
+<li><strong>Deep modules.</strong> Ousterhout’s distinction between deep modules (rich functionality behind simple interfaces) and shallow ones turns out to be an agent-readability property: codebases of scattered shallow modules are hard for agents to navigate and reason about, while deep modules with well-designed interfaces give clean boundaries to test at and clean seams to delegate behind.<a class="cite" href="#ref-5">[5]</a><a class="cite" href="#ref-11">[11]</a></li>
+<li><strong>Design the interface, delegate the implementation.</strong> The human’s attention goes to the boundaries — the module map, the interfaces, the design decisions that are expensive to reverse — while the agent fills in the interiors. Kent Beck’s “invest in the design of the system every day” stops being a virtue and becomes an operating procedure.<a class="cite" href="#ref-5">[5]</a></li>
+</ul>
+<p>The closing metaphor reframes the engineer’s role: the AI is a superb tactical programmer — a sergeant on the ground making changes — and the human must operate at the strategic level, which “requires software fundamental skills that we’ve been using for twenty years. For longer.”<a class="cite" href="#ref-5">[5]</a></p>
+
+<h2 id="synthesis">5. Synthesis: one transformation, three altitudes</h2>
+<p>Read together, the three sources are not in tension. They are the same transformation observed from three altitudes, and each supplies what the others lack.</p>
+<p>The <strong>individual engineer’s</strong> craft (talk two) explains <em>why</em> the platform investments (talk one) pay off. Uber’s context graph is, at organizational scale, exactly the “ubiquitous language” and module-map problem: giving the agent the shared concepts and boundaries it needs to reason. The skills marketplace is the “grill me” and TDD disciplines industrialized — elicitation, verification and design review encoded once and applied fleet-wide. And the playbook’s <code>CLAUDE.md</code> — “the context a new joiner would need,” updated whenever the agent makes the same mistake twice — is simply the personal practice of maintaining a shared language with the agent, promoted to a team artifact.<a class="cite" href="#ref-1">[1]</a></p>
+<p>Conversely, the <strong>platform and process</strong> layers explain why individual heroics don’t scale. A single engineer’s careful TDD loop cannot govern a hundred million model requests a day; that requires gateways, attribution and hooks. And the DORA data supplies the unifying theory: AI amplifies the system it enters.<a class="cite" href="#ref-4">[4]</a> Good architecture, fast feedback loops and disciplined review were always the determinants of delivery performance; the AI era has merely raised the stakes, because amplification works in both directions. A deep-module codebase with strong tests becomes a compounding asset — every agent session is more effective inside it. A shallow, entangled codebase becomes a compounding liability — every agent session adds entropy faster than the last.</p>
+<p>This synthesis also resolves the apparent paradox of the METR result. Sixteen experts in million-line repositories, working two-hour tasks with early-2025 tools and immature workflows, went 19% slower.<a class="cite" href="#ref-3">[3]</a> Uber, with six years of monorepo and build-system investment behind it and a purpose-built agent platform on top, doubled output.<a class="cite" href="#ref-2">[2]</a> The lesson is not that one of them is wrong. It is that <em>the productivity of AI in software engineering is a property of the lifecycle, not the model.</em> METR’s own follow-up work points the same way: by early 2026, developers were refusing to enroll in experiments that required working <em>without</em> AI — selection effects so severe the study design itself had to be abandoned.<a class="cite" href="#ref-12">[12]</a></p>
+
+<h2 id="becomes">6. What the SDLC becomes</h2>
+<p>So what, concretely, is the SDLC in the AI era?</p>
+<p>It is a <strong>loop, not a line</strong> — six stages bound by committed artifacts, where an accepted <code>intent.md</code> fires the design pass, an approved spec fires planning, a merged PR fires the pipeline, and a breached control band in production writes the next intent.<a class="cite" href="#ref-1">[1]</a></p>
+<p>It is a system in which <strong>governance is executed, not convened</strong> — policy applied as skills while code is written, enforced as hooks while agents act, and evidenced as an artifact chain that doubles as the audit trail.<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-2">[2]</a></p>
+<p>It is a system in which <strong>human attention is deliberately concentrated at the gates</strong>: on intent and risk in review, on interfaces and module boundaries in design, and above all on the question Uber ended with — <em>should</em> we build this at all.<a class="cite" href="#ref-2">[2]</a></p>
+<p>And it is a system in which <strong>the oldest knowledge in the field has the highest leverage</strong>. Brooks on conceptual integrity, the Pragmatic Programmers on entropy and feedback, Evans on ubiquitous language, Ousterhout on deep modules, Beck on daily design investment — these were written for humans coordinating with humans. They turn out to be, almost verbatim, the operating manual for humans coordinating with agents.<a class="cite" href="#ref-5">[5]</a></p>
+<p>The SDLC was never really about code. It was about aligning intent, managing complexity and keeping change safe. Code was simply the slowest part, so the process accreted around it. Now that the slow part is fast, the process is being rebuilt around what was always its true center of gravity: judgment. The organizations that understand this — that treat AI as an amplifier and invest in what it amplifies — will define the next decade of software. The rest will discover that entropy, too, has been automated.</p>
+
+<section id="references" class="references no-speech" aria-labelledby="references-heading">
+<h2 id="references-heading">References</h2>
+<ol>
+<li id="ref-1">Anthropic. <em>The AI-Native SDLC Playbook.</em> Claude Blog. <a href="https://claude.com/blog/the-ai-native-sdlc-playbook" target="_blank" rel="noopener nofollow">claude.com/blog/the-ai-native-sdlc-playbook</a></li>
+<li id="ref-2">Udai &amp; Adam (Uber). <em>Journey Towards a Managed Software Factory</em> — conference talk. <a href="https://youtu.be/17-YSUHo6Lk" target="_blank" rel="noopener nofollow">youtu.be/17-YSUHo6Lk</a></li>
+<li id="ref-3">Becker, J. et al. <em>Measuring the Impact of Early-2025 AI on Experienced Open-Source Developer Productivity.</em> METR, July 2025. <a href="https://arxiv.org/abs/2507.09089" target="_blank" rel="noopener nofollow">arxiv.org/abs/2507.09089</a></li>
+<li id="ref-4">DORA (Google Cloud). <em>2025 State of AI-assisted Software Development.</em> <a href="https://dora.dev/dora-report-2025/" target="_blank" rel="noopener nofollow">dora.dev/dora-report-2025</a></li>
+<li id="ref-5"><em>Software Fundamentals Matter Now More Than Ever</em> — conference talk (“Claude Code for real engineers”; skills including “grill me,” ubiquitous language, deep modules). <a href="https://youtu.be/v4F1gFy-hqg" target="_blank" rel="noopener nofollow">youtu.be/v4F1gFy-hqg</a></li>
+<li id="ref-6">Karpathy, A. Post on X coining “vibe coding,” February 2, 2025. <a href="https://x.com/karpathy/status/1886192184808149383" target="_blank" rel="noopener nofollow">x.com/karpathy/status/1886192184808149383</a></li>
+<li id="ref-7">The New Stack. <em>Vibe coding is passé. Karpathy has a new name for the future of software</em> (“agentic engineering”), February 2026. <a href="https://thenewstack.io/vibe-coding-is-passe/" target="_blank" rel="noopener nofollow">thenewstack.io/vibe-coding-is-passe</a></li>
+<li id="ref-8">Hunt, A. &amp; Thomas, D. <em>The Pragmatic Programmer</em> (software entropy; “outrunning your headlights”). Addison-Wesley, 1999.</li>
+<li id="ref-9">Brooks, F. <em>The Design of Design.</em> Addison-Wesley, 2010.</li>
+<li id="ref-10">Evans, E. <em>Domain-Driven Design</em> (ubiquitous language). Addison-Wesley, 2003.</li>
+<li id="ref-11">Ousterhout, J. <em>A Philosophy of Software Design</em> (complexity; deep vs. shallow modules). Yaknyam Press, 2018.</li>
+<li id="ref-12">METR. <em>We are Changing our Developer Productivity Experiment Design</em>, February 2026. <a href="https://metr.org/blog/2026-02-24-uplift-update/" target="_blank" rel="noopener nofollow">metr.org/blog/2026-02-24-uplift-update</a></li>
+</ol>
+</section>
+
+<section id="share" class="share no-speech" aria-labelledby="share-heading">
+<h2 id="share-heading">Share this article</h2>
+<p>Send it to someone who is rebuilding their lifecycle right now.</p>
+<div class="share-buttons">
+<button type="button" data-share="native" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1a3 3 0 0 0-2 .8l-7.1-4.2c0-.2.1-.4.1-.7s0-.5-.1-.7L15.9 7a3 3 0 1 0-1-2.2c0 .2 0 .5.1.7L8 9.7a3 3 0 1 0 0 4.6l7.1 4.2c0 .2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>Share…</button>
+<a data-share="x" href="https://x.com/intent/post?text=SDLC%20in%20the%20AI%20Era&url=https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.7l-5.2-6.8L5.1 22H1.8l7.7-8.8L1 2h6.8l4.7 6.2zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>X</a>
+<a data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1a4.2 4.2 0 0 1 3.8-2c4 0 4.8 2.7 4.8 6.1V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+<a data-share="bluesky" href="https://bsky.app/intent/compose?text=SDLC%20in%20the%20AI%20Era%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.9 8.6 7.9 4.6 5.1 2.7 2.4.8 1.4 1.1.8 1.4c-.8.4-.8 1.5-.8 2.2s.4 5.5.7 6.3c.8 2.6 3.5 3.5 6 3.2-3.7.6-7 1.9-2.7 6.7 4.7 4.9 6.5-1 7.4-4 .9 3 2 8.7 7.3 4 4-4 1.1-6.1-2.6-6.7 2.5.3 5.2-.6 6-3.2.3-.8.7-5.6.7-6.3s0-1.8-.8-2.2c-.6-.3-1.6-.6-4.3 1.3-2.8 1.9-5.8 5.9-6.9 8.1z"/></svg>Bluesky</a>
+<a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+<a data-share="whatsapp" href="https://wa.me/?text=SDLC%20in%20the%20AI%20Era%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
+<button type="button" data-share="slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15a2 2 0 1 1-2-2h2zm1 0a2 2 0 1 1 4 0v5a2 2 0 1 1-4 0zM9 6a2 2 0 1 1 2-2v2zm0 1a2 2 0 1 1 0 4H4a2 2 0 1 1 0-4zm9 2a2 2 0 1 1 2 2h-2zm-1 0a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0zm-2 9a2 2 0 1 1-2 2v-2zm0-1a2 2 0 1 1 0-4h5a2 2 0 1 1 0 4z"/></svg>Send via Slack</button>
+<a data-share="email" href="mailto:?subject=SDLC%20in%20the%20AI%20Era&body=https%3A%2F%2Fylnyorulmaz.github.io%2Farticles%2Fsdlc-in-the-ai-era%2F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 8L4.4 7H19.6zM4 17h16V8.6l-7.4 5.8a1 1 0 0 1-1.2 0L4 8.6z"/></svg>Email</a>
+<button type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4 0zm-4 4.9a4 4 0 0 1 0-5.7l2.8-2.8a1 1 0 0 1 1.4 1.4l-2.8 2.8a2 2 0 0 0 2.8 2.8l2.8-2.8a1 1 0 1 1 1.4 1.4l-2.8 2.9a4 4 0 0 1-5.6 0zm11-6.6a1 1 0 0 1-1.4-1.4l2.8-2.8a2 2 0 1 0-2.8-2.8l-2.8 2.8a1 1 0 0 1-1.4-1.4l2.8-2.8a4 4 0 0 1 5.6 5.6z"/></svg>Copy link</button>
+</div>
+<p class="share-note" id="share-note" role="status" aria-live="polite"></p>
+</section>
+
+<nav class="article-pager no-speech" aria-label="More reading"><a href="/articles/">← All articles</a><a href="/#contact">Get in touch →</a></nav>
+
+</div>
+</div>
+</article>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year">2026</span> Yalın Yorulmaz</span><span>Istanbul, Türkiye</span><a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener">Support the experiments ↗</a></div></footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+</body></html>
