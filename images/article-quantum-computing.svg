@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Quantum Computing, Explained Simply — a guide by Yalın Yorulmaz">
+<rect width="1200" height="630" fill="#f4f3ef"/>
+<rect x="28" y="28" width="1144" height="574" fill="none" stroke="#111" stroke-width="1.5"/>
+<g fill="none" stroke="#cbc9c1" stroke-width="1.5">
+  <path d="M840 300 q40 -60 80 0 t80 0 t80 0"/>
+  <path d="M840 330 q40 60 80 0 t80 0 t80 0"/>
+</g>
+<g font-family="Manrope, Helvetica, Arial, sans-serif">
+  <text x="80" y="122" font-size="20" font-weight="600" letter-spacing="4" fill="#1648ff">GUIDE / TECHNOLOGY</text>
+  <text x="80" y="248" font-size="88" font-weight="600" letter-spacing="-4.5" fill="#111">Quantum Computing,</text>
+  <text x="80" y="336" font-size="88" font-weight="600" letter-spacing="-4.5" fill="#111">Explained Simply</text>
+  <text x="80" y="404" font-size="30" font-weight="400" fill="#696862">Not a faster car — a boat.</text>
+  <line x1="80" y1="452" x2="1120" y2="452" stroke="#cbc9c1" stroke-width="1.5"/>
+  <text x="80" y="510" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#111">Yalın Yorulmaz</text>
+  <text x="80" y="548" font-size="20" font-weight="400" fill="#696862">ylnyorulmaz.github.io/articles</text>
+  <text x="1120" y="510" font-size="20" font-weight="600" letter-spacing="3" fill="#1648ff" text-anchor="end">20 MIN READ</text>
+</g>
+</svg>
