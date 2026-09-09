@@ -27,4 +27,5 @@
 .nav-toggle.is-open .hamburger::before{top:0;transform:rotate(45deg)}
 .nav-toggle.is-open .hamburger::after{top:0;transform:rotate(-45deg)}
 @media(max-width:1100px) and (min-width:901px){.work-list article{grid-template-columns:140px minmax(180px,.55fr) minmax(260px,1fr);gap:22px}.work-list article>a{grid-column:2}.tags{grid-column:3}}
-@media(max-width:900px){.nav-toggle{display:flex}}
+/* Keep the mobile toggle at the right edge despite the empty nav flex item. */
+@media(max-width:900px){.nav-toggle{display:flex}.wrap.nav>.nav-toggle{margin-left:auto;flex-shrink:0}}
