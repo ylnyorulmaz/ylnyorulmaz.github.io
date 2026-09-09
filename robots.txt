@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://ylnyorulmaz.github.io/sitemap.xml
+
+Sitemap: https://ylnyorulmaz.com/sitemap.xml
