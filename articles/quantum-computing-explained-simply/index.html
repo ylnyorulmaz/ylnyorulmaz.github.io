@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quantum Computing, Explained Simply</title>
+<meta name="description" content="A quantum computer isn't a faster computer — it's a boat. What qubits really are, why interference is the whole game, which hardware is racing, and when any of it will matter. No PhD required.">
+<meta name="author" content="Yalın Yorulmaz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="quantum computing explained, qubit, superposition, entanglement, quantum interference, Grover's algorithm, Shor's algorithm, quantum error correction, Google Willow, post-quantum cryptography">
+<link rel="canonical" href="https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/">
+<meta name="theme-color" content="#f4f3ef">
+<meta property="og:site_name" content="Yalın Yorulmaz">
+<meta property="og:title" content="Quantum Computing, Explained Simply">
+<meta property="og:description" content="Not a faster car — a boat. Useless for most trips, and the only thing that can cross a handful of oceans. A beginner-friendly guide to what quantum computers actually do.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/">
+<meta property="og:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-09">
+<meta property="article:author" content="https://ylnyorulmaz.com/about.html">
+<meta property="article:section" content="Technology">
+<meta property="article:tag" content="Quantum computing"><meta property="article:tag" content="Qubits"><meta property="article:tag" content="Post-quantum cryptography">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Quantum Computing, Explained Simply">
+<meta name="twitter:description" content="Quantum computing is the art of making wrong answers cancel out and right answers stand out. A beginner-friendly guide — same facts, no PhD required.">
+<meta name="twitter:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/articles.css">
+<script defer src="/script.js"></script><script defer src="/articles.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Quantum Computing, Explained Simply","alternativeHeadline":"Not a faster computer — a boat","description":"What a qubit really is, why interference rather than parallelism is the mechanism, the five hardware platforms still racing, why errors are the central obstacle, and a sober timeline for when quantum computing will matter.","inLanguage":"en","datePublished":"2026-09-09","dateModified":"2026-09-09","wordCount":4600,"articleSection":"Technology","keywords":["quantum computing","qubits","superposition","entanglement","quantum interference","Grover's algorithm","Shor's algorithm","quantum error correction","post-quantum cryptography"],"image":"https://ylnyorulmaz.com/yalinyorulmaz.jpeg","author":{"@type":"Person","name":"Yalın Yorulmaz","url":"https://ylnyorulmaz.com/about.html"},"publisher":{"@type":"Person","name":"Yalın Yorulmaz","url":"https://ylnyorulmaz.com/"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ylnyorulmaz.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://ylnyorulmaz.com/articles/"},{"@type":"ListItem","position":3,"name":"Quantum Computing, Explained Simply","item":"https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/"}]}</script>
+<meta property="og:image:alt" content="Yalın Yorulmaz, author and product leader">
+<meta name="twitter:image:alt" content="Yalın Yorulmaz, author and product leader">
+</head><body class="article-page"><a class="skip-link" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="wordmark" href="/">YALIN YORULMAZ</a><button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu"><span class="hamburger"></span></button><nav><ul id="primary-navigation" class="nav-links"><li><a href="/#work">Work</a></li><li><a href="/#record">Record</a></li><li><a href="/articles/" aria-current="page">Articles</a></li><li><a href="/about.html">About</a></li><li><a href="/#contact">Contact</a></li><li><a class="resume-link" href="/Yalin_Yorulmaz_CV.pdf">Résumé ↗</a></li></ul></nav></div></header>
+
+<main id="main">
+<article>
+<div class="article-hero"><div class="wrap">
+<p class="kicker"><a href="/articles/">ARTICLES</a> / TECHNOLOGY</p>
+<h1>Quantum Computing, Explained Simply</h1>
+<p class="article-deck">A beginner-friendly version of the technical report “The Architecture, Modalities, and Algorithmic Frontiers of Quantum Information Processing” — same facts, no PhD required.</p>
+<div class="article-meta"><span class="by">By Yalın Yorulmaz</span><span><time datetime="2026-09-09">9 September 2026</time></span><span>20 min read</span><span>Guide</span></div>
+</div></div>
+
+<div class="wrap article-layout">
+<aside class="article-rail">
+  <section id="listen" class="listen" hidden aria-label="Listen to this article">
+    <h2>Listen to this article</h2>
+    <div class="listen-controls">
+      <button type="button" id="listen-play" class="primary">▶ Listen</button>
+      <button type="button" id="listen-stop" disabled>■ Stop</button>
+    </div>
+    <label class="listen-rate" for="listen-rate">Speed
+      <select id="listen-rate"><option value="0.8">0.8×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option></select>
+    </label>
+    <div class="listen-progress" role="progressbar" aria-label="Reading progress"><span id="listen-bar"></span></div>
+    <p class="listen-status" id="listen-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <nav class="article-toc" aria-label="Sections of this article">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#takeaways">Key takeaways</a></li>
+      <li><a href="#big-idea">The big idea</a></li>
+      <li><a href="#qubit">1 / Qubit vs. bit</a></li>
+      <li><a href="#difference">2 / How it differs</a></li>
+      <li><a href="#hardware">3 / What they’re made of</a></li>
+      <li><a href="#benchmarks">4 / Measuring a machine</a></li>
+      <li><a href="#grover">5 / A real algorithm</a></li>
+      <li><a href="#uses">6 / What it’s good for</a></li>
+      <li><a href="#errors">7 / Errors, and the fix</a></li>
+      <li><a href="#timeline">8 / When will it matter?</a></li>
+      <li><a href="#glossary">Glossary</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<div class="article-body" id="article-body">
+
+<p class="oneline"><b>The one-line version:</b> A quantum computer isn’t a faster computer — it’s a boat where everyone else has a car: useless for most trips, but the only thing that can cross a handful of oceans (like simulating molecules and breaking encryption), by choreographing waves so wrong answers cancel and the right one stands out.</p>
+
+<section id="takeaways" class="takeaways" aria-labelledby="takeaways-heading">
+<h2 id="takeaways-heading">The key takeaways</h2>
+<ul>
+<li><strong>Qubits aren’t just “faster bits.”</strong> A qubit holds a blend of 0 and 1 (superposition); each added qubit doubles the state space; entangled qubits act as one linked system.</li>
+<li><strong>The real mechanism is wave interference</strong>, not “trying every answer at once.” Algorithms make wrong-answer waves cancel and right-answer waves reinforce. That’s the whole game.</li>
+<li><strong>The catch: measuring collapses the blend</strong>, so a 300-qubit machine still yields only 300 readable bits. All the cleverness happens before you look.</li>
+<li><strong>It’s a boat, not a faster car.</strong> Specialized for a short list of structured problems — factoring, molecular simulation — not a general speedup. Search only gets a modest √N boost, not a miracle.</li>
+<li><strong>Five hardware platforms are still racing</strong> (superconducting, trapped ion, neutral atom, photonic, silicon spin) with no clear winner; each trades speed against accuracy against temperature.</li>
+<li><strong>Errors are the central obstacle.</strong> Qubits fail every ~100–1,000 operations, against once in a quintillion for classical chips. The fix is error correction: many physical qubits make one reliable logical qubit — but only below a ~1% threshold.</li>
+<li><strong>2024 was the turning point.</strong> Google’s Willow chip crossed that threshold at scale — the first real proof that error correction works as you scale up.</li>
+<li><strong>Two obstacles remain:</strong> the “magic-state tax” (now shrinking) and cosmic-ray error bursts (about once an hour).</li>
+<li><strong>The encryption clock is already ticking.</strong> “Harvest now, decrypt later” is why NIST published post-quantum standards in 2024 — years before a code-breaking machine exists.</li>
+<li><strong>The honest gaps:</strong> quantum advantage in chemistry, optimization and AI is promising but unproven; and there is a quiet shortage of new algorithms — if a working machine appeared tomorrow, we wouldn’t have that much to run on it.</li>
+<li><strong>Realistic timeline:</strong> useful molecular simulation late-2020s; RSA-breaking scale in the 2030s. These will be data-center accelerators, never laptops.</li>
+</ul>
+</section>
+
+<h2 id="big-idea">The big idea in one paragraph</h2>
+<p class="lede">A regular computer stores information as <strong>bits</strong> — tiny switches that are either 0 or 1. A quantum computer uses <strong>qubits</strong>, which can be 0, 1, <em>or a blend of both at once</em>.</p>
+<p>Because of this blending — and a couple of other quantum tricks — a quantum computer can explore certain kinds of problems in ways that would take a normal computer longer than the age of the universe. It won’t replace your laptop. It is a specialized machine for a small set of extremely hard problems: designing new drugs, discovering new materials, and eventually breaking today’s encryption.</p>
+<p>The best one-line analogy comes from a quantum physicist, by way of the “Huge If True” video with MKBHD.<a class="cite" href="#src-27">[27]</a> Imagine exploring a giant map where progress depends on how fast you can do arithmetic. Paper and pencil were walking; early computers were horses; modern supercomputers are cars. <strong>Quantum computers are not faster cars — they’re boats.</strong> Not better or worse, but built for completely different terrain. They open entire oceans of problems no car, however fast, could ever reach. And there is no flying car-boat coming for your pocket either: these machines will live in data centers.</p>
+
+<h2 id="qubit">1. What makes a qubit different from a bit?</h2>
+<p><strong>A bit is a coin lying on a table.</strong> It is either heads (1) or tails (0).</p>
+<p><strong>A qubit is a coin spinning in the air.</strong> While it spins it is neither heads nor tails — it is a <em>blend</em> of both possibilities. Only when you catch it and look (physicists say “measure”) does it land on one definite outcome.</p>
+<p>Three quantum tricks give these spinning coins their power.</p>
+
+<h3>Trick 1: Superposition — the spinning coin</h3>
+<p>One qubit holds a blend of 0 and 1. Two qubits hold a blend of all four combinations (00, 01, 10, 11). Three qubits hold eight. Each added qubit <strong>doubles</strong> the possibilities the computer can juggle at once. Just 300 qubits can represent more states simultaneously than there are atoms in the observable universe.</p>
+
+<h3>Trick 2: Entanglement — linked coins</h3>
+<p>Two qubits can become <strong>entangled</strong>: mysteriously linked, so that measuring one instantly tells you about the other, no matter how far apart they are. Einstein called this “spooky action at a distance.” Entanglement lets qubits work together as one giant system instead of separate pieces.</p>
+
+<h3>Trick 3: Interference — waves that cancel and reinforce</h3>
+<p>Here is the key insight most people miss: a quantum computer does <strong>not</strong> simply “try every answer at once.” If it did, measuring it would hand you a random answer — useless. Instead, qubit states behave like <strong>waves</strong>. Picture tapping a pond in two spots and watching the ripples reinforce where they meet and cancel where they collide. Quantum algorithms choreograph these waves so that the waves of <em>wrong</em> answers cancel each other out, like noise-cancelling headphones, while the waves of the <em>right</em> answer reinforce — so when you finally measure, the correct answer is what you most likely see.</p>
+<p class="callout"><strong>Bottom line:</strong> quantum computing is the art of making wrong answers cancel out and right answers stand out.</p>
+
+<h3>The catch</h3>
+<p>The moment you look at a qubit, the blend collapses into a plain 0 or 1. So from a 300-qubit machine you still only get 300 bits of readable output. All the cleverness is in arranging the waves <em>before</em> you look.</p>
+
+<h2 id="difference">2. How is a quantum computer different from a regular one?</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col"></th><th scope="col">Regular computer</th><th scope="col">Quantum computer</th></tr></thead>
+<tbody>
+<tr><th scope="row">Basic unit</th><td>Bit: 0 or 1</td><td>Qubit: a blend of 0 and 1</td></tr>
+<tr><th scope="row">Memory growth</th><td>Adding bits adds a little power</td><td>Each qubit <strong>doubles</strong> the working space</td></tr>
+<tr><th scope="row">Copying data</th><td>Copy anything, anytime</td><td>Copying an unknown quantum state is <strong>impossible by physics</strong></td></tr>
+<tr><th scope="row">Looking at data</th><td>Peek anytime, no harm done</td><td>Peeking <strong>destroys</strong> the quantum state</td></tr>
+<tr><th scope="row">Running it backwards</th><td>Most operations are one-way — you can’t un-bake a cake</td><td>Everything is reversible until you measure</td></tr>
+<tr><th scope="row">Best at</th><td>Everyday everything</td><td>A short list of special, extremely hard problems</td></tr>
+</tbody>
+</table></div>
+<p><strong>Can it solve every hard problem?</strong> No — this is a common myth. “Find the one right answer among N possibilities” only gets a modest <em>square-root</em> speedup: searching a million items takes roughly 1,000 quantum steps instead of a million. The jaw-dropping speedups appear only for problems with special mathematical structure, like factoring large numbers and simulating molecules.</p>
+<p><strong>Is entanglement alone enough?</strong> Also no. A certain family of quantum circuits (using “Clifford gates”) can generate plenty of entanglement and yet be perfectly simulated on a laptop. True quantum advantage requires extra ingredients — which turns out to matter enormously once we get to error correction.</p>
+
+<h2 id="hardware">3. What are these machines actually made of?</h2>
+<p>There is no single winner yet. Five very different technologies are racing to build the best qubit — rather like the early days of aviation, when nobody knew whether planes, blimps or helicopters would win.</p>
+<p class="callout"><strong>What does one actually look like?</strong> That famous “golden octopus” chandelier you have seen in photos is mostly <em>refrigerator</em>. When MKBHD visited IBM’s lab,<a class="cite" href="#src-27">[27]</a> the actual quantum computer turned out to be a chip the size of a fingernail at the bottom of a room-sized stack of gold-coloured plates: a dilution refrigerator holding the chip at 15 millikelvin — colder than deep space, among the coldest spots in the known universe. The hundreds of cables running down the stack carry microwave signals to the qubits and bring answers back to ordinary room-temperature electronics. So when someone says “IBM’s quantum computer,” 99% of what you are looking at is the life-support system keeping a tiny chip unimaginably cold and quiet.</p>
+
+<h3>🔧 Superconducting circuits — artificial atoms on a chip</h3>
+<p><em>Used by Google and IBM.</em> Tiny electrical circuits etched onto silicon and chilled to near absolute zero — about 0.01 degrees above the coldest possible temperature. At that temperature electricity flows with zero resistance and the circuit behaves like a single artificial atom.</p>
+<ul>
+<li><strong>Strengths:</strong> incredibly fast — a gate operation takes billionths of a second. Built with chip-industry techniques.</li>
+<li><strong>Weaknesses:</strong> giant, expensive refrigerators; every chip comes out slightly different, so manufacturing consistency is hard; qubits forget their state within a fraction of a millisecond.</li>
+</ul>
+
+<h3>⚛️ Trapped ions — real atoms held by invisible tweezers</h3>
+<p><em>Used by IonQ and Quantinuum.</em> Individual charged atoms floating in a vacuum chamber, held in place by electric fields and controlled with laser beams.</p>
+<ul>
+<li><strong>Strengths:</strong> every ion is perfectly identical, because nature made them rather than a factory. The most accurate qubits known, above 99.9% gate precision, and they remember their state for minutes.</li>
+<li><strong>Weaknesses:</strong> very slow gates — roughly 1,000× slower than superconducting — and it is hard to pack many ions into one trap.</li>
+</ul>
+
+<h3>🕸️ Neutral atoms — atoms in a web of light</h3>
+<p><em>Used by QuEra and Pasqal.</em> Uncharged atoms trapped in a grid of focused laser beams (“optical tweezers”). To make them interact, atoms are briefly puffed up into giant “Rydberg” states where they strongly influence their neighbours.</p>
+<ul>
+<li><strong>Strengths:</strong> large grids of hundreds of atoms are comparatively easy to build, and the grid can be rearranged mid-calculation, which saves a lot of overhead.</li>
+<li><strong>Weaknesses:</strong> atoms occasionally escape their traps, and gate accuracy is still catching up.</li>
+</ul>
+
+<h3>💡 Photons — computing with particles of light</h3>
+<p><em>Used by PsiQuantum, Xanadu and Quandela.</em> Qubits encoded in single particles of light travelling through optical chips — the same basic technology as fibre-optic internet.</p>
+<ul>
+<li><strong>Strengths:</strong> works at room temperature; light barely interacts with its environment, so qubits stay clean; naturally suited to networking.</li>
+<li><strong>Weaknesses:</strong> photons don’t naturally interact with each other, so two-qubit operations only succeed <em>sometimes</em> — which requires clever probabilistic designs and many spare photons.</li>
+</ul>
+
+<h3>💠 Silicon spins — one electron per qubit</h3>
+<p><em>Used by Intel and academic labs.</em> Each qubit is the magnetic orientation (“spin”) of a single electron trapped in a nanoscale dot on a silicon chip, built in the same factories that make phone processors.</p>
+<ul>
+<li><strong>Strengths:</strong> astonishingly small — millions could fit on one chip — and riding on trillions of dollars of chip-manufacturing know-how.</li>
+<li><strong>Weaknesses:</strong> qubits can only talk to immediate neighbours, and nanoscale wiring is fiendishly difficult.</li>
+</ul>
+
+<h3>The scorecard</h3>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Platform</th><th scope="col">Speed</th><th scope="col">Accuracy</th><th scope="col">Memory</th><th scope="col">Temperature</th><th scope="col">Biggest headache</th></tr></thead>
+<tbody>
+<tr><th scope="row">Superconducting</th><td>Fastest (billionths of a second)</td><td>99–99.9%</td><td>~0.1–0.3 ms</td><td>Colder than deep space</td><td>Refrigeration and manufacturing variation</td></tr>
+<tr><th scope="row">Trapped ion</th><td>Slowest, but precise</td><td><strong>Best: 99.9%+</strong></td><td>Seconds to minutes</td><td>Room-temp. chamber</td><td>Slow speed; scaling the trap</td></tr>
+<tr><th scope="row">Neutral atom</th><td>Medium</td><td>95–99% (improving)</td><td>Seconds</td><td>Room-temp. chamber</td><td>Atoms escaping mid-run</td></tr>
+<tr><th scope="row">Photonic</th><td>Medium</td><td>Special (probabilistic)</td><td>Limited by photon loss</td><td>Room temperature</td><td>Photons getting lost</td></tr>
+<tr><th scope="row">Silicon spin</th><td>Fast</td><td>99–99.5%</td><td>Milliseconds</td><td>Very cold</td><td>Wiring nanoscale neighbours</td></tr>
+</tbody>
+</table></div>
+<p><strong>Honest takeaway:</strong> nobody knows which platform wins. It may well be different platforms for different jobs, just as we use GPUs for graphics and CPUs for general work today.</p>
+
+<h2 id="benchmarks">4. How do we know if a quantum computer is any good?</h2>
+<p>Counting qubits is like judging a car by engine size alone — a 1,000-qubit machine full of errors is worse than a reliable 100-qubit one. So the field uses better yardsticks.</p>
+<ul>
+<li><strong>Component tests.</strong> How long does a qubit remember its state? What is the chance a single operation goes wrong? Measured by scrambling a qubit with random operations and then checking whether it survived.</li>
+<li><strong>Quantum Volume</strong> (IBM’s idea). Run the hardest random circuits the machine can handle and see how big they can get before the output becomes noise. The score folds qubit count, accuracy and connectivity into one number.<a class="cite" href="#src-17">[17]</a></li>
+<li><strong>Algorithmic Qubits</strong> (IonQ’s idea). Instead of random circuits, run the actual building blocks of real algorithms: how many qubits’ worth of <em>useful</em> work can the machine do?<a class="cite" href="#src-18">[18]</a></li>
+</ul>
+
+<h2 id="grover">5. Watching a real algorithm work: the needle in a haystack</h2>
+<p>This section follows the visual walkthrough from Grant Sanderson’s 3Blue1Brown explainer on Grover’s algorithm.<a class="cite" href="#src-22">[22]</a></p>
+
+<h3>The puzzle</h3>
+<p>Imagine a <strong>mystery function</strong> hiding one secret key among a list of N values. Feed it the key and it answers “true”; feed it anything else and it answers “false.” You can’t open it up — you can only try inputs. This is the generic shape of an enormous family of problems: anything where <em>checking</em> an answer is easy but <em>finding</em> one is hard, such as Sudoku solutions, map colourings and cryptographic keys.</p>
+<p><strong>Classically</strong>, there is nothing better than guess-and-check: on average you need N/2 tries. Double the list, double the work.</p>
+<p><strong>Quick quiz:</strong> on a quantum computer, what is the best possible runtime? Most people — including most Stanford students and even International Math Olympiad attendees who were asked — guess “constant time” (check everything at once, read the answer) or something logarithmic. Both are <strong>wrong</strong>, and the wrongness comes straight from the pop-science “parallel universes” summary. The correct answer, proven optimal in 1994 and achieved by <strong>Lov Grover’s algorithm</strong> in 1996, is about √N steps.</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">List size</th><th scope="col">Classical tries (average)</th><th scope="col">Grover steps</th></tr></thead>
+<tbody>
+<tr><th scope="row">1 million</th><td>~500,000</td><td><strong>~1,000</strong></td></tr>
+<tr><th scope="row">1 trillion</th><td>~500 billion</td><td><strong>~1 million</strong></td></tr>
+</tbody>
+</table></div>
+<p>A square-root speedup, then — not a miracle. So how does even <em>that</em> work?</p>
+
+<h3>The picture: an arrow on a circle</h3>
+<p>Think of the quantum state as an <strong>arrow that must always have length exactly 1</strong>. Each of the N candidate answers is one direction the arrow could point. At the start the arrow sits in an “equal balance” — tilted almost flat, with a tiny lean toward every candidate, including the secret key.</p>
+<p>Grover’s algorithm repeats just two moves:</p>
+<ol>
+<li><strong>Tag the answer.</strong> Using the mystery function, translated into quantum gates, flip the <em>sign</em> of the arrow’s component in the secret-key direction. This changes no probabilities — it just marks the answer, like a wave crest flipping to a trough.</li>
+<li><strong>Mirror around the average.</strong> Reflect the whole arrow around its original “equal balance” direction.</li>
+</ol>
+<p>Here is the magic: two reflections in a row equal a <strong>rotation</strong>. Each pair of moves rotates the arrow by a small fixed angle — roughly 1/√N radians — steadily lifting it toward the secret-key direction. After about (π/4)·√N repetitions — some 804 steps for a list of a million — the arrow points almost straight at the answer. Now you measure, and you almost certainly read out the key. Not guaranteed: if you are unlucky you simply run it again, and since checking an answer is easy, a wrong guess costs nothing.</p>
+
+<h3>Why square root? Think Pythagoras</h3>
+<p>The deepest intuition is geometric. Crossing from one corner of a square to the opposite corner along the edges takes 2 units of walking; cutting diagonally takes √2. In n dimensions, the edges cost n and the diagonal costs √n. Classical computation is like being forced to walk along the edges, from one definite state to another. Quantum computing allows the <strong>diagonal paths through blended states</strong> — and the square-root shortcut falls straight out of the geometry. (The full story uses complex numbers, which let each wave carry both a size and a phase; mercifully, Grover’s algorithm only ever needs positive and negative.)</p>
+<p class="callout"><strong>A fun coda</strong> from complexity theorist Scott Aaronson: he dreams of a sci-fi scene where the heroes run Grover’s algorithm to find a key while the villains break down the door — and the algorithm is only 30% of the way through its rotation, giving a 30% chance of success if measured <em>now</em>. Measure or wait? It is a dilemma no classical algorithm could ever produce.</p>
+
+<h2 id="uses">6. What will quantum computers actually be good for?</h2>
+
+<h3>🔐 Breaking — and replacing — encryption</h3>
+<p>Most internet security, from banking to messaging to government secrets, rests on one mathematical bet: that <strong>factoring enormous numbers is too hard to do</strong>. A normal computer would need billions of years to factor the numbers behind RSA encryption.</p>
+<p>In 1994, Peter Shor found a quantum algorithm that does it efficiently.<a class="cite" href="#src-21">[21]</a> A large enough quantum computer could break RSA in hours. That machine does not exist yet — but estimates of how big it needs to be keep shrinking dramatically.</p>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Year</th><th scope="col">Qubits needed to break RSA-2048</th><th scope="col">Time</th></tr></thead>
+<tbody>
+<tr><th scope="row">Early estimates</th><td>~1 billion</td><td>Years</td></tr>
+<tr><th scope="row">2019</th><td>~20 million</td><td>8 hours</td></tr>
+<tr><th scope="row">2025</th><td><strong>Under 1 million</strong></td><td>Under a week</td></tr>
+<tr><th scope="row">2026 proposals</th><td>~100,000</td><td>Days</td></tr>
+</tbody>
+</table></div>
+<p><strong>How Shor’s algorithm actually works, with a tiny real example</strong> — adapted from the Veritasium walkthrough.<a class="cite" href="#src-28">[28]</a> First, how RSA works: everyone picks two big secret prime numbers, multiplies them and publishes the product. Scrambling a message with the public product is easy; <em>un</em>scrambling it requires knowing the two secret primes — and factoring a 300-digit product would take a supercomputer some 16 million years. Shor’s trick turns factoring into a <strong>rhythm-finding</strong> problem:</p>
+<ol>
+<li><strong>Make a bad guess.</strong> Pick any number g that shares no factors with the public number N — say g = 8 for N = 77.</li>
+<li><strong>Find the hidden rhythm.</strong> Raise g to higher and higher powers, keeping only the remainders after dividing by N. For 8 and 77 the remainders run 8, 64, 50, 15, 43, 36, 57, 71, 29, 1 — and then the whole pattern repeats every 10 steps. Finding that period is the one step that is painfully slow classically, and it is exactly what the quantum computer does fast, using the <strong>Quantum Fourier Transform</strong> — the same mathematics your phone uses to pick frequencies out of music, applied to a superposition.</li>
+<li><strong>Turn the rhythm into better guesses.</strong> With the period r known, g<sup>r/2</sup> + 1 and g<sup>r/2</sup> − 1 — here 32,769 and 32,767 — probably share factors with N.</li>
+<li><strong>Extract the factors</strong> using Euclid’s 2,300-year-old greatest-common-divisor recipe: the shared factor of 32,769 and 77 is 11, and 77 ÷ 11 = 7. Encryption broken — 77 = 7 × 11.</li>
+</ol>
+<p>With perfect qubits this would take only a few thousand of them. The millions in the table above are the <em>error-correction tax</em> for real, noisy hardware.</p>
+<p><strong>Why this matters today:</strong> spies can record encrypted data <em>now</em> and decrypt it <em>later</em>, once the hardware arrives — “harvest now, decrypt later,” also called SNDL. The NSA has publicly warned that a sufficiently large quantum computer would undermine all widely deployed public-key encryption. That is why the U.S. standards agency NIST already published new <strong>post-quantum encryption standards</strong> in 2024, based on mathematical problems that even quantum computers aren’t known to crack, and why governments are pushing everyone to migrate by the early 2030s.<a class="cite" href="#src-5">[5]</a></p>
+<p><strong>What replaces RSA? Invisible grids called lattices.</strong><a class="cite" href="#src-28">[28]</a> NIST ran a global competition from 2016 — 82 candidate algorithms submitted, many broken along the way — and the winners mostly rely on <strong>lattice cryptography</strong>. Picture a regular grid of points generated by combining two arrows in whole-number steps. Now imagine being handed <em>awkward, slanted</em> arrows that generate the same grid, plus a point that is <em>almost</em> on the grid — a message with a pinch of random noise added — and being asked which grid point is closest. Easy in two dimensions with nice arrows. Brutal with bad arrows in around a thousand dimensions, where every step in the right direction on one axis throws you off on the other 999. The legitimate receiver holds the secret “nice arrows” and decodes instantly; everyone else, classical or quantum, faces a problem nobody knows how to solve efficiently. That is the bet the world’s new encryption standards are built on.</p>
+
+<h3>🧪 Designing drugs, fertilizers and materials</h3>
+<p>Nature is quantum mechanical, so simulating molecules is the most <em>natural</em> job for a quantum computer. Classical supercomputers choke on molecules whose electrons are strongly tangled together.</p>
+<p>The famous example is <strong>nitrogenase</strong>, an enzyme in soil bacteria that pulls nitrogen from thin air to make fertilizer at room temperature.<a class="cite" href="#src-6">[6]</a> Human industry does the same thing — the Haber–Bosch process — only with brutal heat and pressure, burning 1–2% of all the energy humanity produces. If a quantum computer could model nitrogenase’s chemistry, which no classical computer can, it could point the way to catalysts that make fertilizer cheaply; similar simulations could accelerate drug discovery and battery design.</p>
+<p>The good news: estimated costs for this have fallen roughly 100,000-fold in eight years of algorithm improvements — from machines needing hundreds of millions of qubits down to projections of a few thousand error-corrected ones.<a class="cite" href="#src-7">[7]</a></p>
+<p><strong>An honest caveat</strong>, from physicist Mithuna Yoganathan, who left quantum computing research and revisited the field five years later.<a class="cite" href="#src-23">[23]</a> The flagship chemistry algorithm, <em>phase estimation</em>, has a chicken-and-egg problem: it extracts a molecule’s ground-state energy beautifully fast — but only if you can feed it a good approximation of that ground state first, and nobody can guarantee your guess is close enough for the hardest molecules. In 2022 a group of respected quantum-computing and chemistry researchers published a paper bluntly titled “Is there evidence for exponential quantum advantage in quantum chemistry?”<a class="cite" href="#src-24">[24]</a> Their conclusion: not yet — it may be prudent to assume exponential speedups are not generically available. Quantum chemistry remains promising, but it is not a guaranteed silver bullet.</p>
+<p><strong>The safer bet: simulating physics itself.</strong> What quantum computers are <em>provably</em> good at is simulating quantum systems directly, letting their qubits interact the way electrons do.<a class="cite" href="#src-8">[8]</a> That maps to concrete dreams: high-temperature superconductors, where today’s only work when deeply cooled; better solar cells, since silicon tops out around 20–25% efficiency; nitrogen fixation without Haber–Bosch’s energy bill; even models of black holes for fundamental physics. Instead of making and testing thousands of materials in a lab, you would screen them in silico and build only the winners.</p>
+
+<h3>🚚 Optimization — the honest “maybe”</h3>
+<p>The best route for a delivery fleet, the best stock portfolio, the best factory schedule: quantum approaches exist here, and they are heavily marketed. But <strong>no clear, practical quantum advantage for optimization has been demonstrated yet</strong>. On today’s noisy machines a frustrating effect called “barren plateaus” makes the optimization landscape so flat that the algorithm cannot tell which way is downhill.<a class="cite" href="#src-16">[16]</a> Promising, unproven — be sceptical of hype here.</p>
+
+<h3>🤖 A quick word on “quantum AI”</h3>
+<p>Media coverage sometimes suggests quantum computers will supercharge AI. Insiders are largely sceptical. Quantum algorithms shine on problems with hidden mathematical <em>structure</em>, like factoring’s periodicity; machine learning is the opposite, grinding through mountains of messy, unstructured data. The “quantum machine learning” hype wave of the late 2010s has noticeably cooled among researchers, and there is no evidence yet that quantum computers will make chatbots or image generators meaningfully better.<a class="cite" href="#src-23">[23]</a></p>
+
+<h3>The quiet bottleneck: where are the new algorithms?</h3>
+<p>Here is an under-appreciated fact: we know of only a <strong>handful</strong> of quantum algorithms with genuine speedups — Shor’s (1994), Grover’s (1996), phase estimation and Hamiltonian simulation — and they are mostly decades old. Hardware teams hit their roadmaps; algorithm discovery has been much slower, partly because it is brutally hard, with proposed speedups often later disproved or matched by classical tricks. As Yoganathan puts it: if a fully functioning quantum computer appeared tomorrow, we wouldn’t have all that much to run on it.<a class="cite" href="#src-23">[23]</a> There are hopeful signs — in 2023 theorists proved a new kind of exponential quantum advantage, albeit for a contrived “oracle” problem that cannot be built directly — and historically such proofs have paved the way to practical algorithms, Shor’s included. The takeaway: the field doesn’t just need better machines, it needs more people hunting for algorithms.</p>
+
+<h2 id="errors">7. The giant problem: errors — and the giant solution</h2>
+
+<h3>Qubits are incredibly fragile</h3>
+<p>A stray vibration, a whisper of heat, even a cosmic ray from deep space can flip a qubit. Where a normal chip makes an error maybe once in a quintillion operations, today’s best quantum hardware makes one every <strong>hundred to thousand</strong> operations. Real algorithms need <em>billions</em> of operations. Do the arithmetic: an unprotected machine fails instantly.</p>
+
+<h3>The fix: quantum error correction</h3>
+<p>The solution mirrors how we protect ordinary data — redundancy. Instead of storing information in one qubit, spread it across many physical qubits to form one <strong>logical qubit</strong>, like spreading one message across many couriers so that no single ambush loses it. Special “check” qubits constantly watch for damage <em>without peeking at the data itself</em>, which would destroy it.<a class="cite" href="#src-13">[13]</a></p>
+<ul>
+<li>If hardware errors are below a critical <strong>threshold</strong> of roughly 1%, adding more physical qubits makes the logical qubit exponentially more reliable.</li>
+<li>If you are above the threshold, adding qubits just adds noise. <strong>Everything in the field hinges on this threshold.</strong></li>
+</ul>
+
+<h3>The landmark moment: Google’s Willow chip, 2024</h3>
+<p>In late 2024 Google crossed the threshold for the first time at scale. Their 105-qubit Willow chip showed that each time they enlarged the error-correcting grid, the logical error rate <strong>dropped by more than half</strong> — and their best logical qubit lived 2.4× longer than any single physical qubit inside it.<a class="cite" href="#src-1">[1]</a> It was the experimental proof that error correction genuinely works, not just on paper.</p>
+<p>In parallel, a Harvard/QuEra team using neutral atoms in laser tweezers built a processor with <strong>48 logical qubits</strong> from 280 physical atoms and ran complex routines on them — a different hardware path to the same goal.<a class="cite" href="#src-2">[2]</a></p>
+
+<h3>Two stubborn obstacles remain</h3>
+<p><strong>1. The “magic” tax.</strong> Remember the Clifford circuits a laptop can simulate? Error correction naturally protects exactly those boring operations. The <em>interesting</em> operations — the ones no classical computer can fake — can’t be protected directly, so quantum computers must manufacture special purified fuel called <strong>magic states</strong> in dedicated factory regions. Historically these factories were expected to consume 80–90% of the whole machine. New techniques, called magic-state cultivation, are now slashing that tax<a class="cite" href="#src-14">[14]</a> — one reason the RSA-breaking estimates collapsed in 2025.<a class="cite" href="#src-3">[3]</a></p>
+<p><strong>2. Cosmic rays.</strong> As error correction gets better, a weirder enemy appears. Experiments found a floor of rare error bursts — about once an hour — traced to cosmic rays and background radiation hitting the chip.<a class="cite" href="#src-15">[15]</a> A single particle impact sends vibrations through the chip that corrupt dozens of qubits <em>simultaneously</em>, which is exactly the kind of correlated failure error correction isn’t designed for. Fixes being explored: operating deep underground, radiation shielding, vibration-absorbing materials and smarter decoding software.</p>
+
+<h3>The road ahead</h3>
+<ul>
+<li><strong>IBM</strong> has published a roadmap to a machine called <strong>Starling</strong> by 2029: roughly 200 logical qubits running 100 million operations — enough for early useful chemistry.<a class="cite" href="#src-19">[19]</a></li>
+<li>New error-correcting codes, called <strong>qLDPC codes</strong>, promise to need far fewer physical qubits per logical qubit than today’s approach, potentially shrinking machines by a factor of ten.</li>
+</ul>
+
+<h2 id="timeline">8. So… when will it matter? A sober timeline</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Era</th><th scope="col">What happens</th></tr></thead>
+<tbody>
+<tr><th scope="row">Now (the NISQ era)</th><td>100–1,000 noisy physical qubits. Great for science experiments and learning; <strong>not yet</strong> beating supercomputers at practical tasks.</td></tr>
+<tr><th scope="row">Late 2020s (early fault tolerance)</th><td>Hundreds of logical qubits, per IBM’s roadmap and its competitors’. First genuinely useful molecular simulations become plausible.</td></tr>
+<tr><th scope="row">2030s (fault-tolerant scale)</th><td>Thousands of logical qubits. Drug and materials discovery at industrial scale; RSA-class encryption definitively breakable — which is why the encryption switch-over is happening <em>now</em>.</td></tr>
+</tbody>
+</table></div>
+<p>And a realistic picture of what these machines will look like: <strong>not standalone devices, but accelerators</strong>. A quantum chip sitting inside a giant classical supercomputing centre, called on only for the specific sub-problems — a molecule’s electrons, a factoring step — where it crushes classical hardware, while ordinary computers handle everything else, including babysitting the qubits’ errors in real time.</p>
+
+<h2 id="glossary">Quick glossary</h2>
+<div class="table-wrap"><table>
+<thead><tr><th scope="col">Term</th><th scope="col">Plain meaning</th></tr></thead>
+<tbody>
+<tr><th scope="row">Qubit</th><td>Quantum bit — a 0/1 blend until measured</td></tr>
+<tr><th scope="row">Superposition</th><td>The 0/1 blend itself</td></tr>
+<tr><th scope="row">Entanglement</th><td>Qubits linked so that measuring one reveals the other</td></tr>
+<tr><th scope="row">Interference</th><td>Waves of wrong answers cancelling, right answers reinforcing</td></tr>
+<tr><th scope="row">Decoherence</th><td>The quantum state leaking away through noise and heat</td></tr>
+<tr><th scope="row">Physical qubit</th><td>One raw, error-prone hardware qubit</td></tr>
+<tr><th scope="row">Logical qubit</th><td>One reliable qubit built from many physical ones plus error correction</td></tr>
+<tr><th scope="row">Magic state</th><td>Special fuel that unlocks the non-classical operations error correction can’t protect directly</td></tr>
+<tr><th scope="row">NISQ</th><td>“Noisy Intermediate-Scale Quantum” — today’s unprotected machines</td></tr>
+<tr><th scope="row">Post-quantum cryptography</th><td>New encryption designed to survive quantum computers</td></tr>
+<tr><th scope="row">State vector</th><td>The hidden “arrow of length 1” the computer actually manipulates; squaring its components gives the odds of each answer</td></tr>
+<tr><th scope="row">Grover’s algorithm</th><td>The search algorithm: finds one hidden answer among N in about √N steps, by rotating the state vector toward it</td></tr>
+<tr><th scope="row">Phase estimation</th><td>The workhorse behind factoring and chemistry — extracts the energy or frequency of a quantum state, if you can prepare that state first</td></tr>
+</tbody>
+</table></div>
+
+<section id="sources" class="references no-speech" aria-labelledby="sources-heading">
+<h2 id="sources-heading">Sources &amp; further reading</h2>
+<p>This is a plain-language adaptation of the technical report “The Architecture, Modalities, and Algorithmic Frontiers of Quantum Information Processing.” Every number and milestone above is backed by the technical version; these are the key sources.</p>
+<ol>
+<li id="src-1">Google Quantum AI. <em>Quantum error correction below the surface code threshold.</em> Nature 638, 920–926 (2025). The Willow result: the first large-scale demonstration that adding qubits to an error-correcting code makes the logical qubit more reliable.</li>
+<li id="src-2">Bluvstein, Evered et al. (Harvard / MIT / QuEra). <em>Logical quantum processor based on reconfigurable atom arrays.</em> Nature 626, 58–65 (2024).</li>
+<li id="src-3">Gidney, C. <em>How to factor 2048 bit RSA integers with less than a million noisy qubits</em> (2025). <a href="https://arxiv.org/abs/2505.15917" target="_blank" rel="noopener nofollow">arXiv:2505.15917</a></li>
+<li id="src-4">Gidney, C. &amp; Ekerå, M. <em>How to factor 2048 bit RSA integers in 8 hours using 20 million noisy qubits.</em> Quantum 5, 433 (2021).</li>
+<li id="src-5">NIST post-quantum cryptography standards — FIPS 203 (ML-KEM), FIPS 204 (ML-DSA), FIPS 205 (SLH-DSA), finalized 13 August 2024; HQC selected as a backup standard 11 March 2025 (NIST IR 8545).</li>
+<li id="src-6">Reiher, Wiebe, Svore, Wecker &amp; Troyer. <em>Elucidating reaction mechanisms on quantum computers.</em> PNAS 114, 7555–7560 (2017). The original nitrogenase / FeMoco proposal.</li>
+<li id="src-7">Lee, Berry et al. <em>Even more efficient quantum computations of chemistry through tensor hypercontraction.</em> PRX Quantum 2, 030305 (2021).</li>
+<li id="src-8">Daley, A. J. et al. <em>Practical quantum advantage in quantum simulation.</em> Nature 607, 667–676 (2022).</li>
+<li id="src-9">Kjaergaard, M. et al. <em>Superconducting qubits: current state of play.</em> Annual Review of Condensed Matter Physics 11 (2020).</li>
+<li id="src-10">Bruzewicz, C. D. et al. <em>Trapped-ion quantum computing: progress and challenges.</em> Applied Physics Reviews 6, 021314 (2019).</li>
+<li id="src-11">Saffman, M., Walker, T. G. &amp; Mølmer, K. <em>Quantum information with Rydberg atoms.</em> Reviews of Modern Physics 82, 2313 (2010).</li>
+<li id="src-12">Burkard, G. et al. <em>Semiconductor spin qubits.</em> Reviews of Modern Physics 95, 025003 (2023).</li>
+<li id="src-13">Fowler, Mariantoni, Martinis &amp; Cleland. <em>Surface codes: towards practical large-scale quantum computation.</em> Physical Review A 86, 032324 (2012).</li>
+<li id="src-14">Gidney, Shutty &amp; Jones. <em>Magic state cultivation</em> (2024). <a href="https://arxiv.org/abs/2409.17595" target="_blank" rel="noopener nofollow">arXiv:2409.17595</a></li>
+<li id="src-15">McEwen, M. et al. <em>Resolving catastrophic error bursts from cosmic rays in large arrays of superconducting qubits.</em> Nature Physics 18, 107–111 (2022).</li>
+<li id="src-16">McClean, J. R. et al. <em>Barren plateaus in quantum neural network training landscapes.</em> Nature Communications 9, 4812 (2018).</li>
+<li id="src-17">Cross, A. W. et al. <em>Validating quantum computers using randomized model circuits</em> (Quantum Volume). Physical Review A 100, 032328 (2019).</li>
+<li id="src-18">IonQ. <em>Algorithmic Qubits: a better single-number metric</em> (2022); see also the QED-C application-oriented benchmark suite (<a href="https://arxiv.org/abs/2110.03137" target="_blank" rel="noopener nofollow">arXiv:2110.03137</a>).</li>
+<li id="src-19">IBM Quantum. <em>Quantum Starling roadmap</em> (2025): ~200 logical qubits running 100 million gates by 2029, built on qLDPC codes.</li>
+<li id="src-20">Nielsen, M. &amp; Chuang, I. <em>Quantum Computation and Quantum Information.</em> Cambridge University Press, 2010 — the standard textbook, for the mathematics behind the analogies.</li>
+<li id="src-21">Shor, P. W. <em>Polynomial-time algorithms for prime factorization and discrete logarithms on a quantum computer.</em> SIAM Journal on Computing 26 (1997); and Grover, L. K. <em>A fast quantum mechanical algorithm for database search</em> (1996).</li>
+<li id="src-22">3Blue1Brown (Grant Sanderson) — quantum computing and Grover’s algorithm explainer: the needle-in-a-haystack walkthrough, the rotating-arrow picture, the Pythagoras intuition and the Scott Aaronson anecdote. <a href="https://www.youtube.com/watch?v=RQWpF2Gb-gU" target="_blank" rel="noopener nofollow">youtube.com/watch?v=RQWpF2Gb-gU</a></li>
+<li id="src-23">Looking Glass Universe (Mithuna Yoganathan) — <em>Why I Left Quantum Computing Research</em> (2025): the phase-estimation caveat, the quantum-machine-learning scepticism, the simulation optimism and the algorithm bottleneck. <a href="https://www.youtube.com/watch?v=pDj1QhPOVBo" target="_blank" rel="noopener nofollow">youtube.com/watch?v=pDj1QhPOVBo</a></li>
+<li id="src-24">Lee, S., Magann, A. B., Rabitz, H. A. et al. <em>Is there evidence for exponential quantum advantage in quantum chemistry?</em> (2022–2023).</li>
+<li id="src-25">Quantum Country (Andy Matuschak &amp; Michael Nielsen) — <em>Quantum Computing for the Very Curious</em>, a free interactive course with built-in memory prompts. <a href="https://quantum.country" target="_blank" rel="noopener nofollow">quantum.country</a></li>
+<li id="src-26">Looking Glass Universe’s beginner course on quantum mechanics — a gentle, video-based introduction to the underlying physics.</li>
+<li id="src-27">Huge If True (Cleo Abram) with MKBHD — <em>Quantum Computers, explained</em>: the boats-not-cars analogy, the “golden octopus” refrigerator visit and the pond-ripples picture of interference. <a href="https://www.youtube.com/watch?v=e3fz3dqhN44" target="_blank" rel="noopener nofollow">youtube.com/watch?v=e3fz3dqhN44</a> (Filmed around 2022, when IBM’s record was 433 qubits; the roadmap numbers here reflect the current state of the art.)</li>
+<li id="src-28">Veritasium — <em>How Quantum Computers Break The Internet… Starting Now</em>: the step-by-step Shor’s algorithm example (77 = 7 × 11), the harvest-now-decrypt-later threat and the lattice-cryptography explanation. <a href="https://www.youtube.com/watch?v=-UrdExQW0cs" target="_blank" rel="noopener nofollow">youtube.com/watch?v=-UrdExQW0cs</a></li>
+</ol>
+</section>
+
+<section id="share" class="share no-speech" aria-labelledby="share-heading">
+<h2 id="share-heading">Share this article</h2>
+<p>Send it to someone who still thinks a quantum computer is just a faster laptop.</p>
+<div class="share-buttons">
+<button type="button" data-share="native" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1a3 3 0 0 0-2 .8l-7.1-4.2c0-.2.1-.4.1-.7s0-.5-.1-.7L15.9 7a3 3 0 1 0-1-2.2c0 .2 0 .5.1.7L8 9.7a3 3 0 1 0 0 4.6l7.1 4.2c0 .2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>Share…</button>
+<a data-share="x" href="https://x.com/intent/post?text=Quantum%20Computing%2C%20Explained%20Simply&url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.7l-5.2-6.8L5.1 22H1.8l7.7-8.8L1 2h6.8l4.7 6.2zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>X</a>
+<a data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1a4.2 4.2 0 0 1 3.8-2c4 0 4.8 2.7 4.8 6.1V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+<a data-share="bluesky" href="https://bsky.app/intent/compose?text=Quantum%20Computing%2C%20Explained%20Simply%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.9 8.6 7.9 4.6 5.1 2.7 2.4.8 1.4 1.1.8 1.4c-.8.4-.8 1.5-.8 2.2s.4 5.5.7 6.3c.8 2.6 3.5 3.5 6 3.2-3.7.6-7 1.9-2.7 6.7 4.7 4.9 6.5-1 7.4-4 .9 3 2 8.7 7.3 4 4-4 1.1-6.1-2.6-6.7 2.5.3 5.2-.6 6-3.2.3-.8.7-5.6.7-6.3s0-1.8-.8-2.2c-.6-.3-1.6-.6-4.3 1.3-2.8 1.9-5.8 5.9-6.9 8.1z"/></svg>Bluesky</a>
+<a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+<a data-share="whatsapp" href="https://wa.me/?text=Quantum%20Computing%2C%20Explained%20Simply%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
+<button type="button" data-share="slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15a2 2 0 1 1-2-2h2zm1 0a2 2 0 1 1 4 0v5a2 2 0 1 1-4 0zM9 6a2 2 0 1 1 2-2v2zm0 1a2 2 0 1 1 0 4H4a2 2 0 1 1 0-4zm9 2a2 2 0 1 1 2 2h-2zm-1 0a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0zm-2 9a2 2 0 1 1-2 2v-2zm0-1a2 2 0 1 1 0-4h5a2 2 0 1 1 0 4z"/></svg>Send via Slack</button>
+<a data-share="email" href="mailto:?subject=Quantum%20Computing%2C%20Explained%20Simply&body=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fquantum-computing-explained-simply%2F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 8L4.4 7H19.6zM4 17h16V8.6l-7.4 5.8a1 1 0 0 1-1.2 0L4 8.6z"/></svg>Email</a>
+<button type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4 0zm-4 4.9a4 4 0 0 1 0-5.7l2.8-2.8a1 1 0 0 1 1.4 1.4l-2.8 2.8a2 2 0 0 0 2.8 2.8l2.8-2.8a1 1 0 1 1 1.4 1.4l-2.8 2.9a4 4 0 0 1-5.6 0zm11-6.6a1 1 0 0 1-1.4-1.4l2.8-2.8a2 2 0 1 0-2.8-2.8l-2.8 2.8a1 1 0 0 1-1.4-1.4l2.8-2.8a4 4 0 0 1 5.6 5.6z"/></svg>Copy link</button>
+</div>
+<p class="share-note" id="share-note" role="status" aria-live="polite"></p>
+</section>
+
+<nav class="article-pager no-speech" aria-label="More reading"><a href="/articles/">← All articles</a><a href="/articles/sdlc-in-the-ai-era/">SDLC in the AI Era →</a></nav>
+
+</div>
+</div>
+</article>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year">2026</span> Yalın Yorulmaz</span><span>Istanbul, Türkiye</span><a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener">Support the experiments ↗</a></div></footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+</body></html>
