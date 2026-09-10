@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Architecture of Ubiquity: jQuery's Quiet Victory</title>
+<meta name="description" content="jQuery fixed the web's biggest headache, got bundled everywhere, then watched the browser absorb its ideas. It still runs on two thirds of the internet. What that teaches anyone who builds things.">
+<meta name="author" content="Yalın Yorulmaz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="jQuery history, John Resig, SmooshGate, monkey patching, querySelector, jQuery 4.0.0, jQuery usage statistics, declarative UI, developer tools adoption">
+<link rel="canonical" href="https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/">
+<meta name="theme-color" content="#f4f3ef">
+<meta property="og:site_name" content="Yalın Yorulmaz">
+<meta property="og:title" content="The Architecture of Ubiquity: jQuery's Quiet Victory">
+<meta property="og:description" content="The tool became invisible because its ideas were everywhere. How jQuery unified a broken web, got absorbed by the platform it fixed, and still runs on 66% of all websites.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/">
+<meta property="og:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-10">
+<meta property="article:author" content="https://ylnyorulmaz.com/about.html">
+<meta property="article:section" content="Software engineering">
+<meta property="article:tag" content="jQuery"><meta property="article:tag" content="Web platform"><meta property="article:tag" content="Developer tools">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Architecture of Ubiquity: jQuery's Quiet Victory">
+<meta name="twitter:description" content="jQuery declined in relevance precisely because it succeeded: the platform did not merely replace it, it became it.">
+<meta name="twitter:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/articles.css">
+<script defer src="/script.js"></script><script defer src="/articles.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Architecture of Ubiquity","alternativeHeadline":"The rise, dominance and quiet victory of jQuery","description":"jQuery became the plumbing of the internet by fixing the web's biggest headache — then the web rebuilt its plumbing around jQuery's design. A history, and the lessons it hands anyone who builds things.","inLanguage":"en","datePublished":"2026-09-10","dateModified":"2026-09-10","wordCount":1800,"articleSection":"Software engineering","keywords":["jQuery","web platform","developer tools","SmooshGate","adoption","distribution"],"image":"https://ylnyorulmaz.com/yalinyorulmaz.jpeg","author":{"@type":"Person","@id":"https://ylnyorulmaz.com/#person","name":"Yalın Yorulmaz","alternateName":["Yalin Yorulmaz","ylnyorulmaz","yorulmazyln"],"url":"https://ylnyorulmaz.com/about.html"},"publisher":{"@id":"https://ylnyorulmaz.com/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/"},"@id":"https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/#article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ylnyorulmaz.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://ylnyorulmaz.com/articles/"},{"@type":"ListItem","position":3,"name":"The Architecture of Ubiquity","item":"https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/"}]}</script>
+<meta property="og:image:alt" content="Yalın Yorulmaz, author and product leader">
+<meta name="twitter:image:alt" content="Yalın Yorulmaz, author and product leader">
+</head><body class="article-page"><a class="skip-link" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="wordmark" href="/">YALIN YORULMAZ</a><button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu"><span class="hamburger"></span></button><nav><ul id="primary-navigation" class="nav-links"><li><a href="/#work">Work</a></li><li><a href="/#record">Record</a></li><li><a href="/articles/" aria-current="page">Articles</a></li><li><a href="/about.html">About</a></li><li><a href="/#contact">Contact</a></li><li><a class="resume-link" href="/Yalin_Yorulmaz_CV.pdf">Résumé ↗</a></li></ul></nav></div></header>
+
+<main id="main">
+<article>
+<div class="article-hero"><div class="wrap">
+<p class="kicker"><a href="/articles/">ARTICLES</a> / SOFTWARE ENGINEERING</p>
+<h1>The Architecture of Ubiquity</h1>
+<p class="article-deck">The rise, dominance and quiet victory of jQuery — and what it teaches anyone who builds things people depend on.</p>
+<div class="article-meta"><span class="by">By Yalın Yorulmaz</span><span><time datetime="2026-09-10">10 September 2026</time></span><span>8 min read</span><span>Essay</span></div>
+</div></div>
+
+<div class="wrap article-layout">
+<aside class="article-rail">
+  <section id="listen" class="listen" hidden aria-label="Listen to this article">
+    <h2>Listen to this article</h2>
+    <div class="listen-controls">
+      <button type="button" id="listen-play" class="primary">▶ Listen</button>
+      <button type="button" id="listen-stop" disabled>■ Stop</button>
+    </div>
+    <label class="listen-rate" for="listen-rate">Speed
+      <select id="listen-rate"><option value="0.8">0.8×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option></select>
+    </label>
+    <div class="listen-progress" role="progressbar" aria-label="Reading progress"><span id="listen-bar"></span></div>
+    <p class="listen-status" id="listen-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <nav class="article-toc" aria-label="Sections of this article">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#takeaways">Key takeaways</a></li>
+      <li><a href="#broken-web">1 / The broken web</a></li>
+      <li><a href="#revolution">2 / A polite revolution</a></li>
+      <li><a href="#vindication">3 / Vindication, 12 years later</a></li>
+      <li><a href="#golden-age">4 / The golden age</a></li>
+      <li><a href="#absorbed">5 / Absorbed by its platform</a></li>
+      <li><a href="#shift">6 / The deeper shift</a></li>
+      <li><a href="#persistence">7 / The paradox of persistence</a></li>
+      <li><a href="#lessons">8 / What it teaches builders</a></li>
+      <li><a href="#victory">9 / The quiet victory</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<div class="article-body" id="article-body">
+
+<p class="oneline"><b>The one-line version:</b> jQuery became the plumbing of the internet by fixing the web’s biggest headache — then the web rebuilt its plumbing around jQuery’s design, and the tool became invisible because its ideas were everywhere.</p>
+
+<section id="takeaways" class="takeaways" aria-labelledby="takeaways-heading">
+<h2 id="takeaways-heading">The key takeaways</h2>
+<ul>
+<li><strong>The problem was universal, not fashionable.</strong> In 2006 every browser disagreed about events, data fetching and finding elements. Every developer paid the same tax daily — which is why one small library could win the whole market.</li>
+<li><strong>The decisive design choice was politeness.</strong> jQuery wrapped browser objects instead of rewiring them. Its rivals monkey-patched the shared machinery, and the bill arrived twelve years later as SmooshGate — an entire language renaming a feature to avoid breaking old sites.</li>
+<li><strong>Distribution beat features.</strong> Microsoft shipped it in Visual Studio; WordPress, Drupal and MediaWiki baked it in. By the mid-2010s it ran on 75–80% of the web’s top properties.</li>
+<li><strong>The platform absorbed it.</strong> <code>querySelector</code>, <code>classList</code>, <code>fetch()</code> and Promises are jQuery’s ideas, shipped natively and free. Evergreen browsers then killed the quirks jQuery existed to tame.</li>
+<li><strong>Then the industry changed its mind about how UI is built.</strong> Imperative DOM editing gave way to declarative frameworks, where the interface is a function of state — and hand-editing the page becomes an anti-pattern.</li>
+<li><strong>Mindshare is not usage.</strong> After a decade of obituaries, jQuery still runs on 66.4% of all websites and about 86% of sites using any JavaScript library. React sits near 6%.</li>
+<li><strong>Inertia is a moat.</strong> jQuery has lost greenfield almost completely and still rules the installed base, because ripping it out of millions of working sites buys nothing and risks everything.</li>
+<li><strong>It isn’t a museum piece.</strong> jQuery 4.0.0 shipped on the project’s twentieth birthday — and internally uses <code>Array.prototype.flat</code>, the very feature that had to be renamed because of a rival’s bad manners.</li>
+</ul>
+</section>
+
+<h2 id="broken-web">1. The broken web</h2>
+<p class="lede">Imagine a world where every country uses a different electrical outlet, a different voltage and a different plug shape — and every appliance you build has to work in all of them. That was the web in 2006.</p>
+<p>The first browser war had ended, but the peace was a mess. Internet Explorer 6 ruled the market and played by its own private rules. Firefox and Safari followed the official standards, more or less — inconsistently, and as the minority. Want a button to react when clicked? Internet Explorer used <code>attachEvent</code>, everyone else used <code>addEventListener</code>, and the two disagreed on how clicks even travelled through a page. Want to fetch data without reloading? Microsoft required a proprietary plugin; the others had a built-in feature. Every simple task — finding an element, changing it, reacting to a user, talking to a server — meant writing the same code two or three times, wrapped in defensive checks for whichever browser happened to be visiting.</p>
+<p>Web developers of that era weren’t really building products. They were paying a tax, in time and sanity, to chaos.</p>
+
+<h2 id="revolution">2. A polite revolution</h2>
+<p>On 14 January 2006, a twenty-one-year-old developer named John Resig stood up at BarCamp NYC, an informal tech unconference, and showed a small JavaScript library he called jQuery.<a class="cite" href="#ref-1">[1]</a><a class="cite" href="#ref-3">[3]</a> The idea was a universal travel adapter for the web: write your code once, in jQuery’s clean little language, and jQuery silently translated it for whatever browser was on the other end.</p>
+<p>The core move was almost embarrassingly simple to describe — <em>find things on the page, then do things to them</em> — and jQuery let you say both in a single flowing sentence of code. <code>$('.item')</code> meant “go find every element like this,” and you could chain the next instruction straight onto it. Underneath that friendly surface sat serious machinery, including a selector engine called Sizzle that could decode CSS selectors even on browsers too old to understand them natively.</p>
+<p>But jQuery’s deepest design decision wasn’t cleverness. It was <strong>politeness</strong>.</p>
+<p>Its main rivals, Prototype and MooTools, had taken a shortcut: they rewired the browser’s shared, built-in machinery — a practice known as monkey-patching.<a class="cite" href="#ref-4">[4]</a><a class="cite" href="#ref-5">[5]</a> Imagine a tenant who doesn’t like the building’s electrical panel, so they open it up and tape their own extra switches onto it. It works, until the landlord upgrades the panel and the whole building shorts out. jQuery refused to touch the shared panel. It wrapped browser elements in its own protective layer — the famous <code>$()</code> — and left the wiring exactly as it found it.</p>
+<p>That choice looked like a technical nicety. Twelve years later, it looked like prophecy.</p>
+
+<h2 id="vindication">3. Vindication, twelve years later</h2>
+<p>In 2018, the committee that governs the JavaScript language tried to add a handy new built-in feature called <code>flatten</code>. They discovered they couldn’t ship it. Old websites still running MooTools had taped their own <code>flatten</code> switch onto the shared panel years earlier, and the new official version broke those sites catastrophically. The incident got a nickname: <strong>SmooshGate</strong>. In the end, an entire global programming language was forced to rename its own feature — from <code>flatten</code> to <code>flat</code> — to route around the bad habit of one aging library.</p>
+<p>jQuery never caused a SmooshGate, because it never touched what it didn’t own. Resig had also done something his rivals hadn’t bothered with: he wrote clear, friendly documentation and actively nurtured a community around the project. That is the first lesson of the story — <em>documentation and community are features, maybe</em> the <em>features</em>. jQuery wasn’t the first tool of its kind. It was the first one ordinary people could actually learn.</p>
+
+<h2 id="golden-age">4. The golden age</h2>
+<p>Then came the pile-up of legitimacy. In September 2008, Microsoft announced it would ship jQuery inside Visual Studio and ASP.NET — open source blessed by the biggest enterprise software company on earth. Nokia signed on too. WordPress, Drupal and MediaWiki — the engines behind enormous swaths of the internet — baked jQuery in as a default. A plugin economy bloomed around it: calendars, carousels, data tables, entire interface kits like jQuery UI.</p>
+<p>By the mid-2010s, jQuery ran on <strong>75 to 80 percent of the web’s top properties</strong> — one of the deepest market penetrations in the history of computing.<a class="cite" href="#ref-6">[6]</a> And notice <em>how</em> it got there: not by out-marketing anyone, but by becoming the <strong>default</strong>. That is the second lesson — <em>distribution beats features</em>. A good tool that’s bundled everywhere beats a better tool that isn’t.</p>
+
+<h2 id="absorbed">5. The twist: absorbed by its own platform</h2>
+<p>Here is where the story turns, and it is the heart of the essay.</p>
+<p>jQuery was so popular, and its way of doing things so obviously right, that it became a kind of living wish list for the web itself. The people who design the official standards — the W3C, WHATWG and TC39 committees — could see, with hard data, exactly what millions of developers actually wanted. So they built those things directly into every browser, free and by default:</p>
+<ul>
+<li>jQuery’s “find elements” trick became the native <code>querySelector</code>.</li>
+<li>jQuery’s class-toggling became the native <code>classList</code>.</li>
+<li>jQuery’s <code>$.ajax()</code> data-fetching became the native <code>fetch()</code> and Promises.</li>
+<li>jQuery’s little utilities became built-in features of the JavaScript language itself.</li>
+</ul>
+<p>Meanwhile, browsers went “evergreen” — Chrome, Firefox, Safari and Edge began updating themselves automatically and continuously. The ancient, quirky browsers that jQuery existed to tame simply died out.</p>
+<p>To extend the earlier metaphor: every country on earth finally standardized its electrical outlets — using jQuery’s adapter as the blueprint. In January 2014, two developers, Zack Bloom and Adam Schwartz, published a cheeky website called <em>You Might Not Need jQuery</em>, showing how to do all of its everyday tricks with plain, built-in browser features.<a class="cite" href="#ref-8">[8]</a> It landed like a manifesto. The universal adapter had become dead weight — because the world had rewired itself in the adapter’s image.</p>
+
+<h2 id="shift">6. The deeper shift</h2>
+<p>And even if the browsers hadn’t caught up, jQuery faced a second, more philosophical disruption: the industry changed its mind about <em>how</em> interfaces should be built at all.</p>
+<p>jQuery is <strong>imperative</strong> — it works like a micromanaging boss. When something happens, you give step-by-step orders: go find that box on the page, check what it says, change its colour, update the number. For simple pages this is fine. But as websites grew into full applications, the micromanagement broke down. With dozens of features all grabbing and editing the same page directly, nobody could say for sure what the page <em>should</em> look like at any moment. Bugs became ghosts — inconsistent, unreproducible, maddening.</p>
+<p>The modern answer is <strong>declarative</strong> thinking, embodied by frameworks like React, Vue and Angular. Instead of giving orders, you describe the result you want, as a pure function of your data:</p>
+<p class="formula">UI = <i>f</i>(state)</p>
+<p>The interface is a reflection of the application’s state, and the framework handles the tedious re-arranging of the actual page. In that world, reaching in and hand-editing the page with jQuery isn’t just unnecessary — it’s an <em>anti-pattern</em>, like secretly editing a document that a system is managing. You corrupt the very bookkeeping that keeps everything consistent.</p>
+<p>The industry ratified this shift publicly. In September 2018, GitHub’s engineers wrote up how they’d removed jQuery from one of the most-visited sites on earth — not by adopting a giant framework, but by using the now-capable native browser features.<a class="cite" href="#ref-9">[9]</a> And Bootstrap — for a decade the single biggest delivery truck carrying jQuery into new projects — rewrote itself without it: the jQuery-free Bootstrap 5 entered testing in June 2020 and shipped in May 2021.</p>
+
+<h2 id="persistence">7. The paradox of persistence</h2>
+<p>Given all that, you would expect jQuery to be dead. The developer world has certainly <em>talked</em> as if it were dead for a decade.</p>
+<p>Here are the measured facts: jQuery still runs on <strong>66.4% of all websites</strong> on the internet. Among sites that use any JavaScript library at all, its share is about <strong>86%</strong>. Even among the thousand busiest sites on the web, it runs on three out of four. React — the fashionable modern framework that dominates conference talks and job postings — sits at roughly <strong>6%</strong>.<a class="cite" href="#ref-12">[12]</a></p>
+<p>That gap between what developers <em>say</em> and what the internet <em>runs</em> is the third lesson: <em>mindshare is not usage</em>. Loud discourse is not data.</p>
+<p>The explanation isn’t nostalgia; it’s economics. WordPress alone powers roughly 41% of the web, and thousands of its themes and plugins still depend on jQuery. For the businesses behind those millions of working sites, ripping out jQuery buys almost nothing and risks breaking everything. This is the difference between <strong>greenfield</strong> — new projects, where jQuery has lost almost completely — and the <strong>installed base</strong>, where it still rules. Once a tool is woven into critical workflows, the cost of switching protects it long after its technical advantage is gone. Inertia, it turns out, is a moat.</p>
+<p>Nor is jQuery a museum piece. On 17 January 2026 — its twentieth birthday — the project released jQuery 4.0.0, its first major version in nearly a decade: modernized internals, ancient-browser support finally shed, deprecated features removed, security features like Trusted Types added.<a class="cite" href="#ref-11">[11]</a> And tucked into its source code is a detail with real poetry: jQuery 4 now internally uses <code>Array.prototype.flat</code> — the very feature the JavaScript language had to rename during SmooshGate because of a rival’s bad manners. The polite library inherited the world; the impolite one became a cautionary tale baked into the language’s vocabulary.</p>
+
+<h2 id="lessons">8. What jQuery teaches anyone who builds things</h2>
+<p>Strip away the code, and this story hands the same lessons to developers, product people and founders alike:</p>
+<ul>
+<li><strong>Solve a pain that’s universal, not fashionable.</strong> jQuery attacked a problem <em>every</em> web developer felt daily. Universality, not novelty, created adoption no marketing budget could buy.</li>
+<li><strong>Don’t modify what you don’t own.</strong> Build around shared systems, never into them. The bill for tampering always arrives — sometimes twelve years later, addressed to an entire industry.</li>
+<li><strong>Distribution beats features.</strong> jQuery didn’t just win hearts; it got <em>bundled</em>. Once you’re the default, you’re nearly impossible to remove.</li>
+<li><strong>Adoption is not mindshare.</strong> jQuery was declared dead for ten years while quietly running most of the internet. Measure reality, not the conversation.</li>
+<li><strong>The ultimate compliment is absorption.</strong> If your product fixes a platform’s flaw, the platform will eventually adopt your solution natively. That isn’t failure — but you had better know which stage of the lifecycle you are in: emerge, dominate, get absorbed, persist.</li>
+<li><strong>Great tools teach their users to outgrow them.</strong> jQuery educated the generation of developers who built the frameworks that displaced it. If your product creates the people who will disrupt you, build the next thing yourself.</li>
+</ul>
+
+<h2 id="victory">9. The quiet victory</h2>
+<p>So how should history remember jQuery? Not as a tool that failed, and not even as a tool that faded. jQuery declined in relevance precisely <em>because</em> it succeeded in its mission: it unified a broken platform, proved what developers needed, and pressured the industry’s giants into delivering it — permanently, for everyone, for free.</p>
+<p>Its fingerprints are now inside every browser on earth. Every time any developer, anywhere, finds an element on a page or fetches data from a server using nothing but built-in browser features, they are using jQuery’s ideas — whether or not they have ever typed a dollar sign.</p>
+<p>The platform did not merely replace jQuery. It became jQuery.</p>
+
+<section id="references" class="references no-speech" aria-labelledby="references-heading">
+<h2 id="references-heading">References</h2>
+<ol>
+<li id="ref-1">Resig, J. — <em>10th Anniversary of jQuery.</em> <a href="https://johnresig.com/blog/10th-anniversary-of-jquery/" target="_blank" rel="noopener nofollow">johnresig.com/blog/10th-anniversary-of-jquery</a></li>
+<li id="ref-2">The Next Web — <em>The most popular JavaScript library, jQuery, is now 10 years old.</em> <a href="https://thenextweb.com/news/the-most-popular-javascript-library-jquery-is-now-10-years-old" target="_blank" rel="noopener nofollow">thenextweb.com</a></li>
+<li id="ref-3">Chall, A. — <em>How jQuery was born: a brief history of the most popular JavaScript library.</em> <a href="https://medium.com/@andrewchall92/how-jquery-was-born-a-brief-history-of-the-most-popular-javascript-library-df3eb5256833" target="_blank" rel="noopener nofollow">medium.com</a></li>
+<li id="ref-4">Stack Overflow — <em>Why is it frowned upon to modify JavaScript objects’ prototypes?</em> <a href="https://stackoverflow.com/questions/6223449/why-is-it-frowned-upon-to-modify-javascript-objects-prototypes" target="_blank" rel="noopener nofollow">stackoverflow.com</a></li>
+<li id="ref-5">Kettanaito, A. — <em>Why Patching Globals Is Harmful.</em> <a href="https://kettanaito.com/blog/why-patching-globals-is-harmful" target="_blank" rel="noopener nofollow">kettanaito.com</a></li>
+<li id="ref-6">Admix Web — <em>Celebrating the 20th Anniversary of jQuery.</em> <a href="https://www.admixweb.com/celebrating-the-20th-anniversary-of-jquery/" target="_blank" rel="noopener nofollow">admixweb.com</a></li>
+<li id="ref-7">Metorial — <em>The jQuery Age of AI Agents.</em> <a href="https://metorial.com/blog/jquery-age-of-ai" target="_blank" rel="noopener nofollow">metorial.com</a></li>
+<li id="ref-8">OpenReplay Blog — <em>jQuery Alternatives for Modern JavaScript.</em> <a href="https://blog.openreplay.com/jquery-alternatives-modern-js/" target="_blank" rel="noopener nofollow">blog.openreplay.com</a></li>
+<li id="ref-9">GitHub Engineering Blog — <em>Removing jQuery from GitHub.com frontend</em> (September 2018). <a href="https://github.blog/engineering/engineering-principles/removing-jquery-from-github-frontend/" target="_blank" rel="noopener nofollow">github.blog</a></li>
+<li id="ref-10">Official jQuery Blog — <em>jQuery 4.0.0 BETA!</em> (February 2024). <a href="https://blog.jquery.com/2024/02/06/jquery-4-0-0-beta/" target="_blank" rel="noopener nofollow">blog.jquery.com</a></li>
+<li id="ref-11">Official jQuery Blog — <em>jQuery 4.0.0</em> (17 January 2026). <a href="https://blog.jquery.com/2026/01/17/jquery-4-0-0/" target="_blank" rel="noopener nofollow">blog.jquery.com</a></li>
+<li id="ref-12">W3Techs — <em>Usage statistics and market share of jQuery.</em> <a href="https://w3techs.com/technologies/details/js-jquery" target="_blank" rel="noopener nofollow">w3techs.com</a></li>
+</ol>
+</section>
+
+<section id="share" class="share no-speech" aria-labelledby="share-heading">
+<h2 id="share-heading">Share this article</h2>
+<p>Send it to someone who has declared a tool dead lately.</p>
+<div class="share-buttons">
+<button type="button" data-share="native" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1a3 3 0 0 0-2 .8l-7.1-4.2c0-.2.1-.4.1-.7s0-.5-.1-.7L15.9 7a3 3 0 1 0-1-2.2c0 .2 0 .5.1.7L8 9.7a3 3 0 1 0 0 4.6l7.1 4.2c0 .2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>Share…</button>
+<a data-share="x" href="https://x.com/intent/post?text=The%20Architecture%20of%20Ubiquity%3A%20jQuery%E2%80%99s%20Quiet%20Victory&url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.7l-5.2-6.8L5.1 22H1.8l7.7-8.8L1 2h6.8l4.7 6.2zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>X</a>
+<a data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1a4.2 4.2 0 0 1 3.8-2c4 0 4.8 2.7 4.8 6.1V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+<a data-share="bluesky" href="https://bsky.app/intent/compose?text=The%20Architecture%20of%20Ubiquity%3A%20jQuery%E2%80%99s%20Quiet%20Victory%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.9 8.6 7.9 4.6 5.1 2.7 2.4.8 1.4 1.1.8 1.4c-.8.4-.8 1.5-.8 2.2s.4 5.5.7 6.3c.8 2.6 3.5 3.5 6 3.2-3.7.6-7 1.9-2.7 6.7 4.7 4.9 6.5-1 7.4-4 .9 3 2 8.7 7.3 4 4-4 1.1-6.1-2.6-6.7 2.5.3 5.2-.6 6-3.2.3-.8.7-5.6.7-6.3s0-1.8-.8-2.2c-.6-.3-1.6-.6-4.3 1.3-2.8 1.9-5.8 5.9-6.9 8.1z"/></svg>Bluesky</a>
+<a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+<a data-share="whatsapp" href="https://wa.me/?text=The%20Architecture%20of%20Ubiquity%3A%20jQuery%E2%80%99s%20Quiet%20Victory%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
+<button type="button" data-share="slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15a2 2 0 1 1-2-2h2zm1 0a2 2 0 1 1 4 0v5a2 2 0 1 1-4 0zM9 6a2 2 0 1 1 2-2v2zm0 1a2 2 0 1 1 0 4H4a2 2 0 1 1 0-4zm9 2a2 2 0 1 1 2 2h-2zm-1 0a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0zm-2 9a2 2 0 1 1-2 2v-2zm0-1a2 2 0 1 1 0-4h5a2 2 0 1 1 0 4z"/></svg>Send via Slack</button>
+<a data-share="email" href="mailto:?subject=The%20Architecture%20of%20Ubiquity&body=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fthe-architecture-of-ubiquity%2F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 8L4.4 7H19.6zM4 17h16V8.6l-7.4 5.8a1 1 0 0 1-1.2 0L4 8.6z"/></svg>Email</a>
+<button type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4 0zm-4 4.9a4 4 0 0 1 0-5.7l2.8-2.8a1 1 0 0 1 1.4 1.4l-2.8 2.8a2 2 0 0 0 2.8 2.8l2.8-2.8a1 1 0 1 1 1.4 1.4l-2.8 2.9a4 4 0 0 1-5.6 0zm11-6.6a1 1 0 0 1-1.4-1.4l2.8-2.8a2 2 0 1 0-2.8-2.8l-2.8 2.8a1 1 0 0 1-1.4-1.4l2.8-2.8a4 4 0 0 1 5.6 5.6z"/></svg>Copy link</button>
+</div>
+<p class="share-note" id="share-note" role="status" aria-live="polite"></p>
+</section>
+
+<nav class="article-pager no-speech" aria-label="More reading"><a href="/articles/">← All articles</a><a href="/articles/sdlc-in-the-ai-era/">SDLC in the AI Era →</a></nav>
+
+</div>
+</div>
+</article>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year">2026</span> Yalın Yorulmaz</span><span>Istanbul, Türkiye</span><a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener">Support the experiments ↗</a></div></footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+</body></html>
