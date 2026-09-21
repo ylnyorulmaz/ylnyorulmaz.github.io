@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Machine Can Solve Chess. It Can’t Solve Why We Play.</title>
+<meta name="description" content="Elon Musk says chess will be solved like checkers. He's right about the maths and wrong about the game. On the scale he's weighing it with, what solving actually kills, and the gap between a system and an experience.">
+<meta name="author" content="Yalın Yorulmaz">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<meta name="keywords" content="chess solved, Elon Musk chess, checkers solved, tablebase, far transfer, chess cognition, game design, product thinking, Stockfish, Shannon 1950">
+<link rel="canonical" href="https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/">
+<meta name="theme-color" content="#f4f3ef">
+<meta property="og:site_name" content="Yalın Yorulmaz">
+<meta property="og:title" content="A Machine Can Solve Chess. It Can’t Solve Why We Play.">
+<meta property="og:description" content="What a machine can solve is the mathematical space of chess. Why we play it is an entirely different problem — and nobody has a scale for that one yet.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/">
+<meta property="og:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-09-21">
+<meta property="article:author" content="https://ylnyorulmaz.com/about.html">
+<meta property="article:section" content="Games &amp; technology">
+<meta property="article:tag" content="Chess"><meta property="article:tag" content="Game design"><meta property="article:tag" content="Product thinking">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="A Machine Can Solve Chess. It Can’t Solve Why We Play.">
+<meta name="twitter:description" content="Solving a problem technically and understanding a human need are two different jobs. Being among the best in the world at the first does not guarantee you’re right about the second.">
+<meta name="twitter:image" content="https://ylnyorulmaz.com/yalinyorulmaz.jpeg">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/articles.css">
+<script defer src="/script.js"></script><script defer src="/articles.js"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"A Machine Can Solve Chess. It Can’t Solve Why We Play.","alternativeHeadline":"On solved games, the wrong scale, and the gap between a system and an experience","description":"Elon Musk says chess will be solved like checkers. He's right about the maths and wrong about the game — and the mistake is one product people make every day.","inLanguage":"en","datePublished":"2026-09-21","dateModified":"2026-09-21","wordCount":2800,"articleSection":"Games & technology","keywords":["chess","solved games","tablebase","far transfer","game design","product thinking"],"image":"https://ylnyorulmaz.com/yalinyorulmaz.jpeg","author":{"@type":"Person","@id":"https://ylnyorulmaz.com/#person","name":"Yalın Yorulmaz","alternateName":["Yalin Yorulmaz","ylnyorulmaz","yorulmazyln"],"url":"https://ylnyorulmaz.com/about.html"},"publisher":{"@id":"https://ylnyorulmaz.com/#person"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/"},"@id":"https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/#article"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://ylnyorulmaz.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://ylnyorulmaz.com/articles/"},{"@type":"ListItem","position":3,"name":"A Machine Can Solve Chess","item":"https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/"}]}</script>
+<meta property="og:image:alt" content="Yalın Yorulmaz, author and product leader">
+<meta name="twitter:image:alt" content="Yalın Yorulmaz, author and product leader">
+</head><body class="article-page"><a class="skip-link" href="#main">Skip to content</a>
+<header><div class="wrap nav"><a class="wordmark" href="/">YALIN YORULMAZ</a><button class="nav-toggle" aria-expanded="false" aria-controls="primary-navigation" aria-label="Toggle menu"><span class="hamburger"></span></button><nav><ul id="primary-navigation" class="nav-links"><li><a href="/#work">Work</a></li><li><a href="/#record">Record</a></li><li><a href="/articles/" aria-current="page">Articles</a></li><li><a href="/about.html">About</a></li><li><a href="/#contact">Contact</a></li><li><a class="resume-link" href="/Yalin_Yorulmaz_CV.pdf">Résumé ↗</a></li></ul></nav></div></header>
+
+<main id="main">
+<article>
+<div class="article-hero"><div class="wrap">
+<p class="kicker"><a href="/articles/">ARTICLES</a> / GAMES &amp; TECHNOLOGY</p>
+<h1>A Machine Can Solve Chess. It Can’t Solve Why We Play.</h1>
+<p class="article-deck">Chess is finite, deterministic and perfect-information, so one day it may well be solved. That says almost nothing about what happens when two people sit down at a board.</p>
+<div class="article-meta"><span class="by">By Yalın Yorulmaz</span><span><time datetime="2026-09-21">21 September 2026</time></span><span>12 min read</span><span>Essay</span></div>
+</div></div>
+
+<div class="wrap article-layout">
+<aside class="article-rail">
+  <section id="listen" class="listen" hidden aria-label="Listen to this article">
+    <h2>Listen to this article</h2>
+    <div class="listen-controls">
+      <button type="button" id="listen-play" class="primary">▶ Listen</button>
+      <button type="button" id="listen-stop" disabled>■ Stop</button>
+    </div>
+    <label class="listen-rate" for="listen-rate">Speed
+      <select id="listen-rate"><option value="0.8">0.8×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option></select>
+    </label>
+    <div class="listen-progress" role="progressbar" aria-label="Reading progress"><span id="listen-bar"></span></div>
+    <p class="listen-status" id="listen-status" role="status" aria-live="polite"></p>
+  </section>
+
+  <nav class="article-toc" aria-label="Sections of this article">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#takeaways">Key takeaways</a></li>
+      <li><a href="#argument">1 / The argument, and what’s right about it</a></li>
+      <li><a href="#scale">2 / The wrong scale</a></li>
+      <li><a href="#even-there">3 / Wrong even on his own scale</a></li>
+      <li><a href="#not-solving">4 / We aren’t trying to solve chess</a></li>
+      <li><a href="#tic-tac-toe">5 / A solution can exist without ending your problem</a></li>
+      <li><a href="#opponent">6 / There is someone else in the equation</a></li>
+      <li><a href="#winning">7 / Winning isn’t even the point</a></li>
+      <li><a href="#engineer">8 / The engineer sees the system</a></li>
+      <li><a href="#unexpected">9 / And then something I didn’t expect</a></li>
+      <li><a href="#why-we-play">10 / Why we’ll still play</a></li>
+      <li><a href="#references">References</a></li>
+    </ol>
+  </nav>
+</aside>
+
+<div class="article-body" id="article-body">
+
+<p class="oneline"><b>The one-line version:</b> What a machine can solve is the mathematical space of chess; why we play it is an entirely different problem — and nobody has a scale for that one yet.</p>
+
+<section id="takeaways" class="takeaways" aria-labelledby="takeaways-heading">
+<h2 id="takeaways-heading">The key takeaways</h2>
+<ul>
+<li><strong>The technical claim is fine.</strong> Chess is finite, deterministic and perfect-information. Seven-piece endgames are already solved exactly, and checkers was solved outright in 2007.</li>
+<li><strong>The mistake is the measuring instrument.</strong> Judging a game by whether it “transfers to real life” imposes a ruler the thing was never built for — and “enjoy it anyway” is a pat on the head, not an answer.</li>
+<li><strong>Even on that ruler, the verdict goes the other way.</strong> The link between chess skill and cognitive ability is robust; what’s genuinely contested is far transfer. Claim the first and you’re on solid ground; claim the second and you’ve handed over the argument.</li>
+<li><strong>Solving a game only kills it if the solution fits in a human head.</strong> Tic-tac-toe died as a contest. A chess solution would be millions of moves long — no brain carries it to the board.</li>
+<li><strong>You don’t play an evaluation number, you play a person.</strong> The objectively second-best move is often the practically strongest one, because it puts eight hard decisions in front of a tired human.</li>
+<li><strong>A game’s formal objective and a player’s actual objective are different functions.</strong> People explore, build, role-play, show off, and deliberately pick bad strategies because they’re fun.</li>
+<li><strong>Engineers see the system; users live the experience.</strong> The founder thinks they’re selling speed; the user is buying a feeling of control.</li>
+<li><strong>Being extraordinary in one field doesn’t buy you flawless judgment in another</strong> — which is oddly encouraging: blind spots aren’t disqualifying. They’re the game.</li>
+</ul>
+</section>
+
+<h2 id="argument">1. The argument, and what’s right about it</h2>
+<p class="lede">Last week Elon Musk got into an argument about chess with <a href="https://www.chess.com" target="_blank" rel="noopener nofollow">Chess.com</a> on X. The gist: chess is getting steadily easier for computers, the number of “non-stupid” moves is actually small, and one day the game will be solved completely, the way checkers was. Chess.com replied with “skill issue”; Musk said an AI would eventually find solutions we couldn’t comprehend, and offered his conversations with Grok as evidence.<a class="cite" href="#ref-1">[1]</a></p>
+<p>I have no objection to the first part. Chess is a finite, deterministic, perfect-information game; in principle it is mathematically solvable one day. We’ve known that for decades — Shannon treated chess as precisely a computation problem back in 1950.<a class="cite" href="#ref-2">[2]</a> And we have genuinely solved a small slice of it: in seven-piece tablebases we know the result of perfect play position by position,<a class="cite" href="#ref-3">[3]</a> and checkers was solved entirely in 2007 — from the starting position, perfect play is a draw.<a class="cite" href="#ref-4">[4]</a></p>
+<p>So “solvable” is correct. My problem is elsewhere.</p>
+
+<h2 id="scale">2. The wrong scale</h2>
+<p>Musk is weighing the game on the wrong scale.</p>
+<p>The root of his view of chess isn’t new, either. In 2022 he wrote that he gave the game up as a child because he found it “too simple to be useful in real life.” This time he said he was getting diminishing returns from chess in terms of “transfer to understanding reality.”<a class="cite" href="#ref-1">[1]</a> Notice what both sentences do: they measure the game by whether it is good <em>for</em> something. Does it feed intelligence? Does it transfer to the real world? Does it make you a better problem-solver?</p>
+<p>That scale is the mistake.</p>
+<p>To be fair to him — somewhere in the exchange he said that until then, and even after, people should enjoy it, that humans already enjoy plenty of games machines are far better at. So he isn’t saying “stop playing once it’s solved.” But that concession doesn’t save him; it gives him away. Being able to say “you carry on having fun” that comfortably shows he never took the game seriously in the first place. Setting something aside as useless and then adding “but you enjoy it, dear” is a pat on the head from above. It takes no interest at all in the question of why the game is loved.</p>
+
+<h2 id="even-there">3. And he’s wrong even on his own scale</h2>
+<p>Now you’ll say: “But that scale isn’t empty — chess really does sharpen the mind.” I agree, and I think Musk is wrong there too. As long as we pitch the claim at the right dose, because this is the easiest place to get refuted.</p>
+<p>Here’s the solid part: strong chess players really are sharper than average — on measures like fluid reasoning, processing speed and memory, the relationship has been confirmed repeatedly in comprehensive meta-analyses.<a class="cite" href="#ref-5">[5]</a> That chess exercises calculation, visualisation, pattern recognition, concentration and planning is not in dispute. There are also positive signals from intervention studies: short-term gains in mathematics for children,<a class="cite" href="#ref-6">[6]</a> and cognitive upkeep in older adults.<a class="cite" href="#ref-7">[7]</a> So saying “chess is a mental sport that keeps you sharp” isn’t folklore; it’s something the data supports.</p>
+<p>The one place honesty is required: the claim that chess makes you <em>generally</em> more intelligent — that it produces an IQ jump spilling into unrelated domains — is still contested. Part of the correlation is selection; sharp people gravitate to the game in the first place. In controlled studies, “far transfer” usually weakens.<a class="cite" href="#ref-8">[8]</a> Some of the studies cited in support of the thesis even find, on a careful reading, that chess improved mathematics but not critical thinking.<a class="cite" href="#ref-9">[9]</a> So if you say “definitively proven,” you’ve left an opening; if you say “a real and measurable mental exercise,” you can stand behind it all day.</p>
+<p>But the claim “it’s useless in real life” is wrong anyway — and showing that doesn’t require chess to be an IQ pill.</p>
+<p>For one thing, Musk seems to want a kind of life simulator from a game: a perfect-information, zero-sum rehearsal you run before going out into the world. No such game exists — and even if it did, life is neither perfect-information nor zero-sum. That’s imposing an unfair ruler from the start.</p>
+<p>The real gains are in plainer, sturdier places. Chess teaches you to sit in front of a problem for hours, to decide under pressure, to lose and sit down again the next day, to read the person across from you. And there’s a social side: you go to a club, you play a total stranger in a park, you have a shared language. These aren’t things you measure by asking “what was the effect size in the far-transfer study,” but they work perfectly well inside a life.</p>
+<p>Two concrete examples — two principles chess gave me that I apply every day. First: never let a move you make have only one purpose. A good move does one job; a genuinely good move does several at once — it develops a piece, holds a square, and quietly builds a threat. Lift that off the board: the sturdiest decisions are the ones serving not a single goal but several simultaneously. Second: when you find a good move, look for a better one — the famous line usually attributed to Emanuel Lasker. A good American football quarterback, even when they see an open pass, will flick their eyes across for a beat and scan for something better. In chess, don’t pounce on the first pretty move you see; pause, look again — is there something better, or is there a flaw in this one you’ve missed? (Obviously, when the clock is short you don’t chase perfection and burn the time; the whole thing is that fine balance.) Both are learned at the board and keep working after you stand up from it.</p>
+<p>And most fundamentally: from every game, every book, every attempt, you add a small thing to some corner of yourself. That is how people develop anyway. Expecting every pursuit to justify itself through “measurable transfer to real life” — that is the genuinely shallow view. A life isn’t built out of far-transfer studies; it’s built out of what you’ve accumulated.</p>
+<p>So even if we accept that scale for a moment, Musk loses. But the scale isn’t the point — which is exactly why I don’t need this argument at all.</p>
+
+<h2 id="not-solving">4. We aren’t trying to solve chess</h2>
+<p>When I sit down at a board I am not thinking “does White win with perfect play, or is it a draw?” I’m trying to beat the person opposite me. Sometimes even beating them isn’t the point: I’m building a position on the board that I like, considering a strange sacrifice, planting a knight on an incredible square, watching the little trap I set ten minutes ago close. Sometimes what appears feels almost like a painting to me. Whether the computer calls that position +1.34 or +0.82 is a secondary matter.</p>
+<p>In chess we have a concept called a “beautiful move” — a strange concept from a mathematical point of view. The optimal move is optimal, full stop. But a piece sacrifice, a quiet queen move, an unexpected in-between move can strike us as aesthetic; two moves can produce the same result and one can still be more beautiful than the other. For a computer the game has a result. For a person it has an experience.</p>
+<p>That is exactly what the argument misses.</p>
+
+<h2 id="tic-tac-toe">5. A solution existing somewhere doesn’t end your problem</h2>
+<p>The most common objection is: “But checkers was solved and nobody stopped playing.” True — but on its own that argument is incomplete, and <em>why</em> it’s incomplete matters.</p>
+<p>Whether solving a game kills it depends on whether the solution fits inside a human head. Tic-tac-toe is a solved game too. But its solution is so simple that every adult carries it around — and precisely because of that, it died as a serious contest. Two adults don’t sit down to play noughts and crosses to see who wins, because both play perfectly and the game draws every time. The moment the solution reached the human, human-versus-human competition lost its meaning.</p>
+<p>Chess isn’t like that. Even if it’s solved one day, that solution would be a line millions of moves long; no brain can carry it. Which means the solution <em>existing</em> and you being able to <em>execute</em> it are two entirely separate things. The optimal answer may sit somewhere in the world, and the problem in front of the person at the board stays exactly as it was.</p>
+<p>It’s like navigation. Google Maps tells you the shortest route. You still sometimes say “I’ll turn off here,” and ten minutes later say “I should have listened.” The solution existed; the human factor was there regardless. In chess that factor never disappears — because nobody can memorise the solution and bring it to the table.</p>
+
+<h2 id="opponent">6. There is someone else in the equation</h2>
+<p>Theoretical chess looks simple: position → best move. In a real game the equation swells:</p>
+<p class="formula">position + opponent + clock + memory + psychology + fatigue + risk appetite + tournament situation → move</p>
+<p>An engine can tell you the position is +0.8; but the human across from you doesn’t know that, and neither do you. And very often the objectively second-best move is far stronger in practice. One path takes you to a clean, technical endgame; another is slightly worse by the computer but places eight hard decisions in front of your opponent in a row. If you’re facing <a href="https://stockfishchess.org" target="_blank" rel="noopener nofollow">Stockfish</a>, you take the first. If you’re facing a human who is short on time, dislikes rook endings and loves attacking, the second is far more lethal.</p>
+<p>Because you aren’t playing against an evaluation number. You’re playing against a person. You know the positions they don’t like. You make one side look weak and draw all their pieces over there. You enter an endgame you know is theoretically drawn, because you think your opponent can’t defend it. You get them into a mating position and they don’t know how to finish the mate. A bit like boxing: you may be winning the fight, but if you don’t know how to put your opponent down, the job isn’t done.</p>
+<p>None of this disappears depending on whether chess gets solved.</p>
+<p>And then there’s the board itself. You touch the pieces, the clock runs, you see the face of the person opposite. You pick something up from the speed at which they play a move — fast means prepared; a long think means they’ve either found something or got lost. You play without hesitating to send the message “I had already calculated that,” true or not. A position can be objectively equal and horrible to play. You could describe all of this as nodes in a game tree, perhaps. But what the player lives through doesn’t fit inside that description — like reducing a concert to the mathematics of sound waves. Not technically wrong, but missing the actual thing.</p>
+
+<h2 id="winning">7. Winning isn’t even the point of every game</h2>
+<p>You see this very clearly outside chess. Two people in my family play Age of Empires. One plays it almost like an economy simulator — cutting down every tree on the map, collecting gold, stockpiling resources, growing the economy. The other lines universities up side by side and finishes every research option without producing more or less a single soldier, as though the game had a hidden “science victory.”</p>
+<p>Could the game’s designer step in and say “no, you’re playing it wrong”? Technically the game has a win condition. But the player’s own objective is something else entirely. People don’t only optimise when they play: they explore, experiment, role-play, build something, take risks, show off to a friend, complete some absurd goal they set themselves, and sometimes knowingly pick the bad strategy purely because it’s fun.</p>
+<p>So a game’s formal objective function and a player’s actual objective function are not the same thing. That is one of the most basic differences between computer science and human behaviour.</p>
+
+<h2 id="engineer">8. The engineer sees the system, the user lives the experience</h2>
+<p>The issue is really bigger than chess. An engineer’s view of a product and a user’s view often don’t overlap. The engineer says “the problem is solved”; the user says “I wasn’t using this product for that problem in the first place.”</p>
+<p>The founder is proud of their most sophisticated algorithm; the user loves the product because of one small detail. The founder thinks they’re selling speed; the user is buying a sense of control. The founder thinks they’re selling automation; the user is buying peace of mind. The founder thinks they’re selling AI; the user is buying the feeling of being more capable.</p>
+<p>Setting chess aside because “it’ll be solved anyway” is the same move: seeing the system and missing the experience. Solving a problem technically and understanding a human need are two different jobs. Being among the best in the world at the first does not guarantee you’ll be right about the second.</p>
+
+<h2 id="unexpected">9. And then something I didn’t expect</h2>
+<p>After thinking this far, the thing that stuck with me wasn’t chess.</p>
+<p>Elon Musk is someone who has founded some of the largest companies on the planet. Looking at people like that from the outside, you inevitably build a mythology: as if there were another processor inside their head that we can’t access, as if they thought five times deeper about everything. Then you see an argument like this one and you realise — no. An extraordinarily successful person can also assess a subject superficially, frame it wrongly, and completely miss a user’s motivation. Being exceptional in one field doesn’t hand you flawless judgment in every other.</p>
+<p>This doesn’t mean “if Musk is wrong about chess, I’ll found SpaceX tomorrow,” obviously. But something far more useful comes out of it: you don’t have to be a genius about everything to do big things. You can have bad ideas. You can have projects that go nowhere. You can have wrong assumptions, products nobody wanted, experiments left half-finished. People with blind spots are the ones doing those big things too. Which means the possibility of being wrong isn’t a flaw that throws you out of the game — it <em>is</em> the game.</p>
+<p>Which, in fact, is the same thing chess has been teaching me for years. You don’t know all the moves. You don’t know what your opponent will do. Sometimes you lose a won position, sometimes you escape a lost one, sometimes you forget the theory, sometimes you miscalculate. Then you set the pieces up again and a new game starts.</p>
+
+<h2 id="why-we-play">10. Why we’ll still play</h2>
+<p>Maybe one day a computer really will solve chess from the first move to the last. Maybe it will hand us an unbelievable sentence like “after 1.e4, under perfect play the result is a certain draw.” Fine. The next day two people will sit down in a café and play anyway. One will half-remember the Sicilian, the other will blunder on move eight, one will see the sacrifice, the other won’t, the clock will run, one will panic, one will realise the moment they touch a piece that they’ve grabbed the wrong one, one will play a move they thought was brilliant, and the other will smile.</p>
+<p>Because what a machine can solve is the mathematical space of chess. Why we play it is an entirely different problem — and nobody has a scale for that one yet.</p>
+
+<section id="references" class="references no-speech" aria-labelledby="references-heading">
+<h2 id="references-heading">References</h2>
+<p>References [1]–[9] are cited in the text; all are peer-reviewed, academic or primary sources. The two lists that follow are not cited and are included for context.</p>
+<ol>
+<li id="ref-1">Landymore, F. — <em>“Elon Musk Is Insisting He Knows More About Chess Than Chess.com,”</em> <em>Futurism</em>, 7 September 2026. <a href="https://futurism.com/future-society/elon-musk-argues-chess" target="_blank" rel="noopener nofollow">futurism.com</a> — Musk’s statements and the course of the argument.</li>
+<li id="ref-2">Shannon, C. E. — <em>“Programming a Computer for Playing Chess,”</em> <em>Philosophical Magazine</em>, Ser. 7, 41(314), 1950, pp. 256–275. <a href="https://fermatslibrary.com/s/programming-a-computer-for-playing-chess" target="_blank" rel="noopener nofollow">fermatslibrary.com</a> — the first treatment of chess as a computation problem.</li>
+<li id="ref-3">Lichess — <em>7-piece Syzygy tablebase.</em> <a href="https://lichess.org/tablebase" target="_blank" rel="noopener nofollow">lichess.org/tablebase</a> — hundreds of billions of positions whose result under perfect play is known.</li>
+<li id="ref-4">Schaeffer, J. et al. — <em>“Checkers Is Solved,”</em> <em>Science</em>, 317(5844), 2007, pp. 1518–1522. <a href="https://webdocs.cs.ualberta.ca/~chinook/publications/solving_checkers.html" target="_blank" rel="noopener nofollow">ualberta.ca</a> — checkers is a draw under perfect play.</li>
+<li id="ref-5">Burgoyne, A. P., Sala, G., Gobet, F. et al. — <em>“The relationship between cognitive ability and chess skill: A comprehensive meta-analysis,”</em> <em>Intelligence</em>, 59, 2016, pp. 72–83. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0160289616301593" target="_blank" rel="noopener nofollow">sciencedirect.com</a> — a robust correlation between chess skill and cognitive ability.</li>
+<li id="ref-6">Sala, G. &amp; Gobet, F. — <em>“Do the benefits of chess instruction transfer to academic and cognitive skills? A meta-analysis,”</em> <em>Educational Research Review</em>, 18, 2016, pp. 46–57. <a href="https://www.sciencedirect.com/science/article/pii/S1747938X16300112" target="_blank" rel="noopener nofollow">sciencedirect.com</a> — short-term gains for children in mathematics and cognition.</li>
+<li id="ref-7"><em>“Effectiveness of a chess-training program for improving cognition, mood, and quality of life in older adults: A pilot study.”</em> <a href="https://pubmed.ncbi.nlm.nih.gov/34098442/" target="_blank" rel="noopener nofollow">pubmed.ncbi.nlm.nih.gov</a> — a pilot study in older adults; improvements in cognition and quality of life.</li>
+<li id="ref-8">Sala, G. &amp; Gobet, F. — <em>“Does Far Transfer Exist? Negative Evidence From Chess, Music, and Working Memory Training,”</em> <em>Current Directions in Psychological Science</em>, 26(6), 2017, pp. 515–520. <a href="https://journals.sagepub.com/doi/10.1177/0963721417712760" target="_blank" rel="noopener nofollow">journals.sagepub.com</a> — far transfer is weak and dependent on experimental quality.</li>
+<li id="ref-9">Berkley, D. K. — <em>“The Impact of Chess Instruction on the Critical Thinking Ability and Mathematical Achievement of Developmental Mathematics Students,”</em> Ed.D. thesis, Morgan State University, 2012 (ERIC ED547468). <a href="https://eric.ed.gov/?id=ED547468" target="_blank" rel="noopener nofollow">eric.ed.gov</a> — chess improved mathematics but not critical thinking.</li>
+</ol>
+<h3>Further reading (not cited in the text)</h3>
+<ul>
+<li>Sala, G., Foley, J. P. &amp; Gobet, F. — <em>“The Effects of Chess Instruction on Pupils’ Cognitive and Academic Skills,”</em> <em>Frontiers in Psychology</em>, 8:238, 2017. <a href="https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.00238/full" target="_blank" rel="noopener nofollow">frontiersin.org</a></li>
+<li>Gonzalez-Burgos, L. et al. — <em>“The effect of chess on cognition: a graph theory study on cognitive data,”</em> <em>Frontiers in Psychology</em>, 15:1407583, 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11442243/" target="_blank" rel="noopener nofollow">pmc.ncbi.nlm.nih.gov</a></li>
+<li><em>“A Study on the Correlation between Intelligence and Body Schema in Children Who Practice Chess at School.”</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9028252/" target="_blank" rel="noopener nofollow">pmc.ncbi.nlm.nih.gov</a></li>
+</ul>
+<h3>Popular pieces (limited evidential value, not cited in the text)</h3>
+<ul>
+<li><em>“12 Ways Chess Can Make You a Better Problem Solver,”</em> <em>Medium / Illumination</em>. <a href="https://medium.com/illumination/12-ways-chess-can-make-you-a-better-problem-solver-2c340f19ebbf" target="_blank" rel="noopener nofollow">medium.com</a></li>
+<li><em>“Chess and Critical Thinking: Improving Problem-Solving Skills,”</em> Chess.com blog. <a href="https://www.chess.com/blog/OnlineChessTeacher/chess-and-critical-thinking-improving-problem-solving-skills" target="_blank" rel="noopener nofollow">chess.com</a></li>
+<li><em>“Chess &amp; Intelligence: How Playing Can Boost Cognitive Abilities,”</em> LinkedIn. <a href="https://www.linkedin.com/pulse/chess-intelligence-how-playing-can-boost-cognitive-abilities-oog3c" target="_blank" rel="noopener nofollow">linkedin.com</a></li>
+<li><em>“Develop Problem-Solving Skills Through Chess,”</em> US Chess Academy blog. <a href="https://www.uschessacademy.com/blog/develop-problem-solving-skills-chess" target="_blank" rel="noopener nofollow">uschessacademy.com</a></li>
+</ul>
+</section>
+
+<section id="share" class="share no-speech" aria-labelledby="share-heading">
+<h2 id="share-heading">Share this article</h2>
+<p>Send it to someone who has called a game pointless lately.</p>
+<div class="share-buttons">
+<button type="button" data-share="native" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 16.1a3 3 0 0 0-2 .8l-7.1-4.2c0-.2.1-.4.1-.7s0-.5-.1-.7L15.9 7a3 3 0 1 0-1-2.2c0 .2 0 .5.1.7L8 9.7a3 3 0 1 0 0 4.6l7.1 4.2c0 .2-.1.4-.1.6a3 3 0 1 0 3-3z"/></svg>Share…</button>
+<a data-share="x" href="https://x.com/intent/post?text=A%20Machine%20Can%20Solve%20Chess.%20It%20Can%E2%80%99t%20Solve%20Why%20We%20Play.&url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.2 2h3.3l-7.2 8.3L23 22h-6.7l-5.2-6.8L5.1 22H1.8l7.7-8.8L1 2h6.8l4.7 6.2zm-1.2 18h1.8L7.1 3.9H5.2z"/></svg>X</a>
+<a data-share="linkedin" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1a4.2 4.2 0 0 1 3.8-2c4 0 4.8 2.7 4.8 6.1V21h-4v-5.4c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21H9z"/></svg>LinkedIn</a>
+<a data-share="bluesky" href="https://bsky.app/intent/compose?text=A%20Machine%20Can%20Solve%20Chess.%20It%20Can%E2%80%99t%20Solve%20Why%20We%20Play.%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 10.8C10.9 8.6 7.9 4.6 5.1 2.7 2.4.8 1.4 1.1.8 1.4c-.8.4-.8 1.5-.8 2.2s.4 5.5.7 6.3c.8 2.6 3.5 3.5 6 3.2-3.7.6-7 1.9-2.7 6.7 4.7 4.9 6.5-1 7.4-4 .9 3 2 8.7 7.3 4 4-4 1.1-6.1-2.6-6.7 2.5.3 5.2-.6 6-3.2.3-.8.7-5.6.7-6.3s0-1.8-.8-2.2c-.6-.3-1.6-.6-4.3 1.3-2.8 1.9-5.8 5.9-6.9 8.1z"/></svg>Bluesky</a>
+<a data-share="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg>Facebook</a>
+<a data-share="whatsapp" href="https://wa.me/?text=A%20Machine%20Can%20Solve%20Chess.%20It%20Can%E2%80%99t%20Solve%20Why%20We%20Play.%20%E2%80%94%20https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.7 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2 1.3 2.3 1.5.3.1.5.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.2.1.7-.1 1.3z"/></svg>WhatsApp</a>
+<button type="button" data-share="slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 15a2 2 0 1 1-2-2h2zm1 0a2 2 0 1 1 4 0v5a2 2 0 1 1-4 0zM9 6a2 2 0 1 1 2-2v2zm0 1a2 2 0 1 1 0 4H4a2 2 0 1 1 0-4zm9 2a2 2 0 1 1 2 2h-2zm-1 0a2 2 0 1 1-4 0V4a2 2 0 1 1 4 0zm-2 9a2 2 0 1 1-2 2v-2zm0-1a2 2 0 1 1 0-4h5a2 2 0 1 1 0 4z"/></svg>Send via Slack</button>
+<a data-share="email" href="mailto:?subject=A%20Machine%20Can%20Solve%20Chess&body=https%3A%2F%2Fylnyorulmaz.com%2Farticles%2Fa-machine-can-solve-chess%2F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm9 8L4.4 7H19.6zM4 17h16V8.6l-7.4 5.8a1 1 0 0 1-1.2 0L4 8.6z"/></svg>Email</a>
+<button type="button" data-share="copy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l1.4-1.4a1 1 0 0 1 1.4 1.4l-1.4 1.4a1 1 0 0 1-1.4 0zm-4 4.9a4 4 0 0 1 0-5.7l2.8-2.8a1 1 0 0 1 1.4 1.4l-2.8 2.8a2 2 0 0 0 2.8 2.8l2.8-2.8a1 1 0 1 1 1.4 1.4l-2.8 2.9a4 4 0 0 1-5.6 0zm11-6.6a1 1 0 0 1-1.4-1.4l2.8-2.8a2 2 0 1 0-2.8-2.8l-2.8 2.8a1 1 0 0 1-1.4-1.4l2.8-2.8a4 4 0 0 1 5.6 5.6z"/></svg>Copy link</button>
+</div>
+<p class="share-note" id="share-note" role="status" aria-live="polite"></p>
+</section>
+
+<nav class="article-pager no-speech" aria-label="More reading"><a href="/articles/">← All articles</a><a href="/articles/what-if-its-not-the-devil/">What If It’s Not the Devil? →</a></nav>
+
+</div>
+</div>
+</article>
+</main>
+
+<footer><div class="wrap footer"><span>© <span id="year">2026</span> Yalın Yorulmaz</span><span>Istanbul, Türkiye</span><a href="https://buymeacoffee.com/ylnyorulmaz" target="_blank" rel="noopener">Support the experiments ↗</a></div></footer>
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
+</body></html>
