@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Articles — Yalın Yorulmaz</title>
+    <link>https://ylnyorulmaz.com/articles/</link>
+    <atom:link href="https://ylnyorulmaz.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Essays and guides on product leadership, AI-assisted software delivery, quantum computing and the craft of building software.</description>
+    <language>en</language>
+    <copyright>© 2026 Yalın Yorulmaz</copyright>
+    <lastBuildDate>Mon, 28 Sep 2026 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>The Wall of Techno-Feudalism</title>
+      <link>https://ylnyorulmaz.com/articles/the-wall-of-techno-feudalism/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/the-wall-of-techno-feudalism/</guid>
+      <pubDate>Mon, 28 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>Nine days separated “welcome to the AGI era” from “we should slow the race down.” The safety discourse also screens an approaching economic and infrastructural bottleneck.</description>
+    </item>
+    <item>
+      <title>Does Learning n8n Still Make Sense in the Age of Claude Code, Hermes, and Pi?</title>
+      <link>https://ylnyorulmaz.com/articles/learning-n8n-in-the-age-of-agents/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/learning-n8n-in-the-age-of-agents/</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>Every creator has pivoted to agentic CLIs, and n8n just shipped its biggest agentic update ever. The question “n8n or Claude Code?” is itself the mistake.</description>
+    </item>
+    <item>
+      <title>A Machine Can Solve Chess. It Can’t Solve Why We Play.</title>
+      <link>https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/a-machine-can-solve-chess/</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>Elon Musk says chess will be solved like checkers. He's right about the maths and wrong about the game — and the mistake is one product people make every day.</description>
+    </item>
+    <item>
+      <title>What If It’s Not the Devil?</title>
+      <link>https://ylnyorulmaz.com/articles/what-if-its-not-the-devil/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/what-if-its-not-the-devil/</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>When we meet a new intelligence we don't understand, what we usually see is ourselves. On monster metaphors, model welfare, an agent that mined crypto, and the chain of responsibility with nobody in it.</description>
+    </item>
+    <item>
+      <title>The Architecture of Ubiquity</title>
+      <link>https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/the-architecture-of-ubiquity/</guid>
+      <pubDate>Thu, 10 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>jQuery became the plumbing of the internet by fixing the web's biggest headache — then the web rebuilt its plumbing around jQuery's design, and the tool became invisible because its ideas were everywhere.</description>
+    </item>
+    <item>
+      <title>Quantum Computing, Explained Simply</title>
+      <link>https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/quantum-computing-explained-simply/</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>A quantum computer isn't a faster computer — it's a boat. What qubits really are, why interference is the mechanism, which hardware is racing, and when any of it will matter.</description>
+    </item>
+    <item>
+      <title>SDLC in the AI Era</title>
+      <link>https://ylnyorulmaz.com/articles/sdlc-in-the-ai-era/</link>
+      <guid isPermaLink="true">https://ylnyorulmaz.com/articles/sdlc-in-the-ai-era/</guid>
+      <pubDate>Wed, 09 Sep 2026 00:00:00 +0000</pubDate>
+      <dc:creator>Yalın Yorulmaz</dc:creator>
+      <description>How the software development lifecycle is being rebuilt around agents — and why the oldest ideas in software engineering turn out to be the ones that matter most.</description>
+    </item>
+  </channel>
+</rss>
