@@ -287,3 +287,35 @@
     });
   }
 })();
+
+/* ── Article text: discourage casual copying (drag-select, right-click, Ctrl+C) ── */
+(() => {
+  const roots = [document.querySelector('.article-hero'), document.getElementById('article-body')].filter(Boolean);
+  if (!roots.length) return;
+
+  // Element nodes only; a text node has no .closest, so climb to its parent first.
+  const el = (node) => (node && node.nodeType === 1 ? node : node && node.parentElement) || null;
+  const inside = (node) => { const e = el(node); return !!e && roots.some((root) => root.contains(e)); };
+
+  // Links and controls keep their native menu — "open in new tab" and
+  // "copy link address" are useful and expose no article prose.
+  const exempt = (node) => {
+    const e = el(node);
+    return !!e && !!e.closest('a, button, select, input, textarea, .listen, .share-buttons');
+  };
+
+  ['contextmenu', 'dragstart', 'selectstart'].forEach((type) => {
+    document.addEventListener(type, (event) => {
+      if (inside(event.target) && !exempt(event.target)) event.preventDefault();
+    });
+  });
+
+  // Covers select-all followed by a keyboard copy, which no CSS can stop.
+  ['copy', 'cut'].forEach((type) => {
+    document.addEventListener(type, (event) => {
+      const selection = window.getSelection();
+      if (!selection || selection.isCollapsed) return;           // the share buttons' own copy
+      if (inside(selection.anchorNode) || inside(selection.focusNode)) event.preventDefault();
+    });
+  });
+})();

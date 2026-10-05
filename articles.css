@@ -70,6 +70,11 @@
 .formula{font:500 24px DM Mono,monospace;letter-spacing:-.02em;text-align:center;padding:26px 16px;margin:0 0 28px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 
 /* ── Callouts ── */
+/* ── Article text: discourage casual copying ── */
+.article-page .article-hero h1,.article-page .article-deck,.article-page .article-body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* Controls stay ordinary: the share row, the player and the pager. */
+.article-page .share-buttons,.article-page .listen,.article-page .article-pager{-webkit-user-select:auto;-moz-user-select:text;-ms-user-select:text;user-select:auto}
+
 /* ── Diagram / preformatted block ── */
 .article-body pre{overflow-x:auto;margin:0 0 28px;padding:20px 24px;border:1px solid var(--line);background:#fff;font:400 13px/1.7 DM Mono,monospace;white-space:pre}
 
